@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) LCNMessageModel *model;
 
-
 /**
  是否需要时间戳
  */

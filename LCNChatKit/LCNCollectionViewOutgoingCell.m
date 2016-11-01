@@ -23,9 +23,52 @@
 }
 
 -(void)setLayout:(LCNMessageLayout *)layout{
+    
+    //公共属性设置放在父类中实现,用于填充视图内容
     [super setLayout:layout];
-
-
+    
+    
+    //布局Cell内视图
+    [self.timeLabel sizeToFit];
+    self.timeLabel.width += 2*kCellSmallGap;
+    self.timeLabel.top = 0;
+    self.timeLabel.left = (kScreenWidth - self.timeLabel.width)/2;
+    
+    self.avatarImageView.size = CGSizeMake(kAvatarImageView_WH, kAvatarImageView_WH);
+    
+    self.nameLabel.size = CGSizeMake(kMediaContainerrView_Max_W, kNameLable_H);
+    
+    self.mediaContainerrView.size = CGSizeMake(layout.mediaViewSize.width, layout.mediaViewSize.height);
+    
+    
+    if (layout.isShowTimeLabel) {
+        self.timeLabel.hidden = NO;
+        self.avatarImageView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH;
+        self.avatarImageView.top = kTimeLabel_H;
+        self.nameLabel.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellMiddleGap-self.nameLabel.width;
+        self.nameLabel.top = kTimeLabel_H;
+        self.mediaContainerrView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellSmallGap-layout.model.mediaItem.mediaViewDisplaySize.width;
+        self.mediaContainerrView.top = kTimeLabel_H + kNameLable_H;
+    }
+    else{
+        self.timeLabel.hidden = YES;
+        self.avatarImageView.left = kCellMiddleGap;
+        self.avatarImageView.top = 0;
+        self.nameLabel.left =  kScreenWidth-kCellMiddleGap - kAvatarImageView_WH-kCellMiddleGap-self.nameLabel.width;
+        self.nameLabel.top = 0;
+        self.mediaContainerrView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellSmallGap-layout.mediaViewSize.width;
+        self.mediaContainerrView.top = kNameLable_H;
+    }
+    
+    if (layout.isShowStatusLabel) {
+        self.statusLabel.hidden = NO;
+        self.statusLabel.size = CGSizeMake(kScreenWidth, kStatusLabel_H);
+        self.statusLabel.left = 0;
+        self.statusLabel.top = self.mediaContainerrView.top + self.mediaContainerrView.height;
+    }
+    else{
+        self.statusLabel.hidden = YES;
+    }
 }
 
 @end

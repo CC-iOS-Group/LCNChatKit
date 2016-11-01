@@ -40,7 +40,7 @@
     int count = 10000;
     for (int i = 0; i < count ; i ++) {
         LCNMessageModel *model = [LCNMessageModel new];
-        model.isOutgoing = NO; //arc4random()%2;
+        model.isOutgoing = arc4random()%2;
         model.messageID = @"messageID";
         model.senderID = @"15158114486";
         model.senderDisplayName = @"XXXX";

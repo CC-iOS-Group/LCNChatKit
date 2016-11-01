@@ -108,6 +108,12 @@
     }
     
     //添加用户名
+    if (layout.model.isOutgoing) {
+        self.nameLabel.textAlignment = NSTextAlignmentRight;
+    }
+    else{
+        self.nameLabel.textAlignment = NSTextAlignmentLeft;
+    }
     self.nameLabel.text = layout.model.senderDisplayName;
     
     //添加头像

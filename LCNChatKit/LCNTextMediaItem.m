@@ -66,7 +66,7 @@
         else{
             //右气泡
             textLabel.top = kCellMiddleGap;
-            textLabel.right = 2;
+            textLabel.left = kCellMiddleGap;
         }
         
         _cachedTextMediaView = bubbleView;

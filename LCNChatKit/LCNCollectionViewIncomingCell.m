@@ -33,9 +33,9 @@
     
     self.avatarImageView.size = CGSizeMake(kAvatarImageView_WH, kAvatarImageView_WH);
     
-    self.nameLabel.size = CGSizeMake(kScreenWidth - kAvatarImageView_WH, kNameLable_H);
+    self.nameLabel.size = CGSizeMake(kMediaContainerrView_Max_W, kNameLable_H);
     
-    self.mediaContainerrView.size = CGSizeMake(kMediaContainerrView_Max_W, layout.mediaViewSize.height);
+    self.mediaContainerrView.size = CGSizeMake(layout.mediaViewSize.width, layout.mediaViewSize.height);
     
     
     if (layout.isShowTimeLabel) {
