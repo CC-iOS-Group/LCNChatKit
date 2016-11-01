@@ -1,0 +1,111 @@
+2016-10-27 07:23:36 +0000 DEBUG -[IDMPAutoLoginViewController checkWithAppId:andAppkey:finishBlock:failBlock:]: 69 - query appid start 
+2016-10-27 07:23:36 +0000 DEBUG -[IDMPAutoLoginViewController checkWithAppId:andAppkey:finishBlock:failBlock:]: 70 - query appid network status  1
+2016-10-27 07:23:36 +0000 DEBUG -[IDMPAutoLoginViewController checkWithAppId:andAppkey:finishBlock:failBlock:]: 78 - heads:{
+	Query = CK appid="01010618",clientversion="1.0",Phone_ID="8579C7B3-7863-4E75-8CB5-B696E747F03B",
+	signature = 5ffea3910a903d7fe41c1db85c527bd4f7a8d845fd62868fc6313fea586669308abcfabf27309196300a862bda218e3c2b297787364abceb3f176d6857cfdc7da5982fc594f80282cb3eefd61efa24f16f45e7595db9183e175cff9368d8eb10b2a0bc51b094fdca2333c0f79b8a23115427c5b2202215c2698f6f3b2857be52
+}
+2016-10-27 07:23:36 +0000 DEBUG -[IDMPHttpRequest getWithHeads:url:successBlock:failBlock:]: 24 - receive data 
+2016-10-27 07:23:36 +0000 DEBUG -[IDMPHttpRequest getWithHeads:url:successBlock:failBlock:]: 26 - statusCode is 200
+2016-10-27 07:23:36 +0000 DEBUG -[IDMPHttpRequest getWithHeads:url:successBlock:failBlock:]: 28 - res {
+	resultCode = 103000,
+	Keep-Alive = timeout=30,
+	Server = nginx,
+	Query-Result = CK esign="null",isSipApp="1",eappid="okFlfMCMqUnsyil6cK5Hmw==",sourceId="010106",epackage="null",
+	Content-Length = 0,
+	Connection = keep-alive,
+	Date = Thu, 27 Oct 2016 07:29:30 GMT
+}
+2016-10-27 07:23:36 +0000 DEBUG __78-[IDMPAutoLoginViewController checkWithAppId:andAppkey:finishBlock:failBlock:]_block_invoke: 81 - 查询appid 结果 {
+	resultCode = 103000,
+	Keep-Alive = timeout=30,
+	Server = nginx,
+	Query-Result = CK esign="null",isSipApp="1",eappid="okFlfMCMqUnsyil6cK5Hmw==",sourceId="010106",epackage="null",
+	Content-Length = 0,
+	Connection = keep-alive,
+	Date = Thu, 27 Oct 2016 07:29:30 GMT
+}
+2016-10-27 07:23:36 +0000 DEBUG __78-[IDMPAutoLoginViewController checkWithAppId:andAppkey:finishBlock:failBlock:]_block_invoke: 88 - server appid okFlfMCMqUnsyil6cK5Hmw==
+2016-10-27 07:23:36 +0000 DEBUG __78-[IDMPAutoLoginViewController checkWithAppId:andAppkey:finishBlock:failBlock:]_block_invoke: 92 - local appid okFlfMCMqUnsyil6cK5Hmw==
+2016-10-27 07:23:36 +0000 DEBUG -[IDMPAutoLoginViewController resultCodeSuccessWithResponse:]:511 - query sourceid result : 010106
+2016-10-27 07:23:36 +0000 DEBUG __122-[IDMPAutoLoginViewController getAppPasswordWithAppid:Appkey:UserName:andLoginType:isUserDefaultUI:finishBlock:failBlock:]_block_invoke:725 - 
+2016-10-27 07:23:36 +0000 DEBUG __122-[IDMPAutoLoginViewController getAppPasswordWithAppid:Appkey:UserName:andLoginType:isUserDefaultUI:finishBlock:failBlock:]_block_invoke:727 - user {
+}
+2016-10-27 07:23:36 +0000 DEBUG __122-[IDMPAutoLoginViewController getAppPasswordWithAppid:Appkey:UserName:andLoginType:isUserDefaultUI:finishBlock:failBlock:]_block_invoke:755 - Use your UI
+2016-10-27 07:24:18 +0000 DEBUG          NSString *RSA_encrypt(NSString *__strong): 85 - bio free
+2016-10-27 07:24:18 +0000 DEBUG          NSString *RSA_encrypt(NSString *__strong): 93 - rsa free
+2016-10-27 07:24:18 +0000 DEBUG          NSString *RSA_encrypt(NSString *__strong): 98 - p_en free
+2016-10-27 07:24:18 +0000 DEBUG          NSString *RSA_encrypt(NSString *__strong):100 - completed free
+2016-10-27 07:24:18 +0000 DEBUG -[IDMPTempSmsMode getSmsCodeWithUserName:appId:appKey:busiType:successBlock:failBlock:]: 32 - 请求头部{
+	signature = 450d364fab343f4e89a63c45015b1a1c73af822c26581b2f8895daf57862b60bf4601bdc361ee8fd1be22967920d8bf827467308188a0eefb827c5c8482d7df0a84d0e715d7159af28a578d64580f2d4e42c0ed72eeb552e017a5748b385dc23162037c01ac54dbcf4f3e6374ee09e43f7c1264f5685de11b8104fe504ee8d2e,
+	UserManage = VC clientversion="1.0",msgtype="3",msisdn="15158114486",enccnonce="0802e6af3219d82e9c572c3ea93ac221e5b4076f86173488c1798c9d549b49dac440d9b81d2a8a6d114faead8b320401a7f1d2c60d42e6481d371ec77910bed181fadc17af5b3efd8b87f08ab192c64f98e67a381d0cc36b611898cdd881d2acc70007a25ab1f325780659faccd07b27e3d3e7bcbe703c1603b4314376382d52",Phone_ID="8579C7B3-7863-4E75-8CB5-B696E747F03B"
+}
+2016-10-27 07:24:18 +0000 DEBUG -[IDMPHttpRequest getHttpByHeads:url:successBlock:failBlock:]: 54 - operation queue begins
+2016-10-27 07:24:20 +0000 DEBUG __61-[IDMPHttpRequest getHttpByHeads:url:successBlock:failBlock:]_block_invoke: 67 - 
+2016-10-27 07:24:20 +0000 DEBUG __61-[IDMPHttpRequest getHttpByHeads:url:successBlock:failBlock:]_block_invoke: 68 - statuscode is 200
+2016-10-27 07:24:20 +0000 DEBUG __87-[IDMPTempSmsMode getSmsCodeWithUserName:appId:appKey:busiType:successBlock:failBlock:]_block_invoke: 36 - request success!
+2016-10-27 07:24:20 +0000 DEBUG __87-[IDMPTempSmsMode getSmsCodeWithUserName:appId:appKey:busiType:successBlock:failBlock:]_block_invoke: 37 - message:{
+	resultCode = 103000,
+	Keep-Alive = timeout=30,
+	Server = nginx,
+	Www-Authenticate = success,
+	Content-Length = 0,
+	Connection = keep-alive,
+	Date = Thu, 27 Oct 2016 07:30:14 GMT
+}
+2016-10-27 07:24:20 +0000 DEBUG __61-[IDMPHttpRequest getHttpByHeads:url:successBlock:failBlock:]_block_invoke: 79 - 请求成功 200
+2016-10-27 07:24:43 +0000 DEBUG -[IDMPAutoLoginViewController checkWithAppId:andAppkey:finishBlock:failBlock:]: 69 - query appid start 
+2016-10-27 07:24:43 +0000 DEBUG -[IDMPAutoLoginViewController checkWithAppId:andAppkey:finishBlock:failBlock:]: 70 - query appid network status  1
+2016-10-27 07:24:43 +0000 DEBUG __125-[IDMPAutoLoginViewController getAppPasswordByConditionWithAppid:Appkey:UserName:Content:andLoginType:finishBlock:failBlock:]_block_invoke:542 - user now {
+}
+2016-10-27 07:24:43 +0000 DEBUG -[IDMPAutoLoginViewController cacheNoUseByConditionWithLoginType:UserName:andPassWd:successBlock:failBlock:]:118 - 不使用缓存
+2016-10-27 07:24:43 +0000 DEBUG          NSString *RSA_encrypt(NSString *__strong): 85 - bio free
+2016-10-27 07:24:43 +0000 DEBUG          NSString *RSA_encrypt(NSString *__strong): 93 - rsa free
+2016-10-27 07:24:43 +0000 DEBUG          NSString *RSA_encrypt(NSString *__strong): 98 - p_en free
+2016-10-27 07:24:43 +0000 DEBUG          NSString *RSA_encrypt(NSString *__strong):100 - completed free
+2016-10-27 07:24:43 +0000 DEBUG -[IDMPHttpRequest getHttpByHeads:url:successBlock:failBlock:]: 54 - operation queue begins
+2016-10-27 07:24:43 +0000 DEBUG __61-[IDMPHttpRequest getHttpByHeads:url:successBlock:failBlock:]_block_invoke: 67 - 
+2016-10-27 07:24:43 +0000 DEBUG __61-[IDMPHttpRequest getHttpByHeads:url:successBlock:failBlock:]_block_invoke: 68 - statuscode is 200
+2016-10-27 07:24:43 +0000 DEBUG __74-[IDMPTempSmsMode getTMKSWithUserName:messageCode:successBlock:failBlock:]_block_invoke: 75 - {
+	resultCode = 103000,
+	Keep-Alive = timeout=30,
+	mac = f417806fdccd0d47b15c1d250f98c0441f3997f2febb758eb73ccf670d485073,
+	Server = nginx,
+	Www-Authenticate = DUP Nonce="JAidMKqp9Et4U0d1lD036y4SYRZPobb6",BTID="RkNEM0NCQkEzMkFFNDZBQzgy@http://211.136.10.131:8080/",lifetime="5184000",sqn="64803891",expiretime="2016-12-26 15:24:43",authtype="DUP",spassword="iopqzTdzn5ME",email="",msisdn="15158114486",passid="764456761",
+	Content-Length = 0,
+	Connection = keep-alive,
+	Date = Thu, 27 Oct 2016 07:30:37 GMT
+}
+2016-10-27 07:24:43 +0000 DEBUG -[IDMPTempSmsMode checkTMKSIsValid:userName:passWd:clientNonce:]:124 - {
+	resultCode = 103000,
+	Keep-Alive = timeout=30,
+	mac = f417806fdccd0d47b15c1d250f98c0441f3997f2febb758eb73ccf670d485073,
+	Server = nginx,
+	Www-Authenticate = DUP Nonce="JAidMKqp9Et4U0d1lD036y4SYRZPobb6",BTID="RkNEM0NCQkEzMkFFNDZBQzgy@http://211.136.10.131:8080/",lifetime="5184000",sqn="64803891",expiretime="2016-12-26 15:24:43",authtype="DUP",spassword="iopqzTdzn5ME",email="",msisdn="15158114486",passid="764456761",
+	Content-Length = 0,
+	Connection = keep-alive,
+	Date = Thu, 27 Oct 2016 07:30:37 GMT
+}
+2016-10-27 07:24:43 +0000 DEBUG unsigned char *kdf_pw(unsigned char *, char *, char *, char *): 21 - @ kdf_pw 1   a10062ae7ae8e8dac4594d3e780ca408    @2   PW_GBA_Ks   @3   JAidMKqp9Et4U0d1lD036y4SYRZPobb6   @4    12853f4180a9511636faa379ad35a6fe 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 67 - p_array长度: 13 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 75 - p_array元素:0   PW_GBA_Ks 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 75 - p_array元素:1   JAidMKqp9Et4U0d1lD036y4SYRZPobb6 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 75 - p_array元素:2   12853f4180a9511636faa379ad35a6fe 
+
+2016-10-27 07:24:43 +0000 DEBUG -[IDMPTempSmsMode checkTMKSIsValid:userName:passWd:clientNonce:]:201 - KS存储成功!
+2016-10-27 07:24:43 +0000 DEBUG unsigned char *kdf_signkey(char *, char *, char *, char *): 92 - @kdf_signkey 1   gba-me    @2   RkNEM0NCQkEzMkFFNDZBQzgy   @3   15158114486   @4    010106 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 67 - p_array长度: 17 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 75 - p_array元素:0   gba-me 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 75 - p_array元素:1   RkNEM0NCQkEzMkFFNDZBQzgy 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 75 - p_array元素:2   15158114486 
+
+2016-10-27 07:24:43 +0000 DEBUG void compose_s(char **, int, unsigned char **, int *): 75 - p_array元素:3   010106 
+
+2016-10-27 07:24:43 +0000 DEBUG __61-[IDMPHttpRequest getHttpByHeads:url:successBlock:failBlock:]_block_invoke: 79 - 请求成功 200
