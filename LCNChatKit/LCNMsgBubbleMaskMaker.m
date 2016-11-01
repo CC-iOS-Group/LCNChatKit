@@ -16,13 +16,13 @@
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
     UIImage *bubbleImage = nil;
     if (isOutgoing) {
-        bubbleImage = [UIImage imageNamed:@"rightBubble"];
-        bubbleImage = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(13, 2, 2, 5) resizingMode:UIImageResizingModeStretch];
+        bubbleImage = [UIImage imageNamed:@"outgoingBubble"];
+        bubbleImage = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(30, 5, 5, 30) resizingMode:UIImageResizingModeStretch];
 
     }
     else{
-        bubbleImage = [UIImage imageNamed:@"leftBubble"];
-        bubbleImage = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(13, 5, 2, 2) resizingMode:UIImageResizingModeStretch];
+        bubbleImage = [UIImage imageNamed:@"incomingBubble"];
+        bubbleImage = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(30, 30, 5, 5) resizingMode:UIImageResizingModeStretch];
     }
     
     //获取气泡蒙版
@@ -35,13 +35,13 @@
 + (UIImage *)bubbleImageIsOutgoing:(BOOL)isOutgoing{
     UIImage *bubbleImage = nil;
     if (isOutgoing) {
-        bubbleImage = [UIImage imageNamed:@"rightBubble"];
-        bubbleImage = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(13, 2, 2, 5) resizingMode:UIImageResizingModeStretch];
+        bubbleImage = [UIImage imageNamed:@"outgoingBubble"];
+        bubbleImage = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(30, 5, 5, 30) resizingMode:UIImageResizingModeStretch];
         
     }
     else{
-        bubbleImage = [UIImage imageNamed:@"leftBubble"];
-        bubbleImage = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(13, 5, 2, 2) resizingMode:UIImageResizingModeStretch];
+        bubbleImage = [UIImage imageNamed:@"incomingBubble"];
+        bubbleImage = [bubbleImage resizableImageWithCapInsets:UIEdgeInsetsMake(30, 30, 5, 5) resizingMode:UIImageResizingModeStretch];
     }
     return bubbleImage;
 }

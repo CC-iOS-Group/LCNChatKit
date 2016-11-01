@@ -11,13 +11,16 @@
 
 #define kAvatarImageView_WH 40.0
 #define kTimeLabel_H 20.0
-#define kNameLable_H 20.0
+#define kNameLable_H 15.0
 #define kStatusLabel_H 20.0
-#define kMediaContainerrView_Max_W (kScreenWidth - kAvatarImageView_WH*2)
+#define kMediaContainerrView_Max_W (kScreenWidth - kAvatarImageView_WH*2 - 100)
+#define kCellMiddleGap 10
+#define kCellSmallGap 5
+
 
 @interface LCNCollectionViewCell : UICollectionViewCell
 
-@property (nonatomic, strong) YYLabel *timeLabel;
+@property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) YYLabel *nameLabel;
 @property (nonatomic, strong) UIView *mediaContainerrView;

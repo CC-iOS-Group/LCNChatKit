@@ -26,8 +26,6 @@ typedef NS_ENUM(NSUInteger, LCNMediaType) {
 
 @property (nonatomic, strong) UIView *mediaView;
 
-@property (nonatomic, strong) UIView *mediaPlaceHolderView;
-
 @property (nonatomic, assign) CGSize mediaViewDisplaySize;
 
 @end

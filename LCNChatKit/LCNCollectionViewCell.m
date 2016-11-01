@@ -16,16 +16,15 @@
     if (self) {
         
         _timeLabel = ({
-            YYLabel *label = [YYLabel new];
-            label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
-            label.displaysAsynchronously = YES;
-            label.ignoreCommonProperties = NO;
-            label.fadeOnAsynchronouslyDisplay = YES;
-            label.fadeOnHighlight = YES;
+            UILabel *label = [UILabel new];
+            label.font = [UIFont systemFontOfSize:12.0f];
             label.lineBreakMode = NSLineBreakByTruncatingMiddle;
-            label.textVerticalAlignment = YYTextVerticalAlignmentCenter;
             label.textAlignment = NSTextAlignmentCenter;
-            label.textColor = [UIColor blackColor];
+            label.numberOfLines = 1;
+            label.textColor = [UIColor whiteColor];
+            label.backgroundColor = [UIColor colorWithHexString:@"CECECE"];
+            label.layer.cornerRadius = 5;
+            label.clipsToBounds = YES;
             
             label;
         });
@@ -48,7 +47,7 @@
         
         _nameLabel = ({
             YYLabel *label = [YYLabel new];
-            label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+            label.font = [UIFont systemFontOfSize:12.0f];
             label.displaysAsynchronously = YES;
             label.ignoreCommonProperties = NO;
             label.fadeOnAsynchronouslyDisplay = YES;
@@ -69,7 +68,7 @@
         
         _statusLabel = ({
             YYLabel *label = [YYLabel new];
-            label.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
+            label.font = [UIFont systemFontOfSize:15.0f];
             label.displaysAsynchronously = YES;
             label.ignoreCommonProperties = NO;
             label.fadeOnAsynchronouslyDisplay = YES;

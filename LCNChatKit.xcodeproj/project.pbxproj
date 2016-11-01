@@ -36,7 +36,7 @@
 		6E19C3171DBA01C700021B1B /* LCNTextMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C3161DBA01C700021B1B /* LCNTextMediaItem.m */; };
 		6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */; };
 		6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */; };
-		6EBA56241DC7464000588039 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EBA56231DC7464000588039 /* test.jpg */; };
+		6EBA56261DC8502200588039 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EBA56251DC8502200588039 /* test.jpg */; };
 		A4BF8E10E0EF1C2111D0068D /* libPods-LCNChatKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */; };
 /* End PBXBuildFile section */
 
@@ -124,7 +124,7 @@
 		6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgContentHelper.m; sourceTree = "<group>"; };
 		6EBA554C1DC18F2D00588039 /* LCNMsgHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgHelper.h; sourceTree = "<group>"; };
 		6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgHelper.m; sourceTree = "<group>"; };
-		6EBA56231DC7464000588039 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		6EBA56251DC8502200588039 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCNChatKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD175623DBDD560EE73B3862 /* Pods-LCNChatKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,9 +170,9 @@
 				6EBA554C1DC18F2D00588039 /* LCNMsgHelper.h */,
 				6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */,
 				6E60D72D1DC09ED9004DCFF2 /* LCNMsgContentHelper.h */,
+				6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */,
 				6E0EB9B11DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.h */,
 				6E0EB9B21DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m */,
-				6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -223,7 +223,7 @@
 				6E19C24F1DB611F800021B1B /* LaunchScreen.storyboard */,
 				6E19C2521DB611F800021B1B /* Info.plist */,
 				6E19C2421DB611F800021B1B /* main.m */,
-				6EBA56231DC7464000588039 /* test.jpg */,
+				6EBA56251DC8502200588039 /* test.jpg */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E19C2511DB611F800021B1B /* LaunchScreen.storyboard in Resources */,
-				6EBA56241DC7464000588039 /* test.jpg in Resources */,
+				6EBA56261DC8502200588039 /* test.jpg in Resources */,
 				6E19C24E1DB611F800021B1B /* Assets.xcassets in Resources */,
 				6E19C24C1DB611F800021B1B /* Main.storyboard in Resources */,
 			);

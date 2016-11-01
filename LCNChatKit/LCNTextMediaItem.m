@@ -36,7 +36,7 @@
     if (!_cachedTextMediaView) {
         
         UIImageView *bubbleView = [UIImageView new];
-        bubbleView.size = CGSizeMake(5+2+_layout.textBoundingRect.size.width, 2+2+_layout.textBoundingRect.size.height);
+        bubbleView.size = CGSizeMake(5+kCellMiddleGap+_layout.textBoundingRect.size.width+kCellMiddleGap, 2*kCellMiddleGap+_layout.textBoundingRect.size.height);
         bubbleView.contentMode = UIViewContentModeScaleToFill;
         UIImage *bubbleImage = [LCNMsgBubbleMaskMaker bubbleImageIsOutgoing:self.isOutgoing];
         [bubbleView setImage:bubbleImage];
@@ -60,12 +60,12 @@
         
         if (!self.isOutgoing) {
             //左气泡
-            textLabel.top = 2;
-            textLabel.left = 5;
+            textLabel.top = kCellMiddleGap;
+            textLabel.left = 5+kCellMiddleGap;
         }
         else{
             //右气泡
-            textLabel.top = 2;
+            textLabel.top = kCellMiddleGap;
             textLabel.right = 2;
         }
         
@@ -78,7 +78,7 @@
 }
 
 - (CGSize)mediaViewDisplaySize{
-    return CGSizeMake(5+2+_layout.textBoundingSize.width, 2+2+_layout.textBoundingSize.height);
+    return CGSizeMake(5+kCellMiddleGap+_layout.textBoundingRect.size.width+kCellMiddleGap, 2*kCellMiddleGap+_layout.textBoundingRect.size.height);
 }
 
 #pragma mark - Private Method
