@@ -102,6 +102,8 @@
 
 -(void)setLayout:(LCNMessageLayout *)layout{
     
+    _layout = layout;
+    
     //添加时间戳
     if (layout.isShowTimeLabel) {
         self.timeLabel.text = [LCNMsgHelper timeStringWithNSDate:layout.model.date];

@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) YYFPSLabel *fpsLabel;
 
-@property (nonatomic, strong) NSMutableArray *dataSource;
+@property (nonatomic, strong) NSMutableArray<LCNMessageLayout *> *dataSource;
 
 @end
 
@@ -48,7 +48,7 @@
         model.receiveID = @"18867103612";
         model.receiveDisplayName = @"yyyy";
         model.date = [NSDate date];
-        LCNMediaType type = arc4random()%2;
+        LCNMediaType type = arc4random()%4;
         model.mediaType = type;
         switch (type) {
             case LCNMediaType_Text:{
@@ -61,6 +61,13 @@
                 LCNImageMediaItem *imageMediaItem = [[LCNImageMediaItem alloc] initWithImage:[UIImage imageNamed:@"test.jpg"] width:200 height:100];
                 imageMediaItem.isOutgoing = model.isOutgoing;
                 model.mediaItem = imageMediaItem;
+                break;
+            }
+            case LCNMediaType_Emoji:
+            case LCNMediaType_Audio:{
+                LCNAudioMediaItem *audioItem = [[LCNAudioMediaItem alloc] initWithNSData:nil duration:100*1000];
+                audioItem.isOutgoing = model.isOutgoing;
+                model.mediaItem = audioItem;
                 break;
             }
             default:
@@ -105,6 +112,18 @@
 }
 
 #pragma mark - LCNCollectionViewDelegate
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
+    
+    if([layout.model.mediaItem isKindOfClass:[LCNAudioMediaItem class]]){
+        LCNAudioMediaItem *item = (LCNAudioMediaItem *)layout.model.mediaItem;
+        [item startPlayAudio];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [item stopPlayAudio];
+        });
+    }
+
+}
 
 
 

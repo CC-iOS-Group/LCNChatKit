@@ -13,7 +13,7 @@
 #define kTimeLabel_H 20.0
 #define kNameLable_H 15.0
 #define kStatusLabel_H 20.0
-#define kMediaContainerrView_Max_W (kScreenWidth - kAvatarImageView_WH*2 - 100)
+#define kMediaContainerrView_Max_W ((kScreenWidth-kAvatarImageView_WH*2)*0.65)
 #define kCellMiddleGap 10
 #define kCellSmallGap 5
 

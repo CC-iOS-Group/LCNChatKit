@@ -20,4 +20,16 @@
  */
 + (NSString *)timeStringWithNSDate:(NSDate *)date;
 
+
+
+/**
+ 计算语音消息气泡长度
+
+ @param duration 毫秒，语音时长
+
+ @return 气泡长度（有最大和最小的气泡长度限制）
+ */
++ (CGFloat)audioBubbleLengthCalculatorWithDuration:(CGFloat)duration;
+
+
 @end

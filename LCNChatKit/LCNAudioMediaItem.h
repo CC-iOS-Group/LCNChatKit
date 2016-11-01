@@ -10,10 +10,20 @@
 
 @interface LCNAudioMediaItem : LCNMediaItem<LCNMediaItemProtocol>
 
-@property (nonatomic, strong, nullable) NSData *audioData;
+@property (nonatomic, strong) NSString *downloadLink;
+
+@property (nonatomic, strong) NSData *audioData;
 
 @property (nonatomic, assign) CGFloat duration;//毫秒为单位
 
-@property (nonatomic, assign) BOOL isReadyToPlay;
+
+- (instancetype)initWithNSData:(NSData *)audioData duration:(CGFloat)duration;
+
+- (instancetype)initWithDownloadLink:(NSString *)link duration:(CGFloat)duration;
+
+- (void)startPlayAudio;
+
+- (void)stopPlayAudio;
+
 
 @end
