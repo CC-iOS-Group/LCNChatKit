@@ -20,6 +20,7 @@
 
 @interface LCNCollectionViewCell : UICollectionViewCell
 
+//UI控件
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) YYLabel *nameLabel;
@@ -28,6 +29,7 @@
 
 @property (nonatomic, strong) UIImageView *unreadRedPointView;
 
+//数据源
 @property (nonatomic, strong) LCNMessageLayout *layout;
 
 -(void)setLayout:(LCNMessageLayout *)layout;

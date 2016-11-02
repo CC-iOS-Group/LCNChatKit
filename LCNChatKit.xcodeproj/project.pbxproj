@@ -26,15 +26,16 @@
 		6E19C2901DB6122600021B1B /* LCNMessageLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2851DB6122600021B1B /* LCNMessageLayout.m */; };
 		6E19C2911DB6122600021B1B /* LCNMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2871DB6122600021B1B /* LCNMessageModel.m */; };
 		6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2A01DB7603800021B1B /* YYFPSLabel.m */; };
-		6E19C2A71DB7775400021B1B /* LCNImageMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2A61DB7775400021B1B /* LCNImageMediaItem.m */; };
-		6E19C2AA1DB7B81000021B1B /* LCNAudioMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2A91DB7B81000021B1B /* LCNAudioMediaItem.m */; };
-		6E19C2AD1DB7B82600021B1B /* LCNVideoMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2AC1DB7B82600021B1B /* LCNVideoMediaItem.m */; };
-		6E19C2B01DB7B8B000021B1B /* LCNLocationMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2AF1DB7B8B000021B1B /* LCNLocationMediaItem.m */; };
-		6E19C2B31DB7B93A00021B1B /* LCNContactMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2B21DB7B93A00021B1B /* LCNContactMediaItem.m */; };
-		6E19C2B61DB7B95800021B1B /* LCNShareMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2B51DB7B95800021B1B /* LCNShareMediaItem.m */; };
-		6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2B81DB7B97500021B1B /* LCNEmojiMedaiItem.m */; };
-		6E19C3171DBA01C700021B1B /* LCNTextMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C3161DBA01C700021B1B /* LCNTextMediaItem.m */; };
+		6E19C2A71DB7775400021B1B /* LCNImageMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2A61DB7775400021B1B /* LCNImageMediaBubble.m */; };
+		6E19C2AA1DB7B81000021B1B /* LCNAudioMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2A91DB7B81000021B1B /* LCNAudioMediaBubble.m */; };
+		6E19C2AD1DB7B82600021B1B /* LCNVideoMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2AC1DB7B82600021B1B /* LCNVideoMediaBubble.m */; };
+		6E19C2B01DB7B8B000021B1B /* LCNLocationMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2AF1DB7B8B000021B1B /* LCNLocationMediaBubble.m */; };
+		6E19C2B31DB7B93A00021B1B /* LCNContactMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2B21DB7B93A00021B1B /* LCNContactMediaBubble.m */; };
+		6E19C2B61DB7B95800021B1B /* LCNShareMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2B51DB7B95800021B1B /* LCNShareMediaBubble.m */; };
+		6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2B81DB7B97500021B1B /* LCNEmojiMedaiBubble.m */; };
+		6E19C3171DBA01C700021B1B /* LCNTextMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C3161DBA01C700021B1B /* LCNTextMediaBubble.m */; };
 		6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */; };
+		6E89EA921DC9B492005EFAFD /* niconiconi@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */; };
 		6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */; };
 		6EBA56261DC8502200588039 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EBA56251DC8502200588039 /* test.jpg */; };
 		A4BF8E10E0EF1C2111D0068D /* libPods-LCNChatKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */; };
@@ -103,25 +104,26 @@
 		6E19C29F1DB7603800021B1B /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		6E19C2A01DB7603800021B1B /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		6E19C2A41DB7748800021B1B /* LCNCollectionViewCellDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollectionViewCellDelegate.h; sourceTree = "<group>"; };
-		6E19C2A51DB7775400021B1B /* LCNImageMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNImageMediaItem.h; sourceTree = "<group>"; };
-		6E19C2A61DB7775400021B1B /* LCNImageMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNImageMediaItem.m; sourceTree = "<group>"; };
-		6E19C2A81DB7B81000021B1B /* LCNAudioMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNAudioMediaItem.h; sourceTree = "<group>"; };
-		6E19C2A91DB7B81000021B1B /* LCNAudioMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNAudioMediaItem.m; sourceTree = "<group>"; };
-		6E19C2AB1DB7B82600021B1B /* LCNVideoMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNVideoMediaItem.h; sourceTree = "<group>"; };
-		6E19C2AC1DB7B82600021B1B /* LCNVideoMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNVideoMediaItem.m; sourceTree = "<group>"; };
-		6E19C2AE1DB7B8B000021B1B /* LCNLocationMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNLocationMediaItem.h; sourceTree = "<group>"; };
-		6E19C2AF1DB7B8B000021B1B /* LCNLocationMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNLocationMediaItem.m; sourceTree = "<group>"; };
-		6E19C2B11DB7B93A00021B1B /* LCNContactMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNContactMediaItem.h; sourceTree = "<group>"; };
-		6E19C2B21DB7B93A00021B1B /* LCNContactMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNContactMediaItem.m; sourceTree = "<group>"; };
-		6E19C2B41DB7B95800021B1B /* LCNShareMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNShareMediaItem.h; sourceTree = "<group>"; };
-		6E19C2B51DB7B95800021B1B /* LCNShareMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNShareMediaItem.m; sourceTree = "<group>"; };
-		6E19C2B71DB7B97500021B1B /* LCNEmojiMedaiItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNEmojiMedaiItem.h; sourceTree = "<group>"; };
-		6E19C2B81DB7B97500021B1B /* LCNEmojiMedaiItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNEmojiMedaiItem.m; sourceTree = "<group>"; };
+		6E19C2A51DB7775400021B1B /* LCNImageMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNImageMediaBubble.h; sourceTree = "<group>"; };
+		6E19C2A61DB7775400021B1B /* LCNImageMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNImageMediaBubble.m; sourceTree = "<group>"; };
+		6E19C2A81DB7B81000021B1B /* LCNAudioMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNAudioMediaBubble.h; sourceTree = "<group>"; };
+		6E19C2A91DB7B81000021B1B /* LCNAudioMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNAudioMediaBubble.m; sourceTree = "<group>"; };
+		6E19C2AB1DB7B82600021B1B /* LCNVideoMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNVideoMediaBubble.h; sourceTree = "<group>"; };
+		6E19C2AC1DB7B82600021B1B /* LCNVideoMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNVideoMediaBubble.m; sourceTree = "<group>"; };
+		6E19C2AE1DB7B8B000021B1B /* LCNLocationMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNLocationMediaBubble.h; sourceTree = "<group>"; };
+		6E19C2AF1DB7B8B000021B1B /* LCNLocationMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNLocationMediaBubble.m; sourceTree = "<group>"; };
+		6E19C2B11DB7B93A00021B1B /* LCNContactMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNContactMediaBubble.h; sourceTree = "<group>"; };
+		6E19C2B21DB7B93A00021B1B /* LCNContactMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNContactMediaBubble.m; sourceTree = "<group>"; };
+		6E19C2B41DB7B95800021B1B /* LCNShareMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNShareMediaBubble.h; sourceTree = "<group>"; };
+		6E19C2B51DB7B95800021B1B /* LCNShareMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNShareMediaBubble.m; sourceTree = "<group>"; };
+		6E19C2B71DB7B97500021B1B /* LCNEmojiMedaiBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNEmojiMedaiBubble.h; sourceTree = "<group>"; };
+		6E19C2B81DB7B97500021B1B /* LCNEmojiMedaiBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNEmojiMedaiBubble.m; sourceTree = "<group>"; };
 		6E19C3141DB9C91000021B1B /* LCNChatKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LCNChatKit-Prefix.pch"; sourceTree = "<group>"; };
-		6E19C3151DBA01C700021B1B /* LCNTextMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNTextMediaItem.h; sourceTree = "<group>"; };
-		6E19C3161DBA01C700021B1B /* LCNTextMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNTextMediaItem.m; sourceTree = "<group>"; };
+		6E19C3151DBA01C700021B1B /* LCNTextMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNTextMediaBubble.h; sourceTree = "<group>"; };
+		6E19C3161DBA01C700021B1B /* LCNTextMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNTextMediaBubble.m; sourceTree = "<group>"; };
 		6E60D72D1DC09ED9004DCFF2 /* LCNMsgContentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgContentHelper.h; sourceTree = "<group>"; };
 		6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgContentHelper.m; sourceTree = "<group>"; };
+		6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "niconiconi@2x.gif"; sourceTree = "<group>"; };
 		6EBA554C1DC18F2D00588039 /* LCNMsgHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgHelper.h; sourceTree = "<group>"; };
 		6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgHelper.m; sourceTree = "<group>"; };
 		6EBA56251DC8502200588039 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 		6E19C2411DB611F800021B1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */,
 				6E19C24A1DB611F800021B1B /* Main.storyboard */,
 				6E19C24D1DB611F800021B1B /* Assets.xcassets */,
 				6E19C24F1DB611F800021B1B /* LaunchScreen.storyboard */,
@@ -276,24 +279,6 @@
 			children = (
 				6E19C2861DB6122600021B1B /* LCNMessageModel.h */,
 				6E19C2871DB6122600021B1B /* LCNMessageModel.m */,
-				6E19C2811DB6122600021B1B /* LCNMediaBubble.h */,
-				6E19C2821DB6122600021B1B /* LCNMediaBubble.m */,
-				6E19C3151DBA01C700021B1B /* LCNTextMediaItem.h */,
-				6E19C3161DBA01C700021B1B /* LCNTextMediaItem.m */,
-				6E19C2A51DB7775400021B1B /* LCNImageMediaItem.h */,
-				6E19C2A61DB7775400021B1B /* LCNImageMediaItem.m */,
-				6E19C2A81DB7B81000021B1B /* LCNAudioMediaItem.h */,
-				6E19C2A91DB7B81000021B1B /* LCNAudioMediaItem.m */,
-				6E19C2AB1DB7B82600021B1B /* LCNVideoMediaItem.h */,
-				6E19C2AC1DB7B82600021B1B /* LCNVideoMediaItem.m */,
-				6E19C2AE1DB7B8B000021B1B /* LCNLocationMediaItem.h */,
-				6E19C2AF1DB7B8B000021B1B /* LCNLocationMediaItem.m */,
-				6E19C2B11DB7B93A00021B1B /* LCNContactMediaItem.h */,
-				6E19C2B21DB7B93A00021B1B /* LCNContactMediaItem.m */,
-				6E19C2B71DB7B97500021B1B /* LCNEmojiMedaiItem.h */,
-				6E19C2B81DB7B97500021B1B /* LCNEmojiMedaiItem.m */,
-				6E19C2B41DB7B95800021B1B /* LCNShareMediaItem.h */,
-				6E19C2B51DB7B95800021B1B /* LCNShareMediaItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -303,12 +288,8 @@
 			children = (
 				6E19C2751DB6122600021B1B /* LCNCollectionView.h */,
 				6E19C2761DB6122600021B1B /* LCNCollectionView.m */,
-				6E19C2771DB6122600021B1B /* LCNCollectionViewCell.h */,
-				6E19C2781DB6122600021B1B /* LCNCollectionViewCell.m */,
-				6E19C27B1DB6122600021B1B /* LCNCollectionViewIncomingCell.h */,
-				6E19C27C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m */,
-				6E19C27F1DB6122600021B1B /* LCNCollectionViewOutgoingCell.h */,
-				6E19C2801DB6122600021B1B /* LCNCollectionViewOutgoingCell.m */,
+				6E89EA901DC9B14E005EFAFD /* CollectionViewCell */,
+				6E89EA8F1DC98E66005EFAFD /* MediaBubble */,
 				6E19C29F1DB7603800021B1B /* YYFPSLabel.h */,
 				6E19C2A01DB7603800021B1B /* YYFPSLabel.m */,
 			);
@@ -324,6 +305,44 @@
 				6E19C2481DB611F800021B1B /* LCNChatKitViewController.m */,
 			);
 			name = LCNChatDemo;
+			sourceTree = "<group>";
+		};
+		6E89EA8F1DC98E66005EFAFD /* MediaBubble */ = {
+			isa = PBXGroup;
+			children = (
+				6E19C2811DB6122600021B1B /* LCNMediaBubble.h */,
+				6E19C2821DB6122600021B1B /* LCNMediaBubble.m */,
+				6E19C3151DBA01C700021B1B /* LCNTextMediaBubble.h */,
+				6E19C3161DBA01C700021B1B /* LCNTextMediaBubble.m */,
+				6E19C2B71DB7B97500021B1B /* LCNEmojiMedaiBubble.h */,
+				6E19C2B81DB7B97500021B1B /* LCNEmojiMedaiBubble.m */,
+				6E19C2A51DB7775400021B1B /* LCNImageMediaBubble.h */,
+				6E19C2A61DB7775400021B1B /* LCNImageMediaBubble.m */,
+				6E19C2A81DB7B81000021B1B /* LCNAudioMediaBubble.h */,
+				6E19C2A91DB7B81000021B1B /* LCNAudioMediaBubble.m */,
+				6E19C2AB1DB7B82600021B1B /* LCNVideoMediaBubble.h */,
+				6E19C2AC1DB7B82600021B1B /* LCNVideoMediaBubble.m */,
+				6E19C2AE1DB7B8B000021B1B /* LCNLocationMediaBubble.h */,
+				6E19C2AF1DB7B8B000021B1B /* LCNLocationMediaBubble.m */,
+				6E19C2B11DB7B93A00021B1B /* LCNContactMediaBubble.h */,
+				6E19C2B21DB7B93A00021B1B /* LCNContactMediaBubble.m */,
+				6E19C2B41DB7B95800021B1B /* LCNShareMediaBubble.h */,
+				6E19C2B51DB7B95800021B1B /* LCNShareMediaBubble.m */,
+			);
+			name = MediaBubble;
+			sourceTree = "<group>";
+		};
+		6E89EA901DC9B14E005EFAFD /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6E19C2771DB6122600021B1B /* LCNCollectionViewCell.h */,
+				6E19C2781DB6122600021B1B /* LCNCollectionViewCell.m */,
+				6E19C27B1DB6122600021B1B /* LCNCollectionViewIncomingCell.h */,
+				6E19C27C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m */,
+				6E19C27F1DB6122600021B1B /* LCNCollectionViewOutgoingCell.h */,
+				6E19C2801DB6122600021B1B /* LCNCollectionViewOutgoingCell.m */,
+			);
+			name = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		BD0856F054D081C81A2D5575 /* Frameworks */ = {
@@ -450,6 +469,7 @@
 				6EBA56261DC8502200588039 /* test.jpg in Resources */,
 				6E19C24E1DB611F800021B1B /* Assets.xcassets in Resources */,
 				6E19C24C1DB611F800021B1B /* Main.storyboard in Resources */,
+				6E89EA921DC9B492005EFAFD /* niconiconi@2x.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,28 +544,28 @@
 			files = (
 				6E0EB9B31DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m in Sources */,
 				6E19C28B1DB6122600021B1B /* LCNCollectionViewFlowLayout.m in Sources */,
-				6E19C2AD1DB7B82600021B1B /* LCNVideoMediaItem.m in Sources */,
+				6E19C2AD1DB7B82600021B1B /* LCNVideoMediaBubble.m in Sources */,
 				6E19C2491DB611F800021B1B /* LCNChatKitViewController.m in Sources */,
 				6E19C28A1DB6122600021B1B /* LCNCollectionViewCell.m in Sources */,
 				6E19C28C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m in Sources */,
 				6E19C2461DB611F800021B1B /* AppDelegate.m in Sources */,
-				6E19C2B61DB7B95800021B1B /* LCNShareMediaItem.m in Sources */,
+				6E19C2B61DB7B95800021B1B /* LCNShareMediaBubble.m in Sources */,
 				6E19C2891DB6122600021B1B /* LCNCollectionView.m in Sources */,
 				6E19C2431DB611F800021B1B /* main.m in Sources */,
 				6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */,
-				6E19C2A71DB7775400021B1B /* LCNImageMediaItem.m in Sources */,
+				6E19C2A71DB7775400021B1B /* LCNImageMediaBubble.m in Sources */,
 				6E19C2901DB6122600021B1B /* LCNMessageLayout.m in Sources */,
-				6E19C2B31DB7B93A00021B1B /* LCNContactMediaItem.m in Sources */,
-				6E19C2AA1DB7B81000021B1B /* LCNAudioMediaItem.m in Sources */,
-				6E19C2B01DB7B8B000021B1B /* LCNLocationMediaItem.m in Sources */,
-				6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiItem.m in Sources */,
+				6E19C2B31DB7B93A00021B1B /* LCNContactMediaBubble.m in Sources */,
+				6E19C2AA1DB7B81000021B1B /* LCNAudioMediaBubble.m in Sources */,
+				6E19C2B01DB7B8B000021B1B /* LCNLocationMediaBubble.m in Sources */,
+				6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiBubble.m in Sources */,
 				6E19C28F1DB6122600021B1B /* LCNMediaBubble.m in Sources */,
 				6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */,
 				6E19C28E1DB6122600021B1B /* LCNCollectionViewOutgoingCell.m in Sources */,
 				6E19C28D1DB6122600021B1B /* LCNCollectionViewLayoutAttributes.m in Sources */,
 				6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */,
 				6E19C2911DB6122600021B1B /* LCNMessageModel.m in Sources */,
-				6E19C3171DBA01C700021B1B /* LCNTextMediaItem.m in Sources */,
+				6E19C3171DBA01C700021B1B /* LCNTextMediaBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

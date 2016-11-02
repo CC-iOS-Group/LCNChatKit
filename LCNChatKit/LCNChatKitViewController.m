@@ -37,7 +37,9 @@
     
     //测试数据制作
     
-    int count = 1000;
+    int count = 10;
+    YYImage *image = [YYImage imageNamed:@"niconiconi"];
+    
     for (int i = 0; i < count ; i ++) {
         LCNMessageModel *model = [LCNMessageModel new];
         model.isOutgoing = arc4random()%2;
@@ -52,20 +54,25 @@
         model.mediaType = type;
         switch (type) {
             case LCNMediaType_Text:{
-                LCNTextMediaItem *textMediaItem = [[LCNTextMediaItem alloc] initWithContent:@"123131231231231sdfas fasdf asdf a a dfa fa  dfsdfafasdfasdfaf"];
+                LCNTextMediaBubble *textMediaItem = [[LCNTextMediaBubble alloc] initWithContent:@"123131231231231sdfas fasdf asdf a a dfa fa  dfsdfafasdfasdfaf"];
                 textMediaItem.isOutgoing = model.isOutgoing;
                 model.mediaItem = textMediaItem;
                 break;
             }
             case LCNMediaType_Image:{
-                LCNImageMediaItem *imageMediaItem = [[LCNImageMediaItem alloc] initWithImage:[UIImage imageNamed:@"test.jpg"] width:200 height:100];
+                LCNImageMediaBubble *imageMediaItem = [[LCNImageMediaBubble alloc] initWithImage:[UIImage imageNamed:@"test.jpg"] width:200 height:100];
                 imageMediaItem.isOutgoing = model.isOutgoing;
                 model.mediaItem = imageMediaItem;
                 break;
             }
-            case LCNMediaType_Emoji:
+            case LCNMediaType_Emoji:{
+                LCNEmojiMedaiBubble *emojiItem = [[LCNEmojiMedaiBubble alloc]initWithEmojiImage:image size:image.size];
+                emojiItem.isOutgoing = model.isOutgoing;
+                model.mediaItem = emojiItem;
+                break;
+            }
             case LCNMediaType_Audio:{
-                LCNAudioMediaItem *audioItem = [[LCNAudioMediaItem alloc] initWithNSData:nil duration:100*1000];
+                LCNAudioMediaBubble *audioItem = [[LCNAudioMediaBubble alloc] initWithNSData:nil duration:100*1000];
                 audioItem.isOutgoing = model.isOutgoing;
                 model.mediaItem = audioItem;
                 break;
@@ -94,6 +101,7 @@
     return _dataSource.count;
 }
 
+
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
@@ -111,15 +119,21 @@
     return cell;
 }
 
+//-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+//    if (kind == UICollectionElementKindSectionHeader) {
+//        
+//    }
+//}
+
 #pragma mark - LCNCollectionViewDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
-    
-    if([layout.model.mediaItem isKindOfClass:[LCNAudioMediaItem class]]){
-        LCNAudioMediaItem *item = (LCNAudioMediaItem *)layout.model.mediaItem;
-        [item startPlayAudio];
+        
+    if([layout.model.mediaItem isKindOfClass:[LCNAudioMediaBubble class]]){
+        LCNAudioMediaBubble *item = (LCNAudioMediaBubble *)layout.model.mediaItem;
+        [item startAnimation];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [item stopPlayAudio];
+            [item stopAnimation];
         });
     }
 
@@ -135,6 +149,8 @@
     
     return CGSizeMake(kScreenWidth, cellHeight);
 }
+
+
 
 
 #pragma mark - Setter & Getter
@@ -160,7 +176,7 @@
 -(LCNCollectionViewFlowLayout *)springCollectionViewLayout{
     if (!_springCollectionViewLayout) {
         _springCollectionViewLayout = [[LCNCollectionViewFlowLayout alloc] init];
-        _springCollectionViewLayout.springEnable = NO;
+        _springCollectionViewLayout.springEnable = YES;
     }
     return _springCollectionViewLayout;
 }

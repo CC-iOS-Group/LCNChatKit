@@ -22,14 +22,14 @@
 //Models
 #import "LCNMessageModel.h"
 #import "LCNMediaBubble.h"
-#import "LCNTextMediaItem.h"
-#import "LCNImageMediaItem.h"
-#import "LCNAudioMediaItem.h"
-#import "LCNVideoMediaItem.h"
-#import "LCNLocationMediaItem.h"
-#import "LCNContactMediaItem.h"
-#import "LCNEmojiMedaiItem.h"
-#import "LCNShareMediaItem.h"
+#import "LCNTextMediaBubble.h"
+#import "LCNImageMediaBubble.h"
+#import "LCNAudioMediaBubble.h"
+#import "LCNVideoMediaBubble.h"
+#import "LCNLocationMediaBubble.h"
+#import "LCNContactMediaBubble.h"
+#import "LCNEmojiMedaiBubble.h"
+#import "LCNShareMediaBubble.h"
 
 
 

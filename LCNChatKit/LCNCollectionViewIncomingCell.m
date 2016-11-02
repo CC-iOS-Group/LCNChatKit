@@ -19,6 +19,12 @@
     return self;
 }
 
+#pragma mark - Cell 生命周期
+-(void)prepareForReuse{
+    
+}
+
+#pragma mark - 布局Cell
 -(void)setLayout:(LCNMessageLayout *)layout{
     
     //公共属性设置放在父类中实现,用于填充视图内容
