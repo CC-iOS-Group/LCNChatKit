@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 
 #import "LCNMessageModelProtocol.h"
 #import "LCNMediaItemProtocol.h"
@@ -32,7 +32,7 @@
 
 @property (nonatomic, assign) LCNMediaType mediaType;
 
-@property (nonatomic, strong) id<LCNMediaItemProtocol> mediaItem;
+@property (nonatomic, strong) id<LCNMediaBubbleProtocol> mediaItem;
 
 @property (nonatomic, assign) NSUInteger messageHash;
 

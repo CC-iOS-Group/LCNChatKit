@@ -6,10 +6,10 @@
 //  Copyright © 2016年 enrecul. All rights reserved.
 //
 
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 #import <MapKit/MapKit.h>
 
-@interface LCNLocationMediaItem : LCNMediaItem<LCNMediaItemProtocol>
+@interface LCNLocationMediaItem : LCNMediaBubble<LCNMediaBubbleProtocol>
 
 @property (copy, nonatomic) CLLocation *location;
 

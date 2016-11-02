@@ -45,7 +45,7 @@
 
 -(UIView *)mediaView{
     if (!_cachedImageMediaView) {
-        
+    
         CGFloat bubbleLength = [LCNMsgHelper audioBubbleLengthCalculatorWithDuration:_duration];
         
         UIView *view = [UIView new];
@@ -98,7 +98,7 @@
         
         _cachedImageMediaView = view;
     }
-    
+
     return _cachedImageMediaView;
 }
 

@@ -6,9 +6,9 @@
 //  Copyright © 2016年 enrecul. All rights reserved.
 //
 
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 
-@interface LCNAudioMediaItem : LCNMediaItem<LCNMediaItemProtocol>
+@interface LCNAudioMediaItem : LCNMediaBubble<LCNMediaBubbleProtocol>
 
 @property (nonatomic, strong) NSString *downloadLink;
 

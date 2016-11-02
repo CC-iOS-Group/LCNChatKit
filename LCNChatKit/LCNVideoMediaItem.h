@@ -6,9 +6,9 @@
 //  Copyright © 2016年 enrecul. All rights reserved.
 //
 
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 
-@interface LCNVideoMediaItem : LCNMediaItem<LCNMediaItemProtocol>
+@interface LCNVideoMediaItem : LCNMediaBubble<LCNMediaBubbleProtocol>
 
 @property (nonatomic, strong) NSURL *fileUrl;
 

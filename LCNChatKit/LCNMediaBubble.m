@@ -6,12 +6,12 @@
 //  Copyright © 2016年 黄春涛. All rights reserved.
 //
 
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 
 static const CGFloat kDefaultMediaViewDisplayWidth = 210.0f;
 static const CGFloat kDefaultMediaViewDisplayHeight = 150.0f;
 
-@implementation LCNMediaItem
+@implementation LCNMediaBubble
 
 
 #pragma mark - LCNMediaItemProtocol

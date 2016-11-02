@@ -21,7 +21,7 @@
 
 //Models
 #import "LCNMessageModel.h"
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 #import "LCNTextMediaItem.h"
 #import "LCNImageMediaItem.h"
 #import "LCNAudioMediaItem.h"

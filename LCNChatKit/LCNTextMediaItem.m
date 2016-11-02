@@ -13,7 +13,6 @@
 
 @interface LCNTextMediaItem()
 
-@property (nonatomic, strong) YYTextContainer *container;
 @property (nonatomic, strong) UIImageView *cachedTextMediaView;
 
 @end
@@ -34,7 +33,7 @@
 - (UIView *)mediaView{
     
     if (!_cachedTextMediaView) {
-        
+    
         UIImageView *bubbleView = [UIImageView new];
         bubbleView.size = CGSizeMake(5+kCellMiddleGap+_layout.textBoundingRect.size.width+kCellMiddleGap, 2*kCellMiddleGap+_layout.textBoundingRect.size.height);
         bubbleView.contentMode = UIViewContentModeScaleToFill;
@@ -98,13 +97,13 @@
     if (attrText.length == 0) return;
     
     
-    self.container = [YYTextContainer new];
-    self.container.size = CGSizeMake(kMediaContainerrView_Max_W, MAXFLOAT);
+    YYTextContainer *container = [YYTextContainer new];
+    container.size = CGSizeMake(kMediaContainerrView_Max_W, MAXFLOAT);
 //    YYTextLinePositionSimpleModifier *lineModifier = [YYTextLinePositionSimpleModifier new];
 //    self.container.linePositionModifier = lineModifier;
-    self.container.maximumNumberOfRows  = 10;
+    container.maximumNumberOfRows  = 10;
     
-    self.layout = [YYTextLayout layoutWithContainer:self.container text:attrText];
+    self.layout = [YYTextLayout layoutWithContainer:container text:attrText];
     
 }
 

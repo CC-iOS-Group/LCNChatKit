@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, LCNMediaType) {
     LCNMediaType_Share
 };
 
-@interface LCNMediaItem : NSObject <LCNMediaItemProtocol>
+@interface LCNMediaBubble : NSObject <LCNMediaBubbleProtocol>
 
 @property (nonatomic, assign) BOOL isOutgoing;
 

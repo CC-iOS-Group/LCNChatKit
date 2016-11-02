@@ -62,7 +62,7 @@ static CGFloat const kDefaultImageHeight = 75;
     }
     
     if (self.cachedImageMediaView == nil) {
-        
+    
         //创建气泡视图
         UIImageView *imageView = [UIImageView new];
         imageView.size = CGSizeMake(_image_Width, _image_Height);//size 需要提前获取

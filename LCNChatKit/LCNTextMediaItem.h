@@ -6,9 +6,9 @@
 //  Copyright © 2016年 enrecul. All rights reserved.
 //
 
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 
-@interface LCNTextMediaItem : LCNMediaItem <LCNMediaItemProtocol>
+@interface LCNTextMediaItem : LCNMediaBubble <LCNMediaBubbleProtocol>
 
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) YYTextLayout *layout;

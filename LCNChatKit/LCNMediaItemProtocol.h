@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol LCNMediaItemProtocol <NSObject>
+@protocol LCNMediaBubbleProtocol <NSObject>
 
 - (UIView *)mediaView;
 

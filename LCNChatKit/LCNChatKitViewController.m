@@ -37,7 +37,7 @@
     
     //测试数据制作
     
-    int count = 10000;
+    int count = 1000;
     for (int i = 0; i < count ; i ++) {
         LCNMessageModel *model = [LCNMessageModel new];
         model.isOutgoing = arc4random()%2;

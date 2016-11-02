@@ -6,8 +6,8 @@
 //  Copyright © 2016年 enrecul. All rights reserved.
 //
 
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 
-@interface LCNShareMediaItem : LCNMediaItem<LCNMediaItemProtocol>
+@interface LCNShareMediaItem : LCNMediaBubble<LCNMediaBubbleProtocol>
 
 @end

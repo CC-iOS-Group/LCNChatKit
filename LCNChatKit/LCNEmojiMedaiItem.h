@@ -6,10 +6,10 @@
 //  Copyright © 2016年 enrecul. All rights reserved.
 //
 
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 @class YYImage;
 
-@interface LCNEmojiMedaiItem : LCNMediaItem <LCNMediaItemProtocol>
+@interface LCNEmojiMedaiItem : LCNMediaBubble<LCNMediaBubbleProtocol>
 
 @property (nonatomic, strong) YYImage *animatedImage;
 

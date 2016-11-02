@@ -22,7 +22,7 @@
 		6E19C28C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C27C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m */; };
 		6E19C28D1DB6122600021B1B /* LCNCollectionViewLayoutAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C27E1DB6122600021B1B /* LCNCollectionViewLayoutAttributes.m */; };
 		6E19C28E1DB6122600021B1B /* LCNCollectionViewOutgoingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2801DB6122600021B1B /* LCNCollectionViewOutgoingCell.m */; };
-		6E19C28F1DB6122600021B1B /* LCNMediaItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2821DB6122600021B1B /* LCNMediaItem.m */; };
+		6E19C28F1DB6122600021B1B /* LCNMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2821DB6122600021B1B /* LCNMediaBubble.m */; };
 		6E19C2901DB6122600021B1B /* LCNMessageLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2851DB6122600021B1B /* LCNMessageLayout.m */; };
 		6E19C2911DB6122600021B1B /* LCNMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2871DB6122600021B1B /* LCNMessageModel.m */; };
 		6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2A01DB7603800021B1B /* YYFPSLabel.m */; };
@@ -90,8 +90,8 @@
 		6E19C27E1DB6122600021B1B /* LCNCollectionViewLayoutAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNCollectionViewLayoutAttributes.m; sourceTree = "<group>"; };
 		6E19C27F1DB6122600021B1B /* LCNCollectionViewOutgoingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollectionViewOutgoingCell.h; sourceTree = "<group>"; };
 		6E19C2801DB6122600021B1B /* LCNCollectionViewOutgoingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNCollectionViewOutgoingCell.m; sourceTree = "<group>"; };
-		6E19C2811DB6122600021B1B /* LCNMediaItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMediaItem.h; sourceTree = "<group>"; };
-		6E19C2821DB6122600021B1B /* LCNMediaItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMediaItem.m; sourceTree = "<group>"; };
+		6E19C2811DB6122600021B1B /* LCNMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMediaBubble.h; sourceTree = "<group>"; };
+		6E19C2821DB6122600021B1B /* LCNMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMediaBubble.m; sourceTree = "<group>"; };
 		6E19C2831DB6122600021B1B /* LCNMediaItemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMediaItemProtocol.h; sourceTree = "<group>"; };
 		6E19C2841DB6122600021B1B /* LCNMessageLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMessageLayout.h; sourceTree = "<group>"; };
 		6E19C2851DB6122600021B1B /* LCNMessageLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMessageLayout.m; sourceTree = "<group>"; };
@@ -276,8 +276,8 @@
 			children = (
 				6E19C2861DB6122600021B1B /* LCNMessageModel.h */,
 				6E19C2871DB6122600021B1B /* LCNMessageModel.m */,
-				6E19C2811DB6122600021B1B /* LCNMediaItem.h */,
-				6E19C2821DB6122600021B1B /* LCNMediaItem.m */,
+				6E19C2811DB6122600021B1B /* LCNMediaBubble.h */,
+				6E19C2821DB6122600021B1B /* LCNMediaBubble.m */,
 				6E19C3151DBA01C700021B1B /* LCNTextMediaItem.h */,
 				6E19C3161DBA01C700021B1B /* LCNTextMediaItem.m */,
 				6E19C2A51DB7775400021B1B /* LCNImageMediaItem.h */,
@@ -539,7 +539,7 @@
 				6E19C2AA1DB7B81000021B1B /* LCNAudioMediaItem.m in Sources */,
 				6E19C2B01DB7B8B000021B1B /* LCNLocationMediaItem.m in Sources */,
 				6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiItem.m in Sources */,
-				6E19C28F1DB6122600021B1B /* LCNMediaItem.m in Sources */,
+				6E19C28F1DB6122600021B1B /* LCNMediaBubble.m in Sources */,
 				6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */,
 				6E19C28E1DB6122600021B1B /* LCNCollectionViewOutgoingCell.m in Sources */,
 				6E19C28D1DB6122600021B1B /* LCNCollectionViewLayoutAttributes.m in Sources */,

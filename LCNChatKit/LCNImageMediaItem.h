@@ -6,9 +6,9 @@
 //  Copyright © 2016年 enrecul. All rights reserved.
 //
 
-#import "LCNMediaItem.h"
+#import "LCNMediaBubble.h"
 
-@interface LCNImageMediaItem : LCNMediaItem<LCNMediaItemProtocol>
+@interface LCNImageMediaItem : LCNMediaBubble<LCNMediaBubbleProtocol>
 
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSString *imageUrl;
