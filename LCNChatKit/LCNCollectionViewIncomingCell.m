@@ -21,7 +21,6 @@
 
 #pragma mark - Cell 生命周期
 -(void)prepareForReuse{
-    
 }
 
 #pragma mark - 布局Cell
@@ -29,7 +28,6 @@
     
     //公共属性设置放在父类中实现,用于填充视图内容
     [super setLayout:layout];
-    
     
     //布局Cell内视图
     [self.timeLabel sizeToFit];

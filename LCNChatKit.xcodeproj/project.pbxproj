@@ -38,6 +38,10 @@
 		6E89EA921DC9B492005EFAFD /* niconiconi@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */; };
 		6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */; };
 		6EBA56261DC8502200588039 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EBA56251DC8502200588039 /* test.jpg */; };
+		6EDCF0151DCA2C3A0021FC5C /* dots22.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCF0141DCA2C3A0021FC5C /* dots22.gif */; };
+		6EDCF0231DCB2A220021FC5C /* LCNCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCF0221DCB2A220021FC5C /* LCNCollectionHeaderView.m */; };
+		6EDCF0271DCB75E80021FC5C /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCF0261DCB75E80021FC5C /* DemoViewController.m */; };
+		6EE1DC1D1DC9E94A00480A18 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1DC1C1DC9E94A00480A18 /* giphy.gif */; };
 		A4BF8E10E0EF1C2111D0068D /* libPods-LCNChatKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */; };
 /* End PBXBuildFile section */
 
@@ -127,6 +131,12 @@
 		6EBA554C1DC18F2D00588039 /* LCNMsgHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgHelper.h; sourceTree = "<group>"; };
 		6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgHelper.m; sourceTree = "<group>"; };
 		6EBA56251DC8502200588039 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		6EDCF0141DCA2C3A0021FC5C /* dots22.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dots22.gif; sourceTree = "<group>"; };
+		6EDCF0211DCB2A220021FC5C /* LCNCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollectionHeaderView.h; sourceTree = "<group>"; };
+		6EDCF0221DCB2A220021FC5C /* LCNCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNCollectionHeaderView.m; sourceTree = "<group>"; };
+		6EDCF0251DCB75E80021FC5C /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		6EDCF0261DCB75E80021FC5C /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		6EE1DC1C1DC9E94A00480A18 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 		73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCNChatKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD175623DBDD560EE73B3862 /* Pods-LCNChatKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,12 +216,11 @@
 			children = (
 				6E19C2741DB6122600021B1B /* LCNChatKit.h */,
 				6E19C3141DB9C91000021B1B /* LCNChatKit-Prefix.pch */,
+				6E19C2971DB6145E00021B1B /* LCNChatDemo */,
 				6E0EB9B01DBF54870050DF58 /* Helper */,
 				6E19C2941DB613D800021B1B /* Protocols */,
-				6E19C2951DB613DA00021B1B /* Models */,
 				6E19C2931DB613D500021B1B /* Layouts */,
 				6E19C2961DB613DC00021B1B /* Views */,
-				6E19C2971DB6145E00021B1B /* LCNChatDemo */,
 				6E19C2411DB611F800021B1B /* Supporting Files */,
 			);
 			path = LCNChatKit;
@@ -220,6 +229,8 @@
 		6E19C2411DB611F800021B1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6EDCF0141DCA2C3A0021FC5C /* dots22.gif */,
+				6EE1DC1C1DC9E94A00480A18 /* giphy.gif */,
 				6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */,
 				6E19C24A1DB611F800021B1B /* Main.storyboard */,
 				6E19C24D1DB611F800021B1B /* Assets.xcassets */,
@@ -301,8 +312,11 @@
 			children = (
 				6E19C2441DB611F800021B1B /* AppDelegate.h */,
 				6E19C2451DB611F800021B1B /* AppDelegate.m */,
+				6EDCF0251DCB75E80021FC5C /* DemoViewController.h */,
+				6EDCF0261DCB75E80021FC5C /* DemoViewController.m */,
 				6E19C2471DB611F800021B1B /* LCNChatKitViewController.h */,
 				6E19C2481DB611F800021B1B /* LCNChatKitViewController.m */,
+				6E19C2951DB613DA00021B1B /* Models */,
 			);
 			name = LCNChatDemo;
 			sourceTree = "<group>";
@@ -341,6 +355,8 @@
 				6E19C27C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m */,
 				6E19C27F1DB6122600021B1B /* LCNCollectionViewOutgoingCell.h */,
 				6E19C2801DB6122600021B1B /* LCNCollectionViewOutgoingCell.m */,
+				6EDCF0211DCB2A220021FC5C /* LCNCollectionHeaderView.h */,
+				6EDCF0221DCB2A220021FC5C /* LCNCollectionHeaderView.m */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -467,8 +483,10 @@
 			files = (
 				6E19C2511DB611F800021B1B /* LaunchScreen.storyboard in Resources */,
 				6EBA56261DC8502200588039 /* test.jpg in Resources */,
+				6EDCF0151DCA2C3A0021FC5C /* dots22.gif in Resources */,
 				6E19C24E1DB611F800021B1B /* Assets.xcassets in Resources */,
 				6E19C24C1DB611F800021B1B /* Main.storyboard in Resources */,
+				6EE1DC1D1DC9E94A00480A18 /* giphy.gif in Resources */,
 				6E89EA921DC9B492005EFAFD /* niconiconi@2x.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,6 +564,7 @@
 				6E19C28B1DB6122600021B1B /* LCNCollectionViewFlowLayout.m in Sources */,
 				6E19C2AD1DB7B82600021B1B /* LCNVideoMediaBubble.m in Sources */,
 				6E19C2491DB611F800021B1B /* LCNChatKitViewController.m in Sources */,
+				6EDCF0231DCB2A220021FC5C /* LCNCollectionHeaderView.m in Sources */,
 				6E19C28A1DB6122600021B1B /* LCNCollectionViewCell.m in Sources */,
 				6E19C28C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m in Sources */,
 				6E19C2461DB611F800021B1B /* AppDelegate.m in Sources */,
@@ -558,6 +577,7 @@
 				6E19C2B31DB7B93A00021B1B /* LCNContactMediaBubble.m in Sources */,
 				6E19C2AA1DB7B81000021B1B /* LCNAudioMediaBubble.m in Sources */,
 				6E19C2B01DB7B8B000021B1B /* LCNLocationMediaBubble.m in Sources */,
+				6EDCF0271DCB75E80021FC5C /* DemoViewController.m in Sources */,
 				6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiBubble.m in Sources */,
 				6E19C28F1DB6122600021B1B /* LCNMediaBubble.m in Sources */,
 				6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */,

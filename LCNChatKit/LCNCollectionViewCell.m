@@ -123,7 +123,7 @@
     
     //添加气泡
     [self.mediaContainerrView removeAllSubviews];
-    [self.mediaContainerrView addSubview:[layout.model.mediaItem mediaView]];
+    [self.mediaContainerrView addSubview:[layout.model.mediaBubble mediaView]];
     
     //添加状态栏内容
     if (layout.isShowStatusLabel) {

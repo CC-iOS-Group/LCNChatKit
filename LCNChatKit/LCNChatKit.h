@@ -43,6 +43,7 @@
 #import "LCNCollectionViewCell.h"
 #import "LCNCollectionViewIncomingCell.h"
 #import "LCNCollectionViewOutgoingCell.h"
+#import "LCNCollectionHeaderView.h"
 
 
 

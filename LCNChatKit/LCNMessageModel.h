@@ -32,7 +32,7 @@
 
 @property (nonatomic, assign) LCNMediaType mediaType;
 
-@property (nonatomic, strong) id<LCNMediaBubbleProtocol> mediaItem;
+@property (nonatomic, strong) id<LCNMediaBubbleProtocol> mediaBubble;
 
 @property (nonatomic, assign) NSUInteger messageHash;
 

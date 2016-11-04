@@ -34,7 +34,6 @@
 -(void)prepareLayout{
     [super prepareLayout];
     
-    NSLog(@"\nFunction:%s",__FUNCTION__);
     if (_springEnable == YES) {
         if (!_animator) {
             _animator = [[UIDynamicAnimator alloc] initWithCollectionViewLayout:self];

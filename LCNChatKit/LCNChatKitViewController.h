@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LCNChatKit.h"
 
 @interface LCNChatKitViewController : UIViewController
+<LCNCollectionViewDataSource,
+LCNCollectionViewDelegate>
 
+//CollectionView
+@property (nonatomic, strong) LCNCollectionView *collectionView;
+
+//CollectionView布局
+@property (nonatomic, strong) LCNCollectionViewFlowLayout *springCollectionViewLayout;
+
+//数据源
+@property (nonatomic, strong) NSMutableArray<LCNMessageLayout *> *dataSource;
 
 @end
 

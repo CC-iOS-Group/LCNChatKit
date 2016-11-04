@@ -12,11 +12,15 @@
 @interface LCNEmojiMedaiBubble : LCNMediaBubble<LCNMediaBubbleProtocol>
 
 @property (nonatomic, strong) YYImage *animatedImage;
+@property (nonatomic, strong) NSString *animatedImageUrl;
 @property (nonatomic, assign) CGSize imageSize;
 
 @property (nonatomic, strong) YYAnimatedImageView *imageView;
 
 
+
 - (instancetype)initWithEmojiImage:(YYImage *)image size:(CGSize)size;
+
+- (instancetype)initWithEmojiImageUrl:(NSString *)imageUrl size:(CGSize)size;
 
 @end

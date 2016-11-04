@@ -96,7 +96,7 @@ static CGFloat const kDefaultImageHeight = 75;
         //将气泡视图缓存在数据源中
         self.cachedImageMediaView = imageView;
     }
-    
+
     return self.cachedImageMediaView;
 }
 

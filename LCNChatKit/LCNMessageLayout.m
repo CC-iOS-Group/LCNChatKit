@@ -22,7 +22,7 @@
         _isShowStatusLabel = YES;
         
         //气泡区域高度
-        _mediaViewSize = model.mediaItem.mediaViewDisplaySize;
+        _mediaViewSize = model.mediaBubble.mediaViewDisplaySize;
 
         //cell高度 = 时间戳高度 + 气泡区域高度 + 消息状态区高度
         _cellHeight = (_isShowTimeLabel?kTimeLabel_H:0) + (((kNameLable_H + _mediaViewSize.height)>kAvatarImageView_WH) ?(kNameLable_H + _mediaViewSize.height):kAvatarImageView_WH) +  (_isShowStatusLabel?kStatusLabel_H:0);

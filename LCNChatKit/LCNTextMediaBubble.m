@@ -69,11 +69,10 @@
         }
         
         _cachedTextMediaView = bubbleView;
-        return _cachedTextMediaView;
-        
     }
     
     return _cachedTextMediaView;
+    
 }
 
 - (CGSize)mediaViewDisplaySize{

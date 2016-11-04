@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "LCNMessageLayout.h"
 
 @protocol LCNCollectionViewDataSource <UICollectionViewDataSource>
+
+@optional
+- (NSArray<LCNMessageLayout *> *)collection:(UICollectionView *)collectionView loadMoreItemsCount:(NSInteger)count;
 
 @end

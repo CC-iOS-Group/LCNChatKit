@@ -22,6 +22,11 @@
     return self;
 }
 
+#pragma mark - Cell 生命周期
+-(void)prepareForReuse{
+}
+
+#pragma mark - 布局Cell
 -(void)setLayout:(LCNMessageLayout *)layout{
     
     //公共属性设置放在父类中实现,用于填充视图内容
@@ -47,7 +52,7 @@
         self.avatarImageView.top = kTimeLabel_H;
         self.nameLabel.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellMiddleGap-self.nameLabel.width;
         self.nameLabel.top = kTimeLabel_H;
-        self.mediaContainerrView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellSmallGap-layout.model.mediaItem.mediaViewDisplaySize.width;
+        self.mediaContainerrView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellSmallGap-layout.model.mediaBubble.mediaViewDisplaySize.width;
         self.mediaContainerrView.top = kTimeLabel_H + kNameLable_H;
     }
     else{
