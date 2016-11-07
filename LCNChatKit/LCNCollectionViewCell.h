@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LCNMessageLayout.h"
+#import "LCNCollectionViewCellDelegate.h"
 
 #define kAvatarImageView_WH 40.0
 #define kTimeLabel_H 20.0
@@ -31,6 +32,8 @@
 
 //数据源
 @property (nonatomic, strong) LCNMessageLayout *layout;
+
+@property (nonatomic, weak) id<LCNCollectionViewCellDelegate> delegate;
 
 -(void)setLayout:(LCNMessageLayout *)layout;
 

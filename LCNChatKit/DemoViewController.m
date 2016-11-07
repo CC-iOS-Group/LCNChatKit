@@ -8,7 +8,7 @@
 
 #import "DemoViewController.h"
 
-@interface DemoViewController ()
+@interface DemoViewController ()<LCNCollectionViewCellDelegate>
 
 @end
 
@@ -27,6 +27,19 @@
     NSArray *array = [self makeFakeDataWithCount:count];
     return array;
 }
+
+#pragma mark - LCNCollectionViewCellDelegate
+//- (void)cellDidClickAvatarImageView:(LCNCollectionViewCell *)cell{
+//    
+//}
+//
+//- (void)cellDidClickNameLabel:(LCNCollectionViewCell *)cell{
+//    
+//}
+//
+//- (void)cellDidClickBubbleView:(LCNCollectionViewCell *)cell{
+//    
+//}
 
 #pragma mark - 假数据制作
 - (NSMutableArray *)makeFakeDataWithCount:(NSInteger)count{

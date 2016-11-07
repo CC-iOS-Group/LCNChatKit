@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "LCNMessageLayout.h"
+@class LCNMessageLayout;
 
 @protocol LCNCollectionViewDataSource <UICollectionViewDataSource>
 

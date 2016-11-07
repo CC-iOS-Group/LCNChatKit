@@ -22,6 +22,8 @@ UICollectionViewDataSourcePrefetching
 //是否在拖动状态
 @property (nonatomic, assign) BOOL isDragging;
 
+@property (nonatomic, assign) BOOL isLoading;
+
 @end
 
 @implementation LCNChatKitViewController
@@ -32,6 +34,9 @@ UICollectionViewDataSourcePrefetching
 
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.fpsLabel];
+    
+    _isDragging = NO;
+    _isLoading = NO;
     
 }
 
@@ -55,7 +60,6 @@ UICollectionViewDataSourcePrefetching
 //cellForItem
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    NSLog(@"XXXXXXXXXXXX");
     LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
     
     LCNCollectionViewCell *cell = nil;
@@ -74,10 +78,8 @@ UICollectionViewDataSourcePrefetching
 
 //CollectionView Header
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    
     LCNCollectionHeaderView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([LCNCollectionHeaderView class]) forIndexPath:indexPath];
-    
-    return nil;
+    return headView;
 }
 
 -(NSArray<LCNMessageLayout *> *)collection:(UICollectionView *)collectionView loadMoreItemsCount:(NSInteger)count{
@@ -140,6 +142,15 @@ UICollectionViewDataSourcePrefetching
     return 0;
 }
 
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (_isLoading) {
+        return CGSizeMake(kScreenWidth, 40);
+    }
+    else{
+        return CGSizeZero;
+    }
+}
+
 #pragma mark - ScrollViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     if (scrollView.contentOffset.y < -20) {
@@ -174,11 +185,6 @@ UICollectionViewDataSourcePrefetching
         ;
     }];
     
-    if ([self isShowCollectionViewHeader]) {
-        offset.y -= 40;
-        [self hideCollectionViewHeader];
-    }
-    
     [self.collectionView setContentOffset:offset animated:NO];
     
     [UIView setAnimationsEnabled:YES];
@@ -198,19 +204,16 @@ UICollectionViewDataSourcePrefetching
 #pragma mark - Private Method
 //隐藏CollectionViewHeader，隐藏加载更多消息视图
 - (void)hideCollectionViewHeader{
-    LCNCollectionViewFlowLayout *layout = (LCNCollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    layout.headerReferenceSize = CGSizeZero;
+    _isLoading = NO;
 }
 
 //显示CollectionViewHeader，显示加载更多消息视图
 - (void)showCollectionViewHeader{
-    LCNCollectionViewFlowLayout *layout = (LCNCollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    layout.headerReferenceSize = CGSizeMake(kScreenWidth, 40);
+    _isLoading = YES;
 }
 
 - (BOOL)isShowCollectionViewHeader{
-    LCNCollectionViewFlowLayout *layout = (LCNCollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
-    return layout.headerReferenceSize.height > 0;
+    return _isLoading;
 }
 
 

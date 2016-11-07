@@ -16,6 +16,7 @@
 //Protocols
 #import "LCNCollectionViewDataSource.h"
 #import "LCNCollectionViewDelegate.h"
+#import "LCNCollectionViewCellDelegate.h"
 #import "LCNMediaItemProtocol.h"
 #import "LCNMessageModelProtocol.h"
 
