@@ -9,6 +9,12 @@
 #import "LCNCollectionViewCell.h"
 #import "LCNMsgHelper.h"
 
+@interface LCNCollectionViewCell()
+
+@property (nonatomic, assign) NSTimeInterval pressTime;
+
+@end
+
 @implementation LCNCollectionViewCell
 
 -(instancetype)initWithFrame:(CGRect)frame{
@@ -132,7 +138,75 @@
     
 }
 
+#pragma mark - 手势控制
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UITouch *t = touches.anyObject;
+    CGPoint bubble_P = [t locationInView:_mediaContainerrView];
+    if(CGRectContainsPoint(_mediaContainerrView.bounds, bubble_P)){
+        _pressTime = t.timestamp;
+        [self performSelector:@selector(handleLongPress) withObject:nil afterDelay:0.5];
+        
+    }
+}
 
+-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+}
+
+-(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    UITouch *t = touches.anyObject;
+    CGPoint avatar_p = [t locationInView:_avatarImageView];
+    CGPoint name_p = [t locationInView:_nameLabel];
+    CGPoint bubble_P = [t locationInView:_mediaContainerrView];
+    
+    //判断点击位置
+    if(CGRectContainsPoint(_avatarImageView.bounds, avatar_p)){
+        if([_delegate respondsToSelector:@selector(cellDidClickAvatar:)]){
+            [_delegate cellDidClickAvatar:self];
+        }
+    }
+    else if (CGRectContainsPoint(_nameLabel.bounds, name_p)){
+        if([_delegate respondsToSelector:@selector(cellDidClickNameLabel:)]){
+            [_delegate cellDidClickNameLabel:self];
+        }
+    }
+    else if(CGRectContainsPoint(_mediaContainerrView.bounds, bubble_P)){
+        
+        //判断是否长按
+        NSTimeInterval diff = (t.timestamp - _pressTime);
+        if(diff > 0.5 && _pressTime > 0 ){
+            [self handleLongPress];
+        }
+        else if(_pressTime == -1){
+            
+        }
+        else{
+            if([_delegate respondsToSelector:@selector(cellDidClickBubbleView:)]){
+                [_delegate cellDidClickBubbleView:self];
+            }
+           
+        }
+        
+    }
+    else{
+        
+    }
+    
+    _pressTime = 0;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(handleLongPress) object:nil];
+    
+}
+
+-(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+}
+
+-(void)handleLongPress{
+    _pressTime = -1;
+    if ([_delegate respondsToSelector:@selector(cellDidLongPressBubbleView:)]) {
+        [_delegate cellDidLongPressBubbleView:self];
+    }
+}
 
 
 @end

@@ -22,6 +22,7 @@ UICollectionViewDataSourcePrefetching
 //是否在拖动状态
 @property (nonatomic, assign) BOOL isDragging;
 
+//是否在加载更多消息中
 @property (nonatomic, assign) BOOL isLoading;
 
 @end
@@ -71,6 +72,7 @@ UICollectionViewDataSourcePrefetching
     }
     
     //设置Cell布局
+    cell.delegate = self;
     [cell setLayout:layout];
     
     return cell;
@@ -92,16 +94,6 @@ UICollectionViewDataSourcePrefetching
 
 //CollectionViewCell被点击
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
-    
-    //语音气泡的动画起停控制
-    if([layout.model.mediaBubble isKindOfClass:[LCNAudioMediaBubble class]]){
-        LCNAudioMediaBubble *item = (LCNAudioMediaBubble *)layout.model.mediaBubble;
-        [item startAnimation];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [item stopAnimation];
-        });
-    }
 
 }
 
@@ -127,6 +119,26 @@ UICollectionViewDataSourcePrefetching
         LCNEmojiMedaiBubble *emojiBubble = (LCNEmojiMedaiBubble*)layout.model.mediaBubble;
         [emojiBubble.imageView stopAnimating];
     }
+}
+
+#pragma mark - LCNCollectionViewCellDelegate
+- (void)cellDidClickAvatar:(LCNCollectionViewCell *)cell{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+
+}
+
+- (void)cellDidClickNameLabel:(LCNCollectionViewCell *)cell{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+
+}
+
+- (void)cellDidClickBubbleView:(LCNCollectionViewCell *)cell{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+
+}
+
+- (void)cellDidLongPressBubbleView:(LCNCollectionViewCell *)cell{
+    [self handleLongPressBubbleView:cell];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
@@ -212,8 +224,58 @@ UICollectionViewDataSourcePrefetching
     _isLoading = YES;
 }
 
+//当前是否显示CollectionViewHeader
 - (BOOL)isShowCollectionViewHeader{
     return _isLoading;
+}
+
+- (void)handleLongPressBubbleView:(LCNCollectionViewCell *)cell{
+    LCNMessageLayout *layout = cell.layout;
+    LCNMessageModel *model = layout.model;
+    
+    UIMenuItem *menu_copy = [[UIMenuItem alloc]initWithTitle:@"复制" action:@selector(menu_copy:)];
+    UIMenuItem *menu_sendToOther=[[UIMenuItem alloc]initWithTitle:@"转发" action:@selector(menu_sendToOther:)];
+    UIMenuItem *menu_collect=[[UIMenuItem alloc]initWithTitle:@"收藏" action:@selector(menu_collect:)];
+    UIMenuItem *menu_removeItem=[[UIMenuItem alloc]initWithTitle:@"删除" action:@selector(menu_removeItem:)];
+    UIMenuItem *menu_more=[[UIMenuItem alloc]initWithTitle:@"更多" action:@selector(menu_more:)];
+    
+    UIMenuController *menu=[UIMenuController sharedMenuController];
+    [menu setMenuItems:@[menu_copy, menu_sendToOther, menu_collect,menu_removeItem,menu_more]];
+    [menu setTargetRect:cell.mediaContainerrView.bounds inView:cell.mediaContainerrView];
+    [menu setMenuVisible:YES animated:YES];
+}
+
+// 用于UIMenuController显示，缺一不可
+-(BOOL)canBecomeFirstResponder{
+    return YES;
+}
+// 用于UIMenuController显示，缺一不可
+-(BOOL)canPerformAction:(SEL)action withSender:(id)sender{
+    if(action == @selector(copyxxx)){
+        return YES;
+    }
+    return NO;//隐藏系统默认的菜单项
+}
+
+#pragma mark - UIMenuController Action
+- (void)menu_copy:(LCNMessageModel *)mdoel{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+}
+
+- (void)menu_sendToOther:(LCNMessageModel *)mdoel{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+}
+
+- (void)menu_collect:(LCNMessageModel *)mdoel{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+}
+
+- (void)menu_removeItem:(LCNMessageModel *)mdoel{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+}
+
+- (void)menu_more:(LCNMessageModel *)mdoel{
+    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
 }
 
 

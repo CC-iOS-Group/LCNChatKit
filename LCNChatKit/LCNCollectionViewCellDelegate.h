@@ -19,4 +19,6 @@
 
 - (void)cellDidClickBubbleView:(LCNCollectionViewCell *)cell;
 
+- (void)cellDidLongPressBubbleView:(LCNCollectionViewCell *)cell;
+
 @end

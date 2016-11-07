@@ -29,17 +29,54 @@
 }
 
 #pragma mark - LCNCollectionViewCellDelegate
-//- (void)cellDidClickAvatarImageView:(LCNCollectionViewCell *)cell{
-//    
-//}
-//
-//- (void)cellDidClickNameLabel:(LCNCollectionViewCell *)cell{
-//    
-//}
-//
-//- (void)cellDidClickBubbleView:(LCNCollectionViewCell *)cell{
-//    
-//}
+- (void)cellDidClickAvatar:(LCNCollectionViewCell *)cell{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)cellDidClickNameLabel:(LCNCollectionViewCell *)cell{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)cellDidClickBubbleView:(LCNCollectionViewCell *)cell{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+    
+    LCNMessageLayout *layout = cell.layout;
+    
+    //语音气泡的动画起停控制
+    if([layout.model.mediaBubble isKindOfClass:[LCNAudioMediaBubble class]]){
+        LCNAudioMediaBubble *item = (LCNAudioMediaBubble *)layout.model.mediaBubble;
+        [item startAnimation];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [item stopAnimation];
+        });
+    }
+}
+
+- (void)cellDidLongPressBubbleView:(LCNCollectionViewCell *)cell{
+    [super cellDidLongPressBubbleView:cell];
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+#pragma mark - UIMenuController Action
+- (void)menu_copy:(LCNMessageModel *)mdoel{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)menu_sendToOther:(LCNMessageModel *)mdoel{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)menu_collect:(LCNMessageModel *)mdoel{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)menu_removeItem:(LCNMessageModel *)mdoel{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
+
+- (void)menu_more:(LCNMessageModel *)mdoel{
+    NSLog(@"%s",__PRETTY_FUNCTION__);
+}
 
 #pragma mark - 假数据制作
 - (NSMutableArray *)makeFakeDataWithCount:(NSInteger)count{

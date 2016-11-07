@@ -22,7 +22,9 @@
     
     
     if ([date isToday]) {//昨天
-        timeString = [NSString stringWithFormat:@"%ld:%2ld",date.hour,(long)date.second];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm"];
+        timeString = [dateFormatter stringFromDate:date];
     }
     else if([date compare:oneWeekAgoDate] == NSOrderedDescending){//一周之内，显示星期几
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

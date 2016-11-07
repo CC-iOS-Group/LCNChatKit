@@ -11,7 +11,8 @@
 
 @interface LCNChatKitViewController : UIViewController
 <LCNCollectionViewDataSource,
-LCNCollectionViewDelegate>
+LCNCollectionViewDelegate,
+LCNCollectionViewCellDelegate>
 
 //CollectionView
 @property (nonatomic, strong) LCNCollectionView *collectionView;
