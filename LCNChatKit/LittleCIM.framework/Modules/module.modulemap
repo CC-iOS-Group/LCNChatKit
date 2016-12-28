@@ -1,0 +1,6 @@
+framework module LittleCIM {
+  umbrella header "LittleCIM.h"
+
+  export *
+  module * { export * }
+}

@@ -19,6 +19,7 @@
     
     self.dataSource = [self makeFakeDataWithCount:10];
     [self.collectionView reloadData];
+    
 }
 
 #pragma mark - LCNCollectionViewDataSource
@@ -152,7 +153,7 @@
         [array addObject:layout];
         
     }
-    
+        
     return array;
 }
 

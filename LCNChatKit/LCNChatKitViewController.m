@@ -9,21 +9,20 @@
 #import "LCNChatKitViewController.h"
 #import "LCNMessageLayout.h"
 
+//Third Part
+#import "SVPullToRefresh.h"
+
 @interface LCNChatKitViewController ()
 <
 UICollectionViewDelegateFlowLayout,
 UICollectionViewDataSourcePrefetching
 >
 
-
 //帧率显示器
 @property (nonatomic, strong) YYFPSLabel *fpsLabel;
 
-//是否在拖动状态
-@property (nonatomic, assign) BOOL isDragging;
-
-//是否在加载更多消息中
-@property (nonatomic, assign) BOOL isLoading;
+//输入框
+@property (nonatomic, strong) LCNInputBar *inputbar;
 
 @end
 
@@ -35,16 +34,33 @@ UICollectionViewDataSourcePrefetching
 
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.fpsLabel];
+    [self.view addSubview:self.inputbar];
     
-    _isDragging = NO;
-    _isLoading = NO;
+    //增加上滑加载
+    @weakify(self);
+    [self.collectionView addInfiniteScrollingWithActionHandler:^{
+        [weak_self loadMoreMessage:3];
+    } forPosition:SVInfiniteScrollingPositionTop];
+    
+    [[YYTextKeyboardManager defaultManager] addObserver:self];
+    
+    //自动调整CollectionView的WrapperView
+    [self setAutomaticallyAdjustsScrollViewInsets:YES];
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[YYTextKeyboardManager defaultManager] removeObserver:self];
+}
+
+-(void)dealloc{
 }
 
 #pragma mark - LCNCollectionViewDataSource
@@ -76,12 +92,6 @@ UICollectionViewDataSourcePrefetching
     [cell setLayout:layout];
     
     return cell;
-}
-
-//CollectionView Header
--(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    LCNCollectionHeaderView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([LCNCollectionHeaderView class]) forIndexPath:indexPath];
-    return headView;
 }
 
 -(NSArray<LCNMessageLayout *> *)collection:(UICollectionView *)collectionView loadMoreItemsCount:(NSInteger)count{
@@ -154,81 +164,52 @@ UICollectionViewDataSourcePrefetching
     return 0;
 }
 
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    if (_isLoading) {
-        return CGSizeMake(kScreenWidth, 40);
+#pragma mark - ScrollViewDelegate
+
+
+#pragma mark - YYTextKeyboardObserver
+#pragma mark 键盘管理类，调整布局回调
+/// 键盘事件监听处理
+- (void)keyboardChangedWithTransition:(YYTextKeyboardTransition)transition{
+    
+    YYTextKeyboardManager *manager = [YYTextKeyboardManager defaultManager];
+    CGRect toFrame =  [manager convertRect:transition.toFrame toView:self.view];
+    
+    NSTimeInterval animationDuration = transition.animationDuration;
+    
+    if (transition.toVisible == YES) {
+        //升起inputBar
+        [UIView animateWithDuration:animationDuration animations:^{
+            _collectionView.height = kScreenHeight - toFrame.size.height - _inputbar.height;
+            _inputbar.top = toFrame.origin.y - _inputbar.height;
+            [_collectionView scrollToBottomAnimated:YES];
+        } completion:^(BOOL finished) {
+            //collection下滑到最新一条消息
+        }];
     }
     else{
-        return CGSizeZero;
+        //降下inputBar
+        [UIView animateWithDuration:animationDuration animations:^{
+            [_inputbar resetAllButton];
+            _collectionView.height = kScreenHeight - _inputbar.height;
+            _inputbar.top = kScreenHeight - _inputbar.height;
+        }];
     }
 }
 
-#pragma mark - ScrollViewDelegate
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    if (scrollView.contentOffset.y < -20) {
-        [UIView setAnimationsEnabled:NO];
-        [self showCollectionViewHeader];
-        [UIView setAnimationsEnabled:YES];
-        
-    }
-}
-
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    
-    [UIView setAnimationsEnabled:NO];
-
-    CGPoint offset = _collectionView.contentOffset;
-
-    NSArray *layouts = [self.collectionView.dataSource collection:self.collectionView loadMoreItemsCount:3];
-    
-    NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:layouts.count];
-    for (int i = 0; i < layouts.count; i++) {
-        LCNMessageLayout *layout = [layouts objectAtIndex:i];
-        offset.y += layout.cellHeight;
-        
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
-        [indexPaths addObject:indexPath];
-    }
-    
-    [_collectionView performBatchUpdates:^{
-        [_dataSource insertObjects:layouts atIndex:0];
-        [_collectionView insertItemsAtIndexPaths:indexPaths];
-    } completion:^(BOOL finished) {
-        ;
-    }];
-    
-    [self.collectionView setContentOffset:offset animated:NO];
-    
-    [UIView setAnimationsEnabled:YES];
-    
-
-}
-
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    _isDragging = YES;
-}
-
--(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    _isDragging = NO;
+#pragma mark - LCNInputBarDelegate
+#pragma mark 输入框高度发生变化，调整布局回调
+-(void)LCNInpuBatHeightChanged:(CGFloat)currentTextviewHeight{
+    CGRect keyboardFrame = [YYTextKeyboardManager defaultManager].keyboardFrame;
+    _collectionView.height = kScreenHeight - keyboardFrame.size.height - currentTextviewHeight;
+    _inputbar.top = keyboardFrame.origin.y - currentTextviewHeight;
+    [_collectionView scrollToBottomAnimated:YES];
 }
 
 
 #pragma mark - Private Method
-//隐藏CollectionViewHeader，隐藏加载更多消息视图
-- (void)hideCollectionViewHeader{
-    _isLoading = NO;
-}
 
-//显示CollectionViewHeader，显示加载更多消息视图
-- (void)showCollectionViewHeader{
-    _isLoading = YES;
-}
-
-//当前是否显示CollectionViewHeader
-- (BOOL)isShowCollectionViewHeader{
-    return _isLoading;
-}
-
+//配置MenuController
 - (void)handleLongPressBubbleView:(LCNCollectionViewCell *)cell{
     LCNMessageLayout *layout = cell.layout;
     LCNMessageModel *model = layout.model;
@@ -251,10 +232,60 @@ UICollectionViewDataSourcePrefetching
 }
 // 用于UIMenuController显示，缺一不可
 -(BOOL)canPerformAction:(SEL)action withSender:(id)sender{
-    if(action == @selector(copyxxx)){
+    
+    if(action == @selector(menu_copy:)){
         return YES;
     }
+    else if(action == @selector(menu_sendToOther:)){
+        return YES;
+    }
+    else if(action == @selector(menu_collect:)){
+        return YES;
+    }
+    else if(action == @selector(menu_removeItem:)){
+        return YES;
+    }
+    else if(action == @selector(menu_more:)){
+        return YES;
+    }
+    else{
+        
+    }
     return NO;//隐藏系统默认的菜单项
+}
+
+- (void)loadMoreMessage:(int)count{
+    
+    [UIView setAnimationsEnabled:NO];
+    
+    CGPoint offset = _collectionView.contentOffset;
+    //从数据库获取更多数据
+    NSArray *layouts = [self.collectionView.dataSource collection:self.collectionView loadMoreItemsCount:count];
+    if (layouts.count > 0) {
+        NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:layouts.count];
+        for (int i = 0; i < layouts.count; i++) {
+            LCNMessageLayout *layout = [layouts objectAtIndex:i];
+            offset.y += layout.cellHeight;
+            
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0];
+            [indexPaths addObject:indexPath];
+        }
+        
+        //插入数据源
+        [_collectionView performBatchUpdates:^{
+            [_dataSource insertObjects:layouts atIndex:0];
+            [_collectionView insertItemsAtIndexPaths:indexPaths];
+        } completion:^(BOOL finished) {
+            ;
+        }];
+    }
+    
+    [[_collectionView infiniteScrollingViewForPosition:SVInfiniteScrollingPositionTop] stopAnimating];
+    
+    _collectionView.contentOffset = offset;
+    
+    [UIView setAnimationsEnabled:YES];
+    
 }
 
 #pragma mark - UIMenuController Action
@@ -283,7 +314,7 @@ UICollectionViewDataSourcePrefetching
 //CollectionView
 -(LCNCollectionView *)collectionView{
     if(!_collectionView){
-        _collectionView = [[LCNCollectionView alloc] initWithFrame:CGRectMake(0, 20, kScreenWidth, kScreenHeight-20)
+        _collectionView = [[LCNCollectionView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-kInputBarHeight)
                                               collectionViewLayout:[UICollectionViewFlowLayout new]];
         
         _collectionView.backgroundColor = [UIColor whiteColor];
@@ -294,25 +325,13 @@ UICollectionViewDataSourcePrefetching
         [_collectionView registerClass:[LCNCollectionViewOutgoingCell class]
             forCellWithReuseIdentifier:NSStringFromClass([LCNCollectionViewOutgoingCell class])];
         
-        [_collectionView registerClass:[LCNCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([LCNCollectionHeaderView class])];
-        
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
-
+        
+        _collectionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 
     }
     return _collectionView;
-}
-
-//CollectionView流式布局创建
--(LCNCollectionViewFlowLayout *)springCollectionViewLayout{
-    if (!_springCollectionViewLayout) {
-        _springCollectionViewLayout = [[LCNCollectionViewFlowLayout alloc] init];
-        _springCollectionViewLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        _springCollectionViewLayout.springEnable = NO;
-        _springCollectionViewLayout.headerReferenceSize = CGSizeZero;
-    }
-    return _springCollectionViewLayout;
 }
 
 //帧率显示器
@@ -324,6 +343,16 @@ UICollectionViewDataSourcePrefetching
         _fpsLabel.top = 0;
     }
     return _fpsLabel;
+}
+
+//输入框
+-(LCNInputBar *)inputbar{
+    if (!_inputbar) {
+        _inputbar = [LCNInputBar new];
+        _inputbar.top = kScreenHeight - kInputBarHeight;
+        _inputbar.delegate = self;
+    }
+    return _inputbar;
 }
 
 @end

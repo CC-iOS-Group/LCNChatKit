@@ -10,11 +10,7 @@
 
 @interface LCNCollectionView()
 
-
-
 @end
-
-
 
 @implementation LCNCollectionView
 

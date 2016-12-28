@@ -34,12 +34,19 @@
 		6E19C2B61DB7B95800021B1B /* LCNShareMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2B51DB7B95800021B1B /* LCNShareMediaBubble.m */; };
 		6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2B81DB7B97500021B1B /* LCNEmojiMedaiBubble.m */; };
 		6E19C3171DBA01C700021B1B /* LCNTextMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C3161DBA01C700021B1B /* LCNTextMediaBubble.m */; };
+		6E23EE351DD9985600F42336 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23EE341DD9985600F42336 /* TestViewController.m */; };
+		6E35CAB61DD30538008393CE /* LCNInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E35CAB51DD30538008393CE /* LCNInputBar.m */; };
+		6E3C242F1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C242C1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m */; };
 		6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */; };
 		6E89EA921DC9B492005EFAFD /* niconiconi@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */; };
+		6E9E65C41DD40ACB00287BC9 /* LittleCIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9E65C31DD40ACB00287BC9 /* LittleCIM.framework */; };
+		6EAE637C1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE637B1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m */; };
+		6EAE637E1E1205890041EBF4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAE637D1E1205890041EBF4 /* QuartzCore.framework */; };
+		6EAE63861E1249470041EBF4 /* LCNInputBarFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE63851E1249470041EBF4 /* LCNInputBarFaceView.m */; };
+		6EAE63891E12495B0041EBF4 /* LCNInputBarMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE63881E12495B0041EBF4 /* LCNInputBarMoreView.m */; };
 		6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */; };
 		6EBA56261DC8502200588039 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EBA56251DC8502200588039 /* test.jpg */; };
 		6EDCF0151DCA2C3A0021FC5C /* dots22.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCF0141DCA2C3A0021FC5C /* dots22.gif */; };
-		6EDCF0231DCB2A220021FC5C /* LCNCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCF0221DCB2A220021FC5C /* LCNCollectionHeaderView.m */; };
 		6EDCF0271DCB75E80021FC5C /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCF0261DCB75E80021FC5C /* DemoViewController.m */; };
 		6EE1DC1D1DC9E94A00480A18 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1DC1C1DC9E94A00480A18 /* giphy.gif */; };
 		A4BF8E10E0EF1C2111D0068D /* libPods-LCNChatKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */; };
@@ -125,15 +132,28 @@
 		6E19C3141DB9C91000021B1B /* LCNChatKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LCNChatKit-Prefix.pch"; sourceTree = "<group>"; };
 		6E19C3151DBA01C700021B1B /* LCNTextMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNTextMediaBubble.h; sourceTree = "<group>"; };
 		6E19C3161DBA01C700021B1B /* LCNTextMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNTextMediaBubble.m; sourceTree = "<group>"; };
+		6E23EE331DD9985600F42336 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		6E23EE341DD9985600F42336 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		6E35CAB41DD30538008393CE /* LCNInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNInputBar.h; sourceTree = "<group>"; };
+		6E35CAB51DD30538008393CE /* LCNInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNInputBar.m; sourceTree = "<group>"; };
+		6E3C242A1E1148F100E0F2AB /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		6E3C242B1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		6E3C242C1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		6E60D72D1DC09ED9004DCFF2 /* LCNMsgContentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgContentHelper.h; sourceTree = "<group>"; };
 		6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgContentHelper.m; sourceTree = "<group>"; };
 		6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "niconiconi@2x.gif"; sourceTree = "<group>"; };
+		6E9E65C31DD40ACB00287BC9 /* LittleCIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LittleCIM.framework; sourceTree = "<group>"; };
+		6EAE637A1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		6EAE637B1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		6EAE637D1E1205890041EBF4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6EAE63841E1249470041EBF4 /* LCNInputBarFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNInputBarFaceView.h; sourceTree = "<group>"; };
+		6EAE63851E1249470041EBF4 /* LCNInputBarFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNInputBarFaceView.m; sourceTree = "<group>"; };
+		6EAE63871E12495B0041EBF4 /* LCNInputBarMoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNInputBarMoreView.h; sourceTree = "<group>"; };
+		6EAE63881E12495B0041EBF4 /* LCNInputBarMoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNInputBarMoreView.m; sourceTree = "<group>"; };
 		6EBA554C1DC18F2D00588039 /* LCNMsgHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgHelper.h; sourceTree = "<group>"; };
 		6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgHelper.m; sourceTree = "<group>"; };
 		6EBA56251DC8502200588039 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		6EDCF0141DCA2C3A0021FC5C /* dots22.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dots22.gif; sourceTree = "<group>"; };
-		6EDCF0211DCB2A220021FC5C /* LCNCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollectionHeaderView.h; sourceTree = "<group>"; };
-		6EDCF0221DCB2A220021FC5C /* LCNCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNCollectionHeaderView.m; sourceTree = "<group>"; };
 		6EDCF0251DCB75E80021FC5C /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		6EDCF0261DCB75E80021FC5C /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		6EE1DC1C1DC9E94A00480A18 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
@@ -146,6 +166,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EAE637E1E1205890041EBF4 /* QuartzCore.framework in Frameworks */,
+				6E9E65C41DD40ACB00287BC9 /* LittleCIM.framework in Frameworks */,
 				A4BF8E10E0EF1C2111D0068D /* libPods-LCNChatKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,6 +201,7 @@
 		6E0EB9B01DBF54870050DF58 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				6E3C24291E1148D200E0F2AB /* SVVPullToRefresh */,
 				6EBA554C1DC18F2D00588039 /* LCNMsgHelper.h */,
 				6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */,
 				6E60D72D1DC09ED9004DCFF2 /* LCNMsgContentHelper.h */,
@@ -229,6 +252,7 @@
 		6E19C2411DB611F800021B1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E9E65C31DD40ACB00287BC9 /* LittleCIM.framework */,
 				6EDCF0141DCA2C3A0021FC5C /* dots22.gif */,
 				6EE1DC1C1DC9E94A00480A18 /* giphy.gif */,
 				6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */,
@@ -299,6 +323,7 @@
 			children = (
 				6E19C2751DB6122600021B1B /* LCNCollectionView.h */,
 				6E19C2761DB6122600021B1B /* LCNCollectionView.m */,
+				6E35CAB71DD3053D008393CE /* InputBar */,
 				6E89EA901DC9B14E005EFAFD /* CollectionViewCell */,
 				6E89EA8F1DC98E66005EFAFD /* MediaBubble */,
 				6E19C29F1DB7603800021B1B /* YYFPSLabel.h */,
@@ -312,6 +337,8 @@
 			children = (
 				6E19C2441DB611F800021B1B /* AppDelegate.h */,
 				6E19C2451DB611F800021B1B /* AppDelegate.m */,
+				6E23EE331DD9985600F42336 /* TestViewController.h */,
+				6E23EE341DD9985600F42336 /* TestViewController.m */,
 				6EDCF0251DCB75E80021FC5C /* DemoViewController.h */,
 				6EDCF0261DCB75E80021FC5C /* DemoViewController.m */,
 				6E19C2471DB611F800021B1B /* LCNChatKitViewController.h */,
@@ -319,6 +346,28 @@
 				6E19C2951DB613DA00021B1B /* Models */,
 			);
 			name = LCNChatDemo;
+			sourceTree = "<group>";
+		};
+		6E35CAB71DD3053D008393CE /* InputBar */ = {
+			isa = PBXGroup;
+			children = (
+				6EAE63831E1249170041EBF4 /* InputBarViews */,
+				6E35CAB41DD30538008393CE /* LCNInputBar.h */,
+				6E35CAB51DD30538008393CE /* LCNInputBar.m */,
+			);
+			name = InputBar;
+			sourceTree = "<group>";
+		};
+		6E3C24291E1148D200E0F2AB /* SVVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				6E3C242A1E1148F100E0F2AB /* SVPullToRefresh.h */,
+				6E3C242B1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.h */,
+				6E3C242C1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m */,
+				6EAE637A1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.h */,
+				6EAE637B1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m */,
+			);
+			name = SVVPullToRefresh;
 			sourceTree = "<group>";
 		};
 		6E89EA8F1DC98E66005EFAFD /* MediaBubble */ = {
@@ -355,15 +404,25 @@
 				6E19C27C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m */,
 				6E19C27F1DB6122600021B1B /* LCNCollectionViewOutgoingCell.h */,
 				6E19C2801DB6122600021B1B /* LCNCollectionViewOutgoingCell.m */,
-				6EDCF0211DCB2A220021FC5C /* LCNCollectionHeaderView.h */,
-				6EDCF0221DCB2A220021FC5C /* LCNCollectionHeaderView.m */,
 			);
 			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		6EAE63831E1249170041EBF4 /* InputBarViews */ = {
+			isa = PBXGroup;
+			children = (
+				6EAE63841E1249470041EBF4 /* LCNInputBarFaceView.h */,
+				6EAE63851E1249470041EBF4 /* LCNInputBarFaceView.m */,
+				6EAE63871E12495B0041EBF4 /* LCNInputBarMoreView.h */,
+				6EAE63881E12495B0041EBF4 /* LCNInputBarMoreView.m */,
+			);
+			name = InputBarViews;
 			sourceTree = "<group>";
 		};
 		BD0856F054D081C81A2D5575 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6EAE637D1E1205890041EBF4 /* QuartzCore.framework */,
 				73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */,
 			);
 			name = Frameworks;
@@ -560,27 +619,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EAE63891E12495B0041EBF4 /* LCNInputBarMoreView.m in Sources */,
 				6E0EB9B31DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m in Sources */,
 				6E19C28B1DB6122600021B1B /* LCNCollectionViewFlowLayout.m in Sources */,
+				6E23EE351DD9985600F42336 /* TestViewController.m in Sources */,
 				6E19C2AD1DB7B82600021B1B /* LCNVideoMediaBubble.m in Sources */,
 				6E19C2491DB611F800021B1B /* LCNChatKitViewController.m in Sources */,
-				6EDCF0231DCB2A220021FC5C /* LCNCollectionHeaderView.m in Sources */,
 				6E19C28A1DB6122600021B1B /* LCNCollectionViewCell.m in Sources */,
 				6E19C28C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m in Sources */,
 				6E19C2461DB611F800021B1B /* AppDelegate.m in Sources */,
+				6E35CAB61DD30538008393CE /* LCNInputBar.m in Sources */,
 				6E19C2B61DB7B95800021B1B /* LCNShareMediaBubble.m in Sources */,
 				6E19C2891DB6122600021B1B /* LCNCollectionView.m in Sources */,
 				6E19C2431DB611F800021B1B /* main.m in Sources */,
 				6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */,
+				6EAE637C1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				6E19C2A71DB7775400021B1B /* LCNImageMediaBubble.m in Sources */,
 				6E19C2901DB6122600021B1B /* LCNMessageLayout.m in Sources */,
 				6E19C2B31DB7B93A00021B1B /* LCNContactMediaBubble.m in Sources */,
 				6E19C2AA1DB7B81000021B1B /* LCNAudioMediaBubble.m in Sources */,
+				6EAE63861E1249470041EBF4 /* LCNInputBarFaceView.m in Sources */,
 				6E19C2B01DB7B8B000021B1B /* LCNLocationMediaBubble.m in Sources */,
 				6EDCF0271DCB75E80021FC5C /* DemoViewController.m in Sources */,
 				6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiBubble.m in Sources */,
 				6E19C28F1DB6122600021B1B /* LCNMediaBubble.m in Sources */,
 				6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */,
+				6E3C242F1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m in Sources */,
 				6E19C28E1DB6122600021B1B /* LCNCollectionViewOutgoingCell.m in Sources */,
 				6E19C28D1DB6122600021B1B /* LCNCollectionViewLayoutAttributes.m in Sources */,
 				6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */,
@@ -737,6 +801,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6K9HLYD652;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LCNChatKit",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LCNChatKit/LCNChatKit-Prefix.pch";
 				INFOPLIST_FILE = LCNChatKit/Info.plist;
@@ -754,6 +823,11 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 6K9HLYD652;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LCNChatKit",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/LCNChatKit/LCNChatKit-Prefix.pch";
 				INFOPLIST_FILE = LCNChatKit/Info.plist;

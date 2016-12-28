@@ -7,6 +7,7 @@
 //
 
 #import "LCNChatKitViewController.h"
+#import <LittleCIM/LittleCIM.h>
 
 @interface DemoViewController : LCNChatKitViewController
 

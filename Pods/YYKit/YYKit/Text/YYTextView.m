@@ -621,6 +621,10 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     }
 }
 
+- (void)hideMenu{
+    [self _hideMenu];
+}
+
 /// Hide the UIMenuController.
 - (void)_hideMenu {
     if (_state.showingMenu) {
