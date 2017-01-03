@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LCNChatKit/TestViewController.m"
-            timestampString = "500887817.310024"
+            filePath = "LCNChatKit/UIScrollView+SVInfiniteScrolling.m"
+            timestampString = "504753808.240163"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "-click:"
+            startingLineNumber = "414"
+            endingLineNumber = "414"
+            landmarkName = "-setState:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

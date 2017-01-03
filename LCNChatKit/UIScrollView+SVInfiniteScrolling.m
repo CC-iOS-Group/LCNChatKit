@@ -58,7 +58,7 @@ UIEdgeInsets scrollViewOriginalContentInsets;
 - (void)addInfiniteScrollingWithActionHandler:(void (^)(void))actionHandler forPosition:(SVInfiniteScrollingPosition)position{
     
     if(![self infiniteScrollingViewForPosition:position]) {
-        SVInfiniteScrollingView *view = [[SVInfiniteScrollingView alloc] initWithFrame:CGRectMake(0, (position == SVInfiniteScrollingPositionTop) ? -SVInfiniteScrollingViewHeight : self.contentSize.height, self.bounds.size.width, SVInfiniteScrollingViewHeight)];
+        SVInfiniteScrollingView *view = [[SVInfiniteScrollingView alloc] initWithFrame:CGRectMake(0, (position == SVInfiniteScrollingPositionTop) ? - SVInfiniteScrollingViewHeight : self.contentSize.height, self.bounds.size.width, SVInfiniteScrollingViewHeight)];
         view.infiniteScrollingHandler = actionHandler;
         view.scrollView = self;
         view.position = position;
@@ -277,10 +277,11 @@ static const CGFloat kAnimationDuration = 0.3f;
         BOOL isUpdating = [updating boolValue];
         
         if (self.position == SVInfiniteScrollingPositionTop){
-            scrollOffsetThreshold = 0;
+            scrollOffsetThreshold = self.frame.origin.y - self.originalTopInset;
+            
             if(!self.scrollView.isDragging && self.state == SVInfiniteScrollingStateTriggered)
                 self.state = SVInfiniteScrollingStateLoading;
-            else if(contentOffset.y < scrollOffsetThreshold && self.state == SVInfiniteScrollingStateStopped && !isUpdating)
+            else if(contentOffset.y < scrollOffsetThreshold && self.state == SVInfiniteScrollingStateStopped && self.state != SVInfiniteScrollingStateLoading && !isUpdating)
                 self.state = SVInfiniteScrollingStateTriggered;
             else if(contentOffset.y >= scrollOffsetThreshold  && self.state != SVInfiniteScrollingStateStopped)
                 self.state = SVInfiniteScrollingStateStopped;
@@ -407,6 +408,7 @@ static const CGFloat kAnimationDuration = 0.3f;
                 break;
         }
     }
+
     
     if(previousState == SVInfiniteScrollingStateTriggered && newState == SVInfiniteScrollingStateLoading && self.infiniteScrollingHandler && self.enabled)
         self.infiniteScrollingHandler();

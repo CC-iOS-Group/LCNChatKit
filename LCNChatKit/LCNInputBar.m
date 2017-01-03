@@ -84,6 +84,8 @@ typedef NS_ENUM(NSUInteger, INPUTBARBUTTON_TAG) {
             YYTextLinePositionSimpleModifier *lineModeify = [YYTextLinePositionSimpleModifier new];
             lineModeify.fixedLineHeight = 20;
             textView.linePositionModifier = lineModeify;
+            textView.returnKeyType = UIReturnKeySend;
+            textView.enablesReturnKeyAutomatically = YES;
             textView.font = [UIFont systemFontOfSize:18];
             textView.backgroundColor = [UIColor whiteColor];
             textView.textVerticalAlignment = YYTextVerticalAlignmentCenter;
@@ -94,7 +96,7 @@ typedef NS_ENUM(NSUInteger, INPUTBARBUTTON_TAG) {
             textView.layer.borderColor = [UIColor colorWithHexString:@"dddddd"].CGColor;
             textView.clipsToBounds = YES;
             textView.layer.cornerRadius = 5;
-            self.textView.showsVerticalScrollIndicator = NO;
+            textView.showsVerticalScrollIndicator = NO;
             textView.delegate = self;
             textView;
         });

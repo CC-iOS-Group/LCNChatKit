@@ -15,9 +15,22 @@
 -(instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
+        
         self.size = CGSizeMake(kScreenWidth, kInputbarFaceViewHeight);
         self.backgroundColor = [UIColor blueColor];
         self.userInteractionEnabled = YES;
+                
+        
+        UIView *containerView = [[UIView alloc] init];
+        containerView.frame = self.bounds;
+        containerView.userInteractionEnabled = YES;
+        [self addSubview:containerView];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithActionBlock:^(id  _Nonnull sender) {
+            NSLog(@"111");
+        }];
+        [containerView addGestureRecognizer:tap];
+        
     }
     return self;
 }

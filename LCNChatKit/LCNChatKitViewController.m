@@ -39,7 +39,7 @@ UICollectionViewDataSourcePrefetching
     //增加上滑加载
     @weakify(self);
     [self.collectionView addInfiniteScrollingWithActionHandler:^{
-        [weak_self loadMoreMessage:3];
+        [weak_self loadMoreMessage:1];
     } forPosition:SVInfiniteScrollingPositionTop];
     
     [[YYTextKeyboardManager defaultManager] addObserver:self];

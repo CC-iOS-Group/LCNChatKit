@@ -39,7 +39,6 @@
 		6E3C242F1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C242C1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m */; };
 		6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */; };
 		6E89EA921DC9B492005EFAFD /* niconiconi@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */; };
-		6E9E65C41DD40ACB00287BC9 /* LittleCIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E9E65C31DD40ACB00287BC9 /* LittleCIM.framework */; };
 		6EAE637C1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE637B1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m */; };
 		6EAE637E1E1205890041EBF4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAE637D1E1205890041EBF4 /* QuartzCore.framework */; };
 		6EAE63861E1249470041EBF4 /* LCNInputBarFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE63851E1249470041EBF4 /* LCNInputBarFaceView.m */; };
@@ -142,7 +141,6 @@
 		6E60D72D1DC09ED9004DCFF2 /* LCNMsgContentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgContentHelper.h; sourceTree = "<group>"; };
 		6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgContentHelper.m; sourceTree = "<group>"; };
 		6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "niconiconi@2x.gif"; sourceTree = "<group>"; };
-		6E9E65C31DD40ACB00287BC9 /* LittleCIM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LittleCIM.framework; sourceTree = "<group>"; };
 		6EAE637A1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		6EAE637B1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		6EAE637D1E1205890041EBF4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -167,7 +165,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EAE637E1E1205890041EBF4 /* QuartzCore.framework in Frameworks */,
-				6E9E65C41DD40ACB00287BC9 /* LittleCIM.framework in Frameworks */,
 				A4BF8E10E0EF1C2111D0068D /* libPods-LCNChatKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,7 +249,6 @@
 		6E19C2411DB611F800021B1B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E9E65C31DD40ACB00287BC9 /* LittleCIM.framework */,
 				6EDCF0141DCA2C3A0021FC5C /* dots22.gif */,
 				6EE1DC1C1DC9E94A00480A18 /* giphy.gif */,
 				6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */,
