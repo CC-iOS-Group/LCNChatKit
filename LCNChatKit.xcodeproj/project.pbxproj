@@ -36,10 +36,8 @@
 		6E19C3171DBA01C700021B1B /* LCNTextMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C3161DBA01C700021B1B /* LCNTextMediaBubble.m */; };
 		6E23EE351DD9985600F42336 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23EE341DD9985600F42336 /* TestViewController.m */; };
 		6E35CAB61DD30538008393CE /* LCNInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E35CAB51DD30538008393CE /* LCNInputBar.m */; };
-		6E3C242F1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C242C1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m */; };
 		6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */; };
 		6E89EA921DC9B492005EFAFD /* niconiconi@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */; };
-		6EAE637C1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE637B1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m */; };
 		6EAE637E1E1205890041EBF4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAE637D1E1205890041EBF4 /* QuartzCore.framework */; };
 		6EAE63861E1249470041EBF4 /* LCNInputBarFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE63851E1249470041EBF4 /* LCNInputBarFaceView.m */; };
 		6EAE63891E12495B0041EBF4 /* LCNInputBarMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE63881E12495B0041EBF4 /* LCNInputBarMoreView.m */; };
@@ -48,7 +46,8 @@
 		6EDCF0151DCA2C3A0021FC5C /* dots22.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCF0141DCA2C3A0021FC5C /* dots22.gif */; };
 		6EDCF0271DCB75E80021FC5C /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCF0261DCB75E80021FC5C /* DemoViewController.m */; };
 		6EE1DC1D1DC9E94A00480A18 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1DC1C1DC9E94A00480A18 /* giphy.gif */; };
-		A4BF8E10E0EF1C2111D0068D /* libPods-LCNChatKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */; };
+		6EFDF3FB1E4863CE0063BA8C /* LCNRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFDF3FA1E4863CE0063BA8C /* LCNRefreshView.m */; };
+		BC68B187316B7B7D60F8B32B /* libPods-LCNChatKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D92FEE436CC2D0F01296A9 /* libPods-LCNChatKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0BC8B937973BF8F9704740C5 /* Pods-LCNChatKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.debug.xcconfig"; sourceTree = "<group>"; };
+		3AA0E421CFF339F35D186A07 /* Pods-LCNChatKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.debug.xcconfig"; sourceTree = "<group>"; };
+		664A8137201E41CB75DB0D84 /* Pods-LCNChatKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.release.xcconfig"; sourceTree = "<group>"; };
 		6E0EB9B11DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgBubbleMaskMaker.h; sourceTree = "<group>"; };
 		6E0EB9B21DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgBubbleMaskMaker.m; sourceTree = "<group>"; };
 		6E19C23E1DB611F800021B1B /* LCNChatKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCNChatKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,14 +135,9 @@
 		6E23EE341DD9985600F42336 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		6E35CAB41DD30538008393CE /* LCNInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNInputBar.h; sourceTree = "<group>"; };
 		6E35CAB51DD30538008393CE /* LCNInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNInputBar.m; sourceTree = "<group>"; };
-		6E3C242A1E1148F100E0F2AB /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
-		6E3C242B1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
-		6E3C242C1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		6E60D72D1DC09ED9004DCFF2 /* LCNMsgContentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgContentHelper.h; sourceTree = "<group>"; };
 		6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgContentHelper.m; sourceTree = "<group>"; };
 		6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "niconiconi@2x.gif"; sourceTree = "<group>"; };
-		6EAE637A1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
-		6EAE637B1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		6EAE637D1E1205890041EBF4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		6EAE63841E1249470041EBF4 /* LCNInputBarFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNInputBarFaceView.h; sourceTree = "<group>"; };
 		6EAE63851E1249470041EBF4 /* LCNInputBarFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNInputBarFaceView.m; sourceTree = "<group>"; };
@@ -155,8 +150,9 @@
 		6EDCF0251DCB75E80021FC5C /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		6EDCF0261DCB75E80021FC5C /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 		6EE1DC1C1DC9E94A00480A18 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
-		73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCNChatKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD175623DBDD560EE73B3862 /* Pods-LCNChatKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.release.xcconfig"; sourceTree = "<group>"; };
+		6EFDF3F91E4863CE0063BA8C /* LCNRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNRefreshView.h; sourceTree = "<group>"; };
+		6EFDF3FA1E4863CE0063BA8C /* LCNRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNRefreshView.m; sourceTree = "<group>"; };
+		C3D92FEE436CC2D0F01296A9 /* libPods-LCNChatKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LCNChatKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EAE637E1E1205890041EBF4 /* QuartzCore.framework in Frameworks */,
-				A4BF8E10E0EF1C2111D0068D /* libPods-LCNChatKit.a in Frameworks */,
+				BC68B187316B7B7D60F8B32B /* libPods-LCNChatKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,19 +182,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B169BB4C763DC69B1767A5F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0BC8B937973BF8F9704740C5 /* Pods-LCNChatKit.debug.xcconfig */,
-				BD175623DBDD560EE73B3862 /* Pods-LCNChatKit.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		6E0EB9B01DBF54870050DF58 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				6E3C24291E1148D200E0F2AB /* SVVPullToRefresh */,
 				6EBA554C1DC18F2D00588039 /* LCNMsgHelper.h */,
 				6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */,
 				6E60D72D1DC09ED9004DCFF2 /* LCNMsgContentHelper.h */,
@@ -216,8 +202,8 @@
 				6E19C25A1DB611F800021B1B /* LCNChatKitTests */,
 				6E19C2651DB611F800021B1B /* LCNChatKitUITests */,
 				6E19C23F1DB611F800021B1B /* Products */,
-				2B169BB4C763DC69B1767A5F /* Pods */,
 				BD0856F054D081C81A2D5575 /* Frameworks */,
+				971F30DC6FE07632822F213F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -354,18 +340,6 @@
 			name = InputBar;
 			sourceTree = "<group>";
 		};
-		6E3C24291E1148D200E0F2AB /* SVVPullToRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				6E3C242A1E1148F100E0F2AB /* SVPullToRefresh.h */,
-				6E3C242B1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.h */,
-				6E3C242C1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m */,
-				6EAE637A1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.h */,
-				6EAE637B1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m */,
-			);
-			name = SVVPullToRefresh;
-			sourceTree = "<group>";
-		};
 		6E89EA8F1DC98E66005EFAFD /* MediaBubble */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +368,8 @@
 		6E89EA901DC9B14E005EFAFD /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				6EFDF3F91E4863CE0063BA8C /* LCNRefreshView.h */,
+				6EFDF3FA1E4863CE0063BA8C /* LCNRefreshView.m */,
 				6E19C2771DB6122600021B1B /* LCNCollectionViewCell.h */,
 				6E19C2781DB6122600021B1B /* LCNCollectionViewCell.m */,
 				6E19C27B1DB6122600021B1B /* LCNCollectionViewIncomingCell.h */,
@@ -415,11 +391,20 @@
 			name = InputBarViews;
 			sourceTree = "<group>";
 		};
+		971F30DC6FE07632822F213F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3AA0E421CFF339F35D186A07 /* Pods-LCNChatKit.debug.xcconfig */,
+				664A8137201E41CB75DB0D84 /* Pods-LCNChatKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BD0856F054D081C81A2D5575 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				6EAE637D1E1205890041EBF4 /* QuartzCore.framework */,
-				73F964EFF824BFE63C22F9EB /* libPods-LCNChatKit.a */,
+				C3D92FEE436CC2D0F01296A9 /* libPods-LCNChatKit.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -431,12 +416,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E19C26B1DB611F800021B1B /* Build configuration list for PBXNativeTarget "LCNChatKit" */;
 			buildPhases = (
-				48245636C62574C4497B0E1C /* Check Pods Manifest.lock */,
+				9C7549BB6C25702FE1EF12FD /* [CP] Check Pods Manifest.lock */,
 				6E19C23A1DB611F800021B1B /* Sources */,
 				6E19C23B1DB611F800021B1B /* Frameworks */,
 				6E19C23C1DB611F800021B1B /* Resources */,
-				DB8D9952729D74F73248EEAE /* Embed Pods Frameworks */,
-				43B78001957F1BEE97534775 /* Copy Pods Resources */,
+				9CE990CC762B2D641C4E2BFA /* [CP] Embed Pods Frameworks */,
+				474162ABF4C69A33C54348C7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -563,14 +548,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		43B78001957F1BEE97534775 /* Copy Pods Resources */ = {
+		474162ABF4C69A33C54348C7 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,29 +563,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		48245636C62574C4497B0E1C /* Check Pods Manifest.lock */ = {
+		9C7549BB6C25702FE1EF12FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		DB8D9952729D74F73248EEAE /* Embed Pods Frameworks */ = {
+		9CE990CC762B2D641C4E2BFA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -617,6 +602,7 @@
 			files = (
 				6EAE63891E12495B0041EBF4 /* LCNInputBarMoreView.m in Sources */,
 				6E0EB9B31DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m in Sources */,
+				6EFDF3FB1E4863CE0063BA8C /* LCNRefreshView.m in Sources */,
 				6E19C28B1DB6122600021B1B /* LCNCollectionViewFlowLayout.m in Sources */,
 				6E23EE351DD9985600F42336 /* TestViewController.m in Sources */,
 				6E19C2AD1DB7B82600021B1B /* LCNVideoMediaBubble.m in Sources */,
@@ -629,7 +615,6 @@
 				6E19C2891DB6122600021B1B /* LCNCollectionView.m in Sources */,
 				6E19C2431DB611F800021B1B /* main.m in Sources */,
 				6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */,
-				6EAE637C1E1203F90041EBF4 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				6E19C2A71DB7775400021B1B /* LCNImageMediaBubble.m in Sources */,
 				6E19C2901DB6122600021B1B /* LCNMessageLayout.m in Sources */,
 				6E19C2B31DB7B93A00021B1B /* LCNContactMediaBubble.m in Sources */,
@@ -640,7 +625,6 @@
 				6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiBubble.m in Sources */,
 				6E19C28F1DB6122600021B1B /* LCNMediaBubble.m in Sources */,
 				6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */,
-				6E3C242F1E1148F100E0F2AB /* UIScrollView+SVPullToRefresh.m in Sources */,
 				6E19C28E1DB6122600021B1B /* LCNCollectionViewOutgoingCell.m in Sources */,
 				6E19C28D1DB6122600021B1B /* LCNCollectionViewLayoutAttributes.m in Sources */,
 				6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */,
@@ -792,7 +776,7 @@
 		};
 		6E19C26C1DB611F800021B1B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BC8B937973BF8F9704740C5 /* Pods-LCNChatKit.debug.xcconfig */;
+			baseConfigurationReference = 3AA0E421CFF339F35D186A07 /* Pods-LCNChatKit.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -814,7 +798,7 @@
 		};
 		6E19C26D1DB611F800021B1B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD175623DBDD560EE73B3862 /* Pods-LCNChatKit.release.xcconfig */;
+			baseConfigurationReference = 664A8137201E41CB75DB0D84 /* Pods-LCNChatKit.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

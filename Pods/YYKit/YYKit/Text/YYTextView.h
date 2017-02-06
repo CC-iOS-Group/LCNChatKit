@@ -345,11 +345,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic) CGFloat extraAccessoryViewHeight;
 
-#pragma mark - Custom ADD
-///=============================================================================
-/// @name hide the textView's menuController
-///=============================================================================
-- (void)hideMenu;
+-(void)hideMenu;
 
 @end
 

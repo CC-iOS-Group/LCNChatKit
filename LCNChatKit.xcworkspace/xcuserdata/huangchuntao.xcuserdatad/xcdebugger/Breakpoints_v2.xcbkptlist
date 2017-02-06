@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LCNChatKit/UIScrollView+SVInfiniteScrolling.m"
-            timestampString = "504753808.240163"
+            timestampString = "508056614.768548"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "412"
+            endingLineNumber = "412"
             landmarkName = "-setState:"
             landmarkType = "7">
          </BreakpointContent>

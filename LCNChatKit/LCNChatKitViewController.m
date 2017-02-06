@@ -8,9 +8,8 @@
 
 #import "LCNChatKitViewController.h"
 #import "LCNMessageLayout.h"
+#import "LCNRefreshView.h"
 
-//Third Part
-#import "SVPullToRefresh.h"
 
 @interface LCNChatKitViewController ()
 <
@@ -24,23 +23,31 @@ UICollectionViewDataSourcePrefetching
 //输入框
 @property (nonatomic, strong) LCNInputBar *inputbar;
 
+
+
 @end
 
-@implementation LCNChatKitViewController
+@implementation LCNChatKitViewController{
+    BOOL _isPulling;
+    BOOL _isLoading;
+    BOOL _isLoadMoreCompleted;
+}
 
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //初始化参数
+    _isPulling = NO;
+    _isLoading = NO;
+    _isLoadMoreCompleted = YES;
 
     [self.view addSubview:self.collectionView];
     [self.view addSubview:self.fpsLabel];
     [self.view addSubview:self.inputbar];
     
     //增加上滑加载
-    @weakify(self);
-    [self.collectionView addInfiniteScrollingWithActionHandler:^{
-        [weak_self loadMoreMessage:1];
-    } forPosition:SVInfiniteScrollingPositionTop];
+
     
     [[YYTextKeyboardManager defaultManager] addObserver:self];
     
@@ -73,6 +80,27 @@ UICollectionViewDataSourcePrefetching
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return _dataSource.count;
 }
+
+//CollectionView Header
+-(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+    LCNRefreshView *headView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([LCNRefreshView class]) forIndexPath:indexPath];
+    
+    //默认一直让他转
+    [headView startAnimation];
+    
+    return headView;
+}
+
+-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+    if (_isLoadMoreCompleted == YES && _isLoading == NO) {
+        return CGSizeMake(kScreenWidth, 0);
+    }
+    else{
+        return CGSizeMake(kScreenWidth, 40);
+    }
+}
+
+
 
 //cellForItem
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -165,7 +193,26 @@ UICollectionViewDataSourcePrefetching
 }
 
 #pragma mark - ScrollViewDelegate
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    if (!_isLoading &&!_isPulling
+        && (scrollView.isDragging || scrollView.isDecelerating)
+        && scrollView.contentOffset.y <= 20 - scrollView.contentInset.top
+        && self.dataSource.count > 0) {
+        _isPulling = YES;
+    }
+}
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (!_isLoading && _isPulling) {
+        [self pullToRefresh];
+    }
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    if (_isPulling) {
+        [self pullToRefresh];
+    }
+}
 
 #pragma mark - YYTextKeyboardObserver
 #pragma mark 键盘管理类，调整布局回调
@@ -254,9 +301,30 @@ UICollectionViewDataSourcePrefetching
     return NO;//隐藏系统默认的菜单项
 }
 
+
+/**
+ 触发刷新
+ */
+- (void)pullToRefresh {
+    _isPulling = NO;
+    _isLoading = YES;
+    
+    NSLog(@"开始下拉刷新");
+    [self loadMoreMessage:5];
+    
+}
+
+
+/**
+ 加载消息，获取更多数据
+
+ @param count 加载消息数量
+ */
 - (void)loadMoreMessage:(int)count{
     
     [UIView setAnimationsEnabled:NO];
+    
+    _isLoadMoreCompleted = NO;
     
     CGPoint offset = _collectionView.contentOffset;
     //从数据库获取更多数据
@@ -276,16 +344,14 @@ UICollectionViewDataSourcePrefetching
             [_dataSource insertObjects:layouts atIndex:0];
             [_collectionView insertItemsAtIndexPaths:indexPaths];
         } completion:^(BOOL finished) {
-            ;
+            _isLoadMoreCompleted = YES;
+            _isLoading = NO;
         }];
     }
-    
-    [[_collectionView infiniteScrollingViewForPosition:SVInfiniteScrollingPositionTop] stopAnimating];
-    
+
     _collectionView.contentOffset = offset;
     
     [UIView setAnimationsEnabled:YES];
-    
 }
 
 #pragma mark - UIMenuController Action
@@ -320,6 +386,7 @@ UICollectionViewDataSourcePrefetching
         _collectionView.backgroundColor = [UIColor whiteColor];
         _collectionView.scrollEnabled = YES;
         
+        [_collectionView registerClass:[LCNRefreshView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([LCNRefreshView class])];
         [_collectionView registerClass:[LCNCollectionViewIncomingCell class]
             forCellWithReuseIdentifier:NSStringFromClass([LCNCollectionViewIncomingCell class])];
         [_collectionView registerClass:[LCNCollectionViewOutgoingCell class]

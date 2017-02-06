@@ -621,10 +621,6 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     }
 }
 
-- (void)hideMenu{
-    [self _hideMenu];
-}
-
 /// Hide the UIMenuController.
 - (void)_hideMenu {
     if (_state.showingMenu) {
@@ -637,6 +633,10 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         [_containerView resignFirstResponder]; // it will call [self becomeFirstResponder], ignore it temporary.
         _state.ignoreFirstResponder = NO;
     }
+}
+
+- (void)hideMenu{
+    [self _hideMenu];
 }
 
 /// Show highlight layout based on `_highlight` and `_highlightRange`

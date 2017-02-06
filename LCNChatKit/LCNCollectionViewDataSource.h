@@ -13,6 +13,7 @@
 @protocol LCNCollectionViewDataSource <UICollectionViewDataSource>
 
 @optional
+
 - (NSArray<LCNMessageLayout *> *)collection:(UICollectionView *)collectionView loadMoreItemsCount:(NSInteger)count;
 
 @end
