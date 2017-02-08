@@ -139,6 +139,8 @@ typedef NS_ENUM(NSUInteger, INPUTBARBUTTON_TAG) {
     self.emojiButton.top =(self.height - kLCNInputBarButtonWH)/2;
     self.moreButton.top = (self.height - kLCNInputBarButtonWH)/2;
     
+    
+    
     //回调通知VC输入框高度发生变化
     if ([self.delegate respondsToSelector:@selector(LCNInpuBatHeightChanged:)]) {
         [self.delegate LCNInpuBatHeightChanged:self.height];

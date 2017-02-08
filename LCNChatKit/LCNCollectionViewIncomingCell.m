@@ -44,23 +44,21 @@
     
     if (layout.isShowTimeLabel) {
         self.timeLabel.hidden = NO;
-        self.avatarImageView.left = kCellMiddleGap;
         self.avatarImageView.top = kTimeLabel_H;
-        self.nameLabel.left = kCellMiddleGap+kAvatarImageView_WH+kCellMiddleGap;
         self.nameLabel.top = kTimeLabel_H;
-        self.mediaContainerrView.left = kCellMiddleGap+kAvatarImageView_WH+kCellSmallGap;
         self.mediaContainerrView.top = kTimeLabel_H + kNameLable_H;
     }
     else{
         self.timeLabel.hidden = YES;
-        self.avatarImageView.left = kCellMiddleGap;
         self.avatarImageView.top = 0;
-        self.nameLabel.left = kCellMiddleGap+kAvatarImageView_WH+kCellMiddleGap;
         self.nameLabel.top = 0;
-        self.mediaContainerrView.left = kCellMiddleGap+kAvatarImageView_WH+kCellSmallGap;
         self.mediaContainerrView.top = kNameLable_H;
     }
     
+    self.avatarImageView.left = kCellMiddleGap;
+    self.nameLabel.left = kCellMiddleGap+kAvatarImageView_WH+kCellMiddleGap;
+    self.mediaContainerrView.left = kCellMiddleGap+kAvatarImageView_WH+kCellSmallGap;
+
     if (layout.isShowStatusLabel) {
         self.statusLabel.hidden = NO;
         self.statusLabel.size = CGSizeMake(kScreenWidth, kStatusLabel_H);

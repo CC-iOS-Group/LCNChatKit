@@ -79,9 +79,11 @@
                                }
                               transform:nil
                              completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
-                                 
-                                 weak_self.indicatorView.hidden = YES;
-                                 [weak_self.indicatorView stopAnimating];
+                                 if (image && error == nil)
+                                 {
+                                     weak_self.indicatorView.hidden = YES;
+                                     [weak_self.indicatorView stopAnimating];
+                                 }
                              }];
             
         }

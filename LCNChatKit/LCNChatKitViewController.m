@@ -46,9 +46,6 @@ UICollectionViewDataSourcePrefetching
     [self.view addSubview:self.fpsLabel];
     [self.view addSubview:self.inputbar];
     
-    //增加上滑加载
-
-    
     [[YYTextKeyboardManager defaultManager] addObserver:self];
     
     //自动调整CollectionView的WrapperView
@@ -57,10 +54,10 @@ UICollectionViewDataSourcePrefetching
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    [_collectionView scrollToBottomAnimated:NO];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -250,12 +247,10 @@ UICollectionViewDataSourcePrefetching
     CGRect keyboardFrame = [YYTextKeyboardManager defaultManager].keyboardFrame;
     _collectionView.height = kScreenHeight - keyboardFrame.size.height - currentTextviewHeight;
     _inputbar.top = keyboardFrame.origin.y - currentTextviewHeight;
-    [_collectionView scrollToBottomAnimated:YES];
+    
 }
 
-
-#pragma mark - Private Method
-
+#pragma mark - Gesture Method
 //配置MenuController
 - (void)handleLongPressBubbleView:(LCNCollectionViewCell *)cell{
     LCNMessageLayout *layout = cell.layout;
@@ -300,6 +295,8 @@ UICollectionViewDataSourcePrefetching
     }
     return NO;//隐藏系统默认的菜单项
 }
+
+#pragma mark - Private Method
 
 
 /**

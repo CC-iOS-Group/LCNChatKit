@@ -23,6 +23,8 @@
 }
 
 #pragma mark - LCNCollectionViewDataSource
+//获取初始数据
+
 //加载更多数据源
 - (NSArray<LCNMessageLayout *> *)collection:(UICollectionView *)collectionView loadMoreItemsCount:(NSInteger)count{
     NSArray *array = [self makeFakeDataWithCount:count];
@@ -83,8 +85,10 @@
 - (NSMutableArray *)makeFakeDataWithCount:(NSInteger)count{
     NSMutableArray *array = [NSMutableArray array];
     
-    //测试数据制作
+    LCNMessageLayout *preLayout = [self.dataSource lastObject];
+    NSDate *preDate = preLayout ? preLayout.model.date:[NSDate date];
     
+    //测试数据制作
     for (int i = 0; i < count ; i ++) {
         LCNMessageModel *model = [LCNMessageModel new];
         model.isOutgoing = arc4random()%2;
@@ -94,7 +98,8 @@
         model.senderAvatarImageUrl = @"https://img3.doubanio.com/icon/ul21552107-31.jpg";
         model.receiveID = @"18867103612";
         model.receiveDisplayName = @"yyyy";
-        model.date = [NSDate date];
+        model.date =[preDate dateByAddingSeconds:(arc4random()%100)];
+        preDate = model.date;
         LCNMediaType type = arc4random()%4;
         model.mediaType = type;
         switch (type) {
@@ -149,12 +154,20 @@
         }
         
         
-        LCNMessageLayout *layout = [[LCNMessageLayout alloc] initWithLCNMessageModel:model];
-        [array addObject:layout];
-        
+        [array addObject:model];
     }
+    
+    NSMutableArray *layOutArray = [NSMutableArray arrayWithCapacity:array.count];
+    for (int i = 0 ; i < array.count; i++) {
+        LCNMessageModel *currentModel = [array objectAtIndex:i];
+        LCNMessageModel *preModel = (i==0)? nil : [array objectAtIndex:i-1];
         
-    return array;
+        LCNMessageLayout *layout = [[LCNMessageLayout alloc] initWithLCNMessageModel:currentModel preMessageModel:preModel];
+        [layOutArray addObject:layout];
+    }
+    
+    
+    return layOutArray;
 }
 
 @end

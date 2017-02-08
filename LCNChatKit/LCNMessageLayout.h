@@ -34,6 +34,6 @@
 @property (nonatomic, assign) CGFloat cellHeight;
 
 
--(LCNMessageLayout *)initWithLCNMessageModel:(LCNMessageModel *) model;
+-(LCNMessageLayout *)initWithLCNMessageModel:(LCNMessageModel *) model preMessageModel:(LCNMessageModel *)preModel;
 
 @end

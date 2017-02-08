@@ -33,7 +33,6 @@ static CGFloat const kDefaultImageHeight = 75;
         _image = image;
         _image_Width = width;
         _image_Height = height;
-        
     }
     return self;
 }

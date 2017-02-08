@@ -66,7 +66,7 @@
         _speakerView.size = CGSizeMake(20, 20);
         [view addSubview:_speakerView];
         
-        //语音长度label
+        //语音时间 label
         UILabel *durationLabel = [UILabel new];
         durationLabel.size = CGSizeMake(40, 15);
         durationLabel.font = [UIFont systemFontOfSize:15.0f];
@@ -77,7 +77,7 @@
             bubbleView.top = 0;
             bubbleView.left = 40;
             durationLabel.frame = CGRectMake(0, 20, 40, 15);
-            durationLabel.textAlignment = NSTextAlignmentRight;
+            durationLabel.textAlignment = NSTextAlignmentLeft;
             
             _speakerView.left = 40+bubbleLength-15-20;
             _speakerView.top = 10;
@@ -87,7 +87,7 @@
             bubbleView.top = 0;
             bubbleView.left = 0;
             durationLabel.frame = CGRectMake(bubbleLength, 20, 40, 15);
-            durationLabel.textAlignment = NSTextAlignmentLeft;
+            durationLabel.textAlignment = NSTextAlignmentRight;
             
             _speakerView.left = 15;
             _speakerView.top = 10;

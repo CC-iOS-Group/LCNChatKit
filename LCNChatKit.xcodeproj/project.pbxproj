@@ -223,10 +223,12 @@
 				6E19C2741DB6122600021B1B /* LCNChatKit.h */,
 				6E19C3141DB9C91000021B1B /* LCNChatKit-Prefix.pch */,
 				6E19C2971DB6145E00021B1B /* LCNChatDemo */,
+				6E28CDA61E4B0DE4000CA101 /* VC */,
+				6E19C2961DB613DC00021B1B /* Views */,
+				6E19C2951DB613DA00021B1B /* Models */,
 				6E0EB9B01DBF54870050DF58 /* Helper */,
 				6E19C2941DB613D800021B1B /* Protocols */,
 				6E19C2931DB613D500021B1B /* Layouts */,
-				6E19C2961DB613DC00021B1B /* Views */,
 				6E19C2411DB611F800021B1B /* Supporting Files */,
 			);
 			path = LCNChatKit;
@@ -303,13 +305,13 @@
 		6E19C2961DB613DC00021B1B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6E19C29F1DB7603800021B1B /* YYFPSLabel.h */,
+				6E19C2A01DB7603800021B1B /* YYFPSLabel.m */,
 				6E19C2751DB6122600021B1B /* LCNCollectionView.h */,
 				6E19C2761DB6122600021B1B /* LCNCollectionView.m */,
 				6E35CAB71DD3053D008393CE /* InputBar */,
 				6E89EA901DC9B14E005EFAFD /* CollectionViewCell */,
 				6E89EA8F1DC98E66005EFAFD /* MediaBubble */,
-				6E19C29F1DB7603800021B1B /* YYFPSLabel.h */,
-				6E19C2A01DB7603800021B1B /* YYFPSLabel.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -323,11 +325,17 @@
 				6E23EE341DD9985600F42336 /* TestViewController.m */,
 				6EDCF0251DCB75E80021FC5C /* DemoViewController.h */,
 				6EDCF0261DCB75E80021FC5C /* DemoViewController.m */,
-				6E19C2471DB611F800021B1B /* LCNChatKitViewController.h */,
-				6E19C2481DB611F800021B1B /* LCNChatKitViewController.m */,
-				6E19C2951DB613DA00021B1B /* Models */,
 			);
 			name = LCNChatDemo;
+			sourceTree = "<group>";
+		};
+		6E28CDA61E4B0DE4000CA101 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				6E19C2471DB611F800021B1B /* LCNChatKitViewController.h */,
+				6E19C2481DB611F800021B1B /* LCNChatKitViewController.m */,
+			);
+			name = VC;
 			sourceTree = "<group>";
 		};
 		6E35CAB71DD3053D008393CE /* InputBar */ = {

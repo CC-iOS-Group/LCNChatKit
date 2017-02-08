@@ -48,22 +48,23 @@
     
     if (layout.isShowTimeLabel) {
         self.timeLabel.hidden = NO;
-        self.avatarImageView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH;
         self.avatarImageView.top = kTimeLabel_H;
-        self.nameLabel.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellMiddleGap-self.nameLabel.width;
         self.nameLabel.top = kTimeLabel_H;
-        self.mediaContainerrView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellSmallGap-layout.model.mediaBubble.mediaViewDisplaySize.width;
+//        self.mediaContainerrView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellSmallGap-layout.model.mediaBubble.mediaViewDisplaySize.width;
         self.mediaContainerrView.top = kTimeLabel_H + kNameLable_H;
     }
     else{
         self.timeLabel.hidden = YES;
-        self.avatarImageView.left = kCellMiddleGap;
         self.avatarImageView.top = 0;
-        self.nameLabel.left =  kScreenWidth-kCellMiddleGap - kAvatarImageView_WH-kCellMiddleGap-self.nameLabel.width;
         self.nameLabel.top = 0;
-        self.mediaContainerrView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellSmallGap-layout.mediaViewSize.width;
         self.mediaContainerrView.top = kNameLable_H;
     }
+    
+    self.avatarImageView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH;
+    self.nameLabel.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellMiddleGap-self.nameLabel.width;
+    self.mediaContainerrView.left = kScreenWidth-kCellMiddleGap-kAvatarImageView_WH-kCellSmallGap-layout.mediaViewSize.width;
+
+
     
     if (layout.isShowStatusLabel) {
         self.statusLabel.hidden = NO;
