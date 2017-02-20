@@ -8,7 +8,7 @@
 
 #import "LCNMediaBubble.h"
 
-@interface LCNVideoMediaBubble : LCNMediaBubble<LCNMediaBubbleProtocol>
+@interface LCNVideoMediaBubble : LCNMediaBubble<LCNMediaBubbleDelegate>
 
 @property (nonatomic, strong) UIImage *image;
 

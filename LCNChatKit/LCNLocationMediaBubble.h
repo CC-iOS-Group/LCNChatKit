@@ -9,7 +9,7 @@
 #import "LCNMediaBubble.h"
 #import <MapKit/MapKit.h>
 
-@interface LCNLocationMediaBubble : LCNMediaBubble<LCNMediaBubbleProtocol>
+@interface LCNLocationMediaBubble : LCNMediaBubble<LCNMediaBubbleDelegate>
 
 @property (copy, nonatomic) CLLocation *location;
 

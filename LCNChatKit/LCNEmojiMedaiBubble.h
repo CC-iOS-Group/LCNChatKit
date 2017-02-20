@@ -9,7 +9,7 @@
 #import "LCNMediaBubble.h"
 @class YYImage;
 
-@interface LCNEmojiMedaiBubble : LCNMediaBubble<LCNMediaBubbleProtocol>
+@interface LCNEmojiMedaiBubble : LCNMediaBubble<LCNMediaBubbleDelegate>
 
 @property (nonatomic, strong) YYImage *animatedImage;
 @property (nonatomic, strong) NSString *animatedImageUrl;

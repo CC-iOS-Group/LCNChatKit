@@ -8,6 +8,6 @@
 
 #import "LCNMediaBubble.h"
 
-@interface LCNShareMediaBubble : LCNMediaBubble<LCNMediaBubbleProtocol>
+@interface LCNShareMediaBubble : LCNMediaBubble<LCNMediaBubbleDelegate>
 
 @end

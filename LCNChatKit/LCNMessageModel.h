@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "LCNMediaBubble.h"
 
-#import "LCNMessageModelProtocol.h"
-#import "LCNMediaItemProtocol.h"
+#import "LCNMessageModelDelegate.h"
+#import "LCNMediaBubbleDelegate.h"
 
-@interface LCNMessageModel : NSObject <LCNMessageModelProtocol>
+@interface LCNMessageModel : NSObject <LCNMessageModelDelegate>
 
 @property (nonatomic, assign) BOOL isOutgoing; //是否是发出的消息
 
@@ -32,7 +32,7 @@
 
 @property (nonatomic, assign) LCNMediaType mediaType;
 
-@property (nonatomic, strong) id<LCNMediaBubbleProtocol> mediaBubble;
+@property (nonatomic, strong) id<LCNMediaBubbleDelegate> mediaBubble;
 
 @property (nonatomic, assign) NSUInteger messageHash;
 

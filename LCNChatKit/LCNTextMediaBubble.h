@@ -8,7 +8,7 @@
 
 #import "LCNMediaBubble.h"
 
-@interface LCNTextMediaBubble : LCNMediaBubble <LCNMediaBubbleProtocol>
+@interface LCNTextMediaBubble : LCNMediaBubble <LCNMediaBubbleDelegate>
 
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) YYTextLayout *layout;

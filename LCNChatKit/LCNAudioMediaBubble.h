@@ -8,7 +8,7 @@
 
 #import "LCNMediaBubble.h"
 
-@interface LCNAudioMediaBubble : LCNMediaBubble<LCNMediaBubbleProtocol>
+@interface LCNAudioMediaBubble : LCNMediaBubble<LCNMediaBubbleDelegate>
 
 @property (nonatomic, strong) NSString *downloadLink;
 

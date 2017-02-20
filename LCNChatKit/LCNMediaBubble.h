@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LCNMediaItemProtocol.h"
+#import "LCNMediaBubbleDelegate.h"
 
 typedef NS_ENUM(NSUInteger, LCNMediaType) {
     LCNMediaType_Text,
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, LCNMediaType) {
     LCNMediaType_Share
 };
 
-@interface LCNMediaBubble : NSObject <LCNMediaBubbleProtocol>
+@interface LCNMediaBubble : NSObject <LCNMediaBubbleDelegate>
 
 @property (nonatomic, assign) BOOL isOutgoing;
 

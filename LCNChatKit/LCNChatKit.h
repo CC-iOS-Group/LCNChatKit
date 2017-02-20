@@ -17,8 +17,8 @@
 #import "LCNCollectionViewDataSource.h"
 #import "LCNCollectionViewDelegate.h"
 #import "LCNCollectionViewCellDelegate.h"
-#import "LCNMediaItemProtocol.h"
-#import "LCNMessageModelProtocol.h"
+#import "LCNMediaBubbleDelegate.h"
+#import "LCNMessageModelDelegate.h"
 
 //Models
 #import "LCNMessageModel.h"
@@ -36,7 +36,6 @@
 
 //Layouts
 #import "LCNCollectionViewLayoutAttributes.h"
-#import "LCNCollectionViewFlowLayout.h"
 #import "LCNMessageLayout.h"
 
 //Views

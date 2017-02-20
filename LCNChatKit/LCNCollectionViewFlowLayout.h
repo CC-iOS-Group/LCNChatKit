@@ -6,6 +6,10 @@
 //  Copyright © 2016年 黄春涛. All rights reserved.
 //
 
+/**
+ Tip: 气泡弹簧效果，存在效率问题。暂时没有用到
+ */
+
 #import <UIKit/UIKit.h>
 
 @interface LCNCollectionViewFlowLayout : UICollectionViewFlowLayout

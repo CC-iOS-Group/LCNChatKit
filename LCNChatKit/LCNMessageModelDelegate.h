@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol LCNMessageModelProtocol <NSObject>
+@protocol LCNMessageModelDelegate <NSObject>
 
 @required
 

@@ -43,6 +43,7 @@
 		6EAE63891E12495B0041EBF4 /* LCNInputBarMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAE63881E12495B0041EBF4 /* LCNInputBarMoreView.m */; };
 		6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */; };
 		6EBA56261DC8502200588039 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EBA56251DC8502200588039 /* test.jpg */; };
+		6EC0C6801E4B6AD6002B7A4E /* LCNAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0C67F1E4B6AD6002B7A4E /* LCNAudioManager.m */; };
 		6EDCF0151DCA2C3A0021FC5C /* dots22.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCF0141DCA2C3A0021FC5C /* dots22.gif */; };
 		6EDCF0271DCB75E80021FC5C /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCF0261DCB75E80021FC5C /* DemoViewController.m */; };
 		6EE1DC1D1DC9E94A00480A18 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1DC1C1DC9E94A00480A18 /* giphy.gif */; };
@@ -103,12 +104,12 @@
 		6E19C2801DB6122600021B1B /* LCNCollectionViewOutgoingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNCollectionViewOutgoingCell.m; sourceTree = "<group>"; };
 		6E19C2811DB6122600021B1B /* LCNMediaBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMediaBubble.h; sourceTree = "<group>"; };
 		6E19C2821DB6122600021B1B /* LCNMediaBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMediaBubble.m; sourceTree = "<group>"; };
-		6E19C2831DB6122600021B1B /* LCNMediaItemProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMediaItemProtocol.h; sourceTree = "<group>"; };
+		6E19C2831DB6122600021B1B /* LCNMediaBubbleDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMediaBubbleDelegate.h; sourceTree = "<group>"; };
 		6E19C2841DB6122600021B1B /* LCNMessageLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMessageLayout.h; sourceTree = "<group>"; };
 		6E19C2851DB6122600021B1B /* LCNMessageLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMessageLayout.m; sourceTree = "<group>"; };
 		6E19C2861DB6122600021B1B /* LCNMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMessageModel.h; sourceTree = "<group>"; };
 		6E19C2871DB6122600021B1B /* LCNMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMessageModel.m; sourceTree = "<group>"; };
-		6E19C2881DB6122600021B1B /* LCNMessageModelProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMessageModelProtocol.h; sourceTree = "<group>"; };
+		6E19C2881DB6122600021B1B /* LCNMessageModelDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMessageModelDelegate.h; sourceTree = "<group>"; };
 		6E19C2981DB616BD00021B1B /* LCNCollectionViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollectionViewDataSource.h; sourceTree = "<group>"; };
 		6E19C2991DB6171200021B1B /* LCNCollectionViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNCollectionViewDelegate.h; sourceTree = "<group>"; };
 		6E19C29F1DB7603800021B1B /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
@@ -146,6 +147,10 @@
 		6EBA554C1DC18F2D00588039 /* LCNMsgHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgHelper.h; sourceTree = "<group>"; };
 		6EBA554D1DC18F2D00588039 /* LCNMsgHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgHelper.m; sourceTree = "<group>"; };
 		6EBA56251DC8502200588039 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		6EC0C67E1E4B6AD6002B7A4E /* LCNAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNAudioManager.h; sourceTree = "<group>"; };
+		6EC0C67F1E4B6AD6002B7A4E /* LCNAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNAudioManager.m; sourceTree = "<group>"; };
+		6EC0C8DF1E4C92A6002B7A4E /* LCNAudioRecordDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNAudioRecordDelegate.h; sourceTree = "<group>"; };
+		6EC0C8E01E4C97F9002B7A4E /* LCNAudioPlayDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNAudioPlayDelegate.h; sourceTree = "<group>"; };
 		6EDCF0141DCA2C3A0021FC5C /* dots22.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dots22.gif; sourceTree = "<group>"; };
 		6EDCF0251DCB75E80021FC5C /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		6EDCF0261DCB75E80021FC5C /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
@@ -223,6 +228,7 @@
 				6E19C2741DB6122600021B1B /* LCNChatKit.h */,
 				6E19C3141DB9C91000021B1B /* LCNChatKit-Prefix.pch */,
 				6E19C2971DB6145E00021B1B /* LCNChatDemo */,
+				6EC0C67D1E4B6A9E002B7A4E /* Manager */,
 				6E28CDA61E4B0DE4000CA101 /* VC */,
 				6E19C2961DB613DC00021B1B /* Views */,
 				6E19C2951DB613DA00021B1B /* Models */,
@@ -284,11 +290,9 @@
 		6E19C2941DB613D800021B1B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				6E19C2831DB6122600021B1B /* LCNMediaItemProtocol.h */,
-				6E19C2881DB6122600021B1B /* LCNMessageModelProtocol.h */,
-				6E19C2981DB616BD00021B1B /* LCNCollectionViewDataSource.h */,
-				6E19C2991DB6171200021B1B /* LCNCollectionViewDelegate.h */,
-				6E19C2A41DB7748800021B1B /* LCNCollectionViewCellDelegate.h */,
+				6EC0C8DE1E4C83EA002B7A4E /* AudioProtocol */,
+				6EC0C67C1E4B69D1002B7A4E /* CollectionViewProtocol */,
+				6EC0C67B1E4B69B0002B7A4E /* ModelProtocols */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -397,6 +401,43 @@
 				6EAE63881E12495B0041EBF4 /* LCNInputBarMoreView.m */,
 			);
 			name = InputBarViews;
+			sourceTree = "<group>";
+		};
+		6EC0C67B1E4B69B0002B7A4E /* ModelProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				6E19C2831DB6122600021B1B /* LCNMediaBubbleDelegate.h */,
+				6E19C2881DB6122600021B1B /* LCNMessageModelDelegate.h */,
+			);
+			name = ModelProtocols;
+			sourceTree = "<group>";
+		};
+		6EC0C67C1E4B69D1002B7A4E /* CollectionViewProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				6E19C2981DB616BD00021B1B /* LCNCollectionViewDataSource.h */,
+				6E19C2991DB6171200021B1B /* LCNCollectionViewDelegate.h */,
+				6E19C2A41DB7748800021B1B /* LCNCollectionViewCellDelegate.h */,
+			);
+			name = CollectionViewProtocol;
+			sourceTree = "<group>";
+		};
+		6EC0C67D1E4B6A9E002B7A4E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				6EC0C67E1E4B6AD6002B7A4E /* LCNAudioManager.h */,
+				6EC0C67F1E4B6AD6002B7A4E /* LCNAudioManager.m */,
+			);
+			name = Manager;
+			sourceTree = "<group>";
+		};
+		6EC0C8DE1E4C83EA002B7A4E /* AudioProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				6EC0C8DF1E4C92A6002B7A4E /* LCNAudioRecordDelegate.h */,
+				6EC0C8E01E4C97F9002B7A4E /* LCNAudioPlayDelegate.h */,
+			);
+			name = AudioProtocol;
 			sourceTree = "<group>";
 		};
 		971F30DC6FE07632822F213F /* Pods */ = {
@@ -616,6 +657,7 @@
 				6E19C2AD1DB7B82600021B1B /* LCNVideoMediaBubble.m in Sources */,
 				6E19C2491DB611F800021B1B /* LCNChatKitViewController.m in Sources */,
 				6E19C28A1DB6122600021B1B /* LCNCollectionViewCell.m in Sources */,
+				6EC0C6801E4B6AD6002B7A4E /* LCNAudioManager.m in Sources */,
 				6E19C28C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m in Sources */,
 				6E19C2461DB611F800021B1B /* AppDelegate.m in Sources */,
 				6E35CAB61DD30538008393CE /* LCNInputBar.m in Sources */,
