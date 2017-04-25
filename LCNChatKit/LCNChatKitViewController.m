@@ -9,6 +9,7 @@
 #import "LCNChatKitViewController.h"
 #import "LCNMessageLayout.h"
 #import "LCNRefreshView.h"
+#import "YYPhotoGroupView.h"
 
 
 @interface LCNChatKitViewController ()
@@ -158,17 +159,47 @@ UICollectionViewDataSourcePrefetching
 
 #pragma mark - LCNCollectionViewCellDelegate
 - (void)cellDidClickAvatar:(LCNCollectionViewCell *)cell{
-    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+//    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
 
 }
 
 - (void)cellDidClickNameLabel:(LCNCollectionViewCell *)cell{
-    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+//    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
 
 }
 
 - (void)cellDidClickBubbleView:(LCNCollectionViewCell *)cell{
-    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+//    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
+    
+    LCNMediaType mediaType = cell.layout.model.mediaType;
+    LCNMessageLayout *layout = cell.layout;
+    switch (mediaType) {
+        case LCNMediaType_Image:
+        {
+            [self showPhotoBrowserWithCell:cell];
+        }
+            break;
+        case LCNMediaType_Audio:
+        {
+            //语音气泡的动画起停控制
+            if([cell.layout.model.mediaBubble isKindOfClass:[LCNAudioMediaBubble class]]){
+                LCNAudioMediaBubble *item = (LCNAudioMediaBubble *)cell.layout.model.mediaBubble;
+                [item startAnimation];
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [item stopAnimation];
+                });
+            }
+        }
+            break;
+        case LCNMediaType_Video:
+        {}
+            break;
+        case LCNMediaType_Location:
+        {}
+            break;
+        default:
+            break;
+    }
 
 }
 
@@ -349,6 +380,32 @@ UICollectionViewDataSourcePrefetching
     _collectionView.contentOffset = offset;
     
     [UIView setAnimationsEnabled:YES];
+}
+
+//图片浏览器
+- (void)showPhotoBrowserWithCell:(LCNCollectionViewCell *)cell{
+    
+    //组装图片浏览Items
+    UIView *fromView = nil;
+    NSMutableArray *itemArray = [NSMutableArray new];
+    for (LCNMessageLayout *layout in _dataSource) {
+        if (layout.model.mediaType == LCNMediaType_Image) {
+            
+            LCNImageMediaBubble *imageBubble = (LCNImageMediaBubble *)layout.model.mediaBubble;
+            YYPhotoGroupItem *item = [YYPhotoGroupItem new];
+            item.thumbView = imageBubble.mediaView;
+            item.largeImageURL = [NSURL URLWithString: imageBubble.imageUrl];
+            item.largeImageSize = CGSizeMake(imageBubble.image_Width, imageBubble.image_Height);
+            [itemArray addObject:item];
+            if (cell.layout.model.mediaBubble.mediaView == item.thumbView) {
+                fromView = item.thumbView;
+            }
+        }
+    }
+
+    //弹出图片浏览控件
+    YYPhotoGroupView *v = [[YYPhotoGroupView alloc] initWithGroupItems:itemArray];
+    [v presentFromImageView:fromView toContainer:self.view animated:YES completion:nil];
 }
 
 #pragma mark - UIMenuController Action

@@ -81,11 +81,10 @@ static CGFloat const kDefaultImageHeight = 75;
                 //制作接受进度指示
                 
             } transform:^UIImage * _Nullable(UIImage * _Nonnull image, NSURL * _Nonnull url) {
-                return nil;
+                return image;
             } completion:^(UIImage * _Nullable image, NSURL * _Nonnull url, YYWebImageFromType from, YYWebImageStage stage, NSError * _Nullable error) {
                 weak_self.image = image;
                 [weak_self.indicatorView stopAnimating];
-
             }];
         }
         else{

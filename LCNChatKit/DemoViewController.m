@@ -32,33 +32,23 @@
 }
 
 #pragma mark - LCNCollectionViewCellDelegate
-- (void)cellDidClickAvatar:(LCNCollectionViewCell *)cell{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-}
-
-- (void)cellDidClickNameLabel:(LCNCollectionViewCell *)cell{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-}
-
-- (void)cellDidClickBubbleView:(LCNCollectionViewCell *)cell{
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-    
-    LCNMessageLayout *layout = cell.layout;
-    
-    //语音气泡的动画起停控制
-    if([layout.model.mediaBubble isKindOfClass:[LCNAudioMediaBubble class]]){
-        LCNAudioMediaBubble *item = (LCNAudioMediaBubble *)layout.model.mediaBubble;
-        [item startAnimation];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [item stopAnimation];
-        });
-    }
-}
-
-- (void)cellDidLongPressBubbleView:(LCNCollectionViewCell *)cell{
-    [super cellDidLongPressBubbleView:cell];
-    NSLog(@"%s",__PRETTY_FUNCTION__);
-}
+//- (void)cellDidClickAvatar:(LCNCollectionViewCell *)cell{
+//    NSLog(@"%s",__PRETTY_FUNCTION__);
+//}
+//
+//- (void)cellDidClickNameLabel:(LCNCollectionViewCell *)cell{
+//    NSLog(@"%s",__PRETTY_FUNCTION__);
+//}
+//
+//- (void)cellDidClickBubbleView:(LCNCollectionViewCell *)cell{
+//    NSLog(@"%s",__PRETTY_FUNCTION__);
+//    
+//    }
+//
+//- (void)cellDidLongPressBubbleView:(LCNCollectionViewCell *)cell{
+//    [super cellDidLongPressBubbleView:cell];
+//    NSLog(@"%s",__PRETTY_FUNCTION__);
+//}
 
 #pragma mark - UIMenuController Action
 - (void)menu_copy:(LCNMessageModel *)mdoel{
@@ -110,7 +100,8 @@
                 break;
             }
             case LCNMediaType_Image:{
-                LCNImageMediaBubble *imageMediaItem = [[LCNImageMediaBubble alloc] initWithImage:[UIImage imageNamed:@"test.jpg"] width:200 height:100];
+//                LCNImageMediaBubble *imageMediaItem = [[LCNImageMediaBubble alloc] initWithImage:[UIImage imageNamed:@"test.jpg"] width:200 height:100];
+                LCNImageMediaBubble *imageMediaItem = [[LCNImageMediaBubble alloc] initWithImageUrl:@"https://img3.doubanio.com/view/note/large/public/p42212620.jpg" width:200 height:100];
                 imageMediaItem.isOutgoing = model.isOutgoing;
                 model.mediaBubble = imageMediaItem;
                 break;

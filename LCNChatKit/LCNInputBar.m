@@ -86,9 +86,9 @@ typedef NS_ENUM(NSUInteger, INPUTBARBUTTON_TAG) {
             textView.linePositionModifier = lineModeify;
             textView.returnKeyType = UIReturnKeySend;
             textView.enablesReturnKeyAutomatically = YES;
-            textView.font = [UIFont systemFontOfSize:18];
+            textView.font = [UIFont systemFontOfSize:17];
             textView.backgroundColor = [UIColor whiteColor];
-            textView.textVerticalAlignment = YYTextVerticalAlignmentCenter;
+            textView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
             textView.size = CGSizeMake(kScreenWidth - 40 - 3 *kLCNInputBarButtonWH, 50 - 16);
             textView.top = 8;
             textView.left = kLCNInputBarButtonWH + 15;

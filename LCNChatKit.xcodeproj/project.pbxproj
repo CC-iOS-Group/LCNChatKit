@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E06DA371EADA6DA001EF166 /* YYPhotoGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DA361EADA6DA001EF166 /* YYPhotoGroupView.m */; };
 		6E0EB9B31DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EB9B21DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m */; };
 		6E19C2431DB611F800021B1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2421DB611F800021B1B /* main.m */; };
 		6E19C2461DB611F800021B1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2451DB611F800021B1B /* AppDelegate.m */; };
@@ -71,6 +72,8 @@
 /* Begin PBXFileReference section */
 		3AA0E421CFF339F35D186A07 /* Pods-LCNChatKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.debug.xcconfig"; sourceTree = "<group>"; };
 		664A8137201E41CB75DB0D84 /* Pods-LCNChatKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.release.xcconfig"; sourceTree = "<group>"; };
+		6E06DA351EADA6DA001EF166 /* YYPhotoGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPhotoGroupView.h; sourceTree = "<group>"; };
+		6E06DA361EADA6DA001EF166 /* YYPhotoGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPhotoGroupView.m; sourceTree = "<group>"; };
 		6E0EB9B11DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgBubbleMaskMaker.h; sourceTree = "<group>"; };
 		6E0EB9B21DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgBubbleMaskMaker.m; sourceTree = "<group>"; };
 		6E19C23E1DB611F800021B1B /* LCNChatKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCNChatKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +314,8 @@
 			children = (
 				6E19C29F1DB7603800021B1B /* YYFPSLabel.h */,
 				6E19C2A01DB7603800021B1B /* YYFPSLabel.m */,
+				6E06DA351EADA6DA001EF166 /* YYPhotoGroupView.h */,
+				6E06DA361EADA6DA001EF166 /* YYPhotoGroupView.m */,
 				6E19C2751DB6122600021B1B /* LCNCollectionView.h */,
 				6E19C2761DB6122600021B1B /* LCNCollectionView.m */,
 				6E35CAB71DD3053D008393CE /* InputBar */,
@@ -666,6 +671,7 @@
 				6E19C2431DB611F800021B1B /* main.m in Sources */,
 				6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */,
 				6E19C2A71DB7775400021B1B /* LCNImageMediaBubble.m in Sources */,
+				6E06DA371EADA6DA001EF166 /* YYPhotoGroupView.m in Sources */,
 				6E19C2901DB6122600021B1B /* LCNMessageLayout.m in Sources */,
 				6E19C2B31DB7B93A00021B1B /* LCNContactMediaBubble.m in Sources */,
 				6E19C2AA1DB7B81000021B1B /* LCNAudioMediaBubble.m in Sources */,

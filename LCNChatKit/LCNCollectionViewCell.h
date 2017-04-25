@@ -25,7 +25,7 @@
 @property (nonatomic, strong) UILabel *timeLabel;
 @property (nonatomic, strong) UIImageView *avatarImageView;
 @property (nonatomic, strong) YYLabel *nameLabel;
-@property (nonatomic, strong) UIView *mediaContainerrView;
+@property (nonatomic, strong) UIView *mediaContainerrView;///>气泡视图
 @property (nonatomic, strong) YYLabel *statusLabel;
 
 @property (nonatomic, strong) UIImageView *unreadRedPointView;
