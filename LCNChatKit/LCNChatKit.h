@@ -32,8 +32,6 @@
 #import "LCNEmojiMedaiBubble.h"
 #import "LCNShareMediaBubble.h"
 
-
-
 //Layouts
 #import "LCNCollectionViewLayoutAttributes.h"
 #import "LCNMessageLayout.h"

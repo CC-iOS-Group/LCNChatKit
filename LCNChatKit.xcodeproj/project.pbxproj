@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6E06DA371EADA6DA001EF166 /* YYPhotoGroupView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DA361EADA6DA001EF166 /* YYPhotoGroupView.m */; };
+		6E06DCDC1EAEED89001EF166 /* LCNDeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DCDB1EAEED89001EF166 /* LCNDeviceManager.m */; };
+		6E06DD391EB0982D001EF166 /* amrFileCodec.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DD2E1EB0982D001EF166 /* amrFileCodec.mm */; };
+		6E06DD3A1EB0982D001EF166 /* EMVoiceConverter.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DD301EB0982D001EF166 /* EMVoiceConverter.mm */; };
+		6E06DD3B1EB0982D001EF166 /* LCNUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DD321EB0982D001EF166 /* LCNUtils.m */; };
+		6E06DD3C1EB0982D001EF166 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E06DD331EB0982D001EF166 /* libopencore-amrnb.a */; };
+		6E06DD3D1EB0982D001EF166 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E06DD341EB0982D001EF166 /* libopencore-amrwb.a */; };
+		6E06DD3E1EB0982D001EF166 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DD361EB0982D001EF166 /* UIView+Toast.m */; };
+		6E06DD3F1EB0982D001EF166 /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DD381EB0982D001EF166 /* wav.mm */; };
 		6E0EB9B31DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EB9B21DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m */; };
 		6E19C2431DB611F800021B1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2421DB611F800021B1B /* main.m */; };
 		6E19C2461DB611F800021B1B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2451DB611F800021B1B /* AppDelegate.m */; };
@@ -74,6 +82,25 @@
 		664A8137201E41CB75DB0D84 /* Pods-LCNChatKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCNChatKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-LCNChatKit/Pods-LCNChatKit.release.xcconfig"; sourceTree = "<group>"; };
 		6E06DA351EADA6DA001EF166 /* YYPhotoGroupView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYPhotoGroupView.h; sourceTree = "<group>"; };
 		6E06DA361EADA6DA001EF166 /* YYPhotoGroupView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYPhotoGroupView.m; sourceTree = "<group>"; };
+		6E06DCDA1EAEED89001EF166 /* LCNDeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNDeviceManager.h; sourceTree = "<group>"; };
+		6E06DCDB1EAEED89001EF166 /* LCNDeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNDeviceManager.m; sourceTree = "<group>"; };
+		6E06DCF41EB0745F001EF166 /* LCNConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCNConfig.h; sourceTree = "<group>"; };
+		6E06DD2D1EB0982D001EF166 /* amrFileCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amrFileCodec.h; sourceTree = "<group>"; };
+		6E06DD2E1EB0982D001EF166 /* amrFileCodec.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = amrFileCodec.mm; sourceTree = "<group>"; };
+		6E06DD2F1EB0982D001EF166 /* EMVoiceConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMVoiceConverter.h; sourceTree = "<group>"; };
+		6E06DD301EB0982D001EF166 /* EMVoiceConverter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EMVoiceConverter.mm; sourceTree = "<group>"; };
+		6E06DD311EB0982D001EF166 /* LCNUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNUtils.h; sourceTree = "<group>"; };
+		6E06DD321EB0982D001EF166 /* LCNUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNUtils.m; sourceTree = "<group>"; };
+		6E06DD331EB0982D001EF166 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		6E06DD341EB0982D001EF166 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
+		6E06DD351EB0982D001EF166 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		6E06DD361EB0982D001EF166 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		6E06DD371EB0982D001EF166 /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
+		6E06DD381EB0982D001EF166 /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
+		6E06DD431EB09877001EF166 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
+		6E06DD441EB09877001EF166 /* interf_enc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_enc.h; sourceTree = "<group>"; };
+		6E06DD461EB098B2001EF166 /* dec_if.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dec_if.h; sourceTree = "<group>"; };
+		6E06DD471EB098B2001EF166 /* if_rom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = if_rom.h; sourceTree = "<group>"; };
 		6E0EB9B11DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgBubbleMaskMaker.h; sourceTree = "<group>"; };
 		6E0EB9B21DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgBubbleMaskMaker.m; sourceTree = "<group>"; };
 		6E19C23E1DB611F800021B1B /* LCNChatKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCNChatKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +196,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EAE637E1E1205890041EBF4 /* QuartzCore.framework in Frameworks */,
+				6E06DD3C1EB0982D001EF166 /* libopencore-amrnb.a in Frameworks */,
+				6E06DD3D1EB0982D001EF166 /* libopencore-amrwb.a in Frameworks */,
 				BC68B187316B7B7D60F8B32B /* libPods-LCNChatKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +219,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E06DD2C1EB09808001EF166 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6E06DD481EB098F4001EF166 /* Toast */,
+				6E06DD401EB09840001EF166 /* VoiceConvert */,
+				6E06DD311EB0982D001EF166 /* LCNUtils.h */,
+				6E06DD321EB0982D001EF166 /* LCNUtils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		6E06DD401EB09840001EF166 /* VoiceConvert */ = {
+			isa = PBXGroup;
+			children = (
+				6E06DD2F1EB0982D001EF166 /* EMVoiceConverter.h */,
+				6E06DD301EB0982D001EF166 /* EMVoiceConverter.mm */,
+				6E06DD451EB0989A001EF166 /* opencore-amrwb */,
+				6E06DD421EB0985C001EF166 /* opencore-amrnb */,
+				6E06DD411EB09849001EF166 /* amrwapper */,
+			);
+			name = VoiceConvert;
+			sourceTree = "<group>";
+		};
+		6E06DD411EB09849001EF166 /* amrwapper */ = {
+			isa = PBXGroup;
+			children = (
+				6E06DD371EB0982D001EF166 /* wav.h */,
+				6E06DD381EB0982D001EF166 /* wav.mm */,
+				6E06DD2D1EB0982D001EF166 /* amrFileCodec.h */,
+				6E06DD2E1EB0982D001EF166 /* amrFileCodec.mm */,
+			);
+			name = amrwapper;
+			sourceTree = "<group>";
+		};
+		6E06DD421EB0985C001EF166 /* opencore-amrnb */ = {
+			isa = PBXGroup;
+			children = (
+				6E06DD431EB09877001EF166 /* interf_dec.h */,
+				6E06DD441EB09877001EF166 /* interf_enc.h */,
+				6E06DD331EB0982D001EF166 /* libopencore-amrnb.a */,
+			);
+			name = "opencore-amrnb";
+			sourceTree = "<group>";
+		};
+		6E06DD451EB0989A001EF166 /* opencore-amrwb */ = {
+			isa = PBXGroup;
+			children = (
+				6E06DD461EB098B2001EF166 /* dec_if.h */,
+				6E06DD471EB098B2001EF166 /* if_rom.h */,
+				6E06DD341EB0982D001EF166 /* libopencore-amrwb.a */,
+			);
+			name = "opencore-amrwb";
+			sourceTree = "<group>";
+		};
+		6E06DD481EB098F4001EF166 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				6E06DD351EB0982D001EF166 /* UIView+Toast.h */,
+				6E06DD361EB0982D001EF166 /* UIView+Toast.m */,
+			);
+			name = Toast;
+			sourceTree = "<group>";
+		};
 		6E0EB9B01DBF54870050DF58 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +322,8 @@
 			children = (
 				6E19C2741DB6122600021B1B /* LCNChatKit.h */,
 				6E19C3141DB9C91000021B1B /* LCNChatKit-Prefix.pch */,
+				6E06DCF41EB0745F001EF166 /* LCNConfig.h */,
+				6E06DD2C1EB09808001EF166 /* Utils */,
 				6E19C2971DB6145E00021B1B /* LCNChatDemo */,
 				6EC0C67D1E4B6A9E002B7A4E /* Manager */,
 				6E28CDA61E4B0DE4000CA101 /* VC */,
@@ -432,6 +526,8 @@
 			children = (
 				6EC0C67E1E4B6AD6002B7A4E /* LCNAudioManager.h */,
 				6EC0C67F1E4B6AD6002B7A4E /* LCNAudioManager.m */,
+				6E06DCDA1EAEED89001EF166 /* LCNDeviceManager.h */,
+				6E06DCDB1EAEED89001EF166 /* LCNDeviceManager.m */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -655,12 +751,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EAE63891E12495B0041EBF4 /* LCNInputBarMoreView.m in Sources */,
+				6E06DD3E1EB0982D001EF166 /* UIView+Toast.m in Sources */,
 				6E0EB9B31DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m in Sources */,
 				6EFDF3FB1E4863CE0063BA8C /* LCNRefreshView.m in Sources */,
 				6E19C28B1DB6122600021B1B /* LCNCollectionViewFlowLayout.m in Sources */,
 				6E23EE351DD9985600F42336 /* TestViewController.m in Sources */,
 				6E19C2AD1DB7B82600021B1B /* LCNVideoMediaBubble.m in Sources */,
 				6E19C2491DB611F800021B1B /* LCNChatKitViewController.m in Sources */,
+				6E06DD3B1EB0982D001EF166 /* LCNUtils.m in Sources */,
 				6E19C28A1DB6122600021B1B /* LCNCollectionViewCell.m in Sources */,
 				6EC0C6801E4B6AD6002B7A4E /* LCNAudioManager.m in Sources */,
 				6E19C28C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m in Sources */,
@@ -668,16 +766,20 @@
 				6E35CAB61DD30538008393CE /* LCNInputBar.m in Sources */,
 				6E19C2B61DB7B95800021B1B /* LCNShareMediaBubble.m in Sources */,
 				6E19C2891DB6122600021B1B /* LCNCollectionView.m in Sources */,
+				6E06DD3A1EB0982D001EF166 /* EMVoiceConverter.mm in Sources */,
 				6E19C2431DB611F800021B1B /* main.m in Sources */,
 				6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */,
 				6E19C2A71DB7775400021B1B /* LCNImageMediaBubble.m in Sources */,
 				6E06DA371EADA6DA001EF166 /* YYPhotoGroupView.m in Sources */,
 				6E19C2901DB6122600021B1B /* LCNMessageLayout.m in Sources */,
 				6E19C2B31DB7B93A00021B1B /* LCNContactMediaBubble.m in Sources */,
+				6E06DCDC1EAEED89001EF166 /* LCNDeviceManager.m in Sources */,
+				6E06DD3F1EB0982D001EF166 /* wav.mm in Sources */,
 				6E19C2AA1DB7B81000021B1B /* LCNAudioMediaBubble.m in Sources */,
 				6EAE63861E1249470041EBF4 /* LCNInputBarFaceView.m in Sources */,
 				6E19C2B01DB7B8B000021B1B /* LCNLocationMediaBubble.m in Sources */,
 				6EDCF0271DCB75E80021FC5C /* DemoViewController.m in Sources */,
+				6E06DD391EB0982D001EF166 /* amrFileCodec.mm in Sources */,
 				6E19C2B91DB7B97500021B1B /* LCNEmojiMedaiBubble.m in Sources */,
 				6E19C28F1DB6122600021B1B /* LCNMediaBubble.m in Sources */,
 				6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */,
@@ -847,6 +949,12 @@
 				INFOPLIST_FILE = LCNChatKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LCNChatKit/opencore-amrnb",
+					"$(PROJECT_DIR)/LCNChatKit/opencore-amrwb",
+					"$(PROJECT_DIR)/LCNChatKit",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.enrecul.LCNChatKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -869,6 +977,12 @@
 				INFOPLIST_FILE = LCNChatKit/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LCNChatKit/opencore-amrnb",
+					"$(PROJECT_DIR)/LCNChatKit/opencore-amrwb",
+					"$(PROJECT_DIR)/LCNChatKit",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.enrecul.LCNChatKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -172,9 +172,9 @@ UICollectionViewDataSourcePrefetching
 //    NSAssert(NO, @"ERROR: required method not implemented: %s", __PRETTY_FUNCTION__);
     
     LCNMediaType mediaType = cell.layout.model.mediaType;
-    LCNMessageLayout *layout = cell.layout;
     switch (mediaType) {
         case LCNMediaType_Image:
+        case LCNMediaType_Emoji:
         {
             [self showPhotoBrowserWithCell:cell];
         }
@@ -385,6 +385,8 @@ UICollectionViewDataSourcePrefetching
 //图片浏览器
 - (void)showPhotoBrowserWithCell:(LCNCollectionViewCell *)cell{
     
+    //Todo: _dataSource巨大的话，会引起CPU峰值，限制图片浏览数量。
+    
     //组装图片浏览Items
     UIView *fromView = nil;
     NSMutableArray *itemArray = [NSMutableArray new];
@@ -396,6 +398,17 @@ UICollectionViewDataSourcePrefetching
             item.thumbView = imageBubble.mediaView;
             item.largeImageURL = [NSURL URLWithString: imageBubble.imageUrl];
             item.largeImageSize = CGSizeMake(imageBubble.image_Width, imageBubble.image_Height);
+            [itemArray addObject:item];
+            if (cell.layout.model.mediaBubble.mediaView == item.thumbView) {
+                fromView = item.thumbView;
+            }
+        }
+        else if(layout.model.mediaType == LCNMediaType_Emoji){
+            LCNEmojiMedaiBubble *emojiBubble = (LCNEmojiMedaiBubble *)layout.model.mediaBubble;
+            YYPhotoGroupItem *item = [YYPhotoGroupItem new];
+            item.thumbView = emojiBubble.mediaView;
+            item.largeImageURL = [NSURL URLWithString: emojiBubble.animatedImageUrl];
+            item.largeImageSize = emojiBubble.imageSize;
             [itemArray addObject:item];
             if (cell.layout.model.mediaBubble.mediaView == item.thumbView) {
                 fromView = item.thumbView;

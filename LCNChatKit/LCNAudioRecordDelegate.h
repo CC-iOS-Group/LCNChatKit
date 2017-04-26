@@ -20,7 +20,7 @@
 - (void)audioRecordAuthorizationDidGranted;
 
 //录音成功开始
-- (void)audioRecordDidStartedWithError:(NSError *)error;
+- (void)audioRecordDidStartRecordingWithError:(NSError *)error;
 
 //录音音量发生变化
 - (void)audioRecordDidUpdateVoiceMeter:(double)averagePower;
