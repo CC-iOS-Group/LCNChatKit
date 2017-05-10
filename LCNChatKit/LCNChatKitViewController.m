@@ -76,7 +76,7 @@ UICollectionViewDataSourcePrefetching
 
 //section内item数量
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return _dataSource.count;
+    return self.chatMessagesManager.messagesCount;
 }
 
 //CollectionView Header
@@ -103,8 +103,7 @@ UICollectionViewDataSourcePrefetching
 //cellForItem
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
-    
+    LCNMessageLayout *layout = [self.chatMessagesManager messageLayoutAtIndexPath:indexPath];
     LCNCollectionViewCell *cell = nil;
     if (!layout.model.isOutgoing) {
         cell = (LCNCollectionViewIncomingCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LCNCollectionViewIncomingCell class]) forIndexPath:indexPath];
@@ -136,7 +135,7 @@ UICollectionViewDataSourcePrefetching
 //CollectionViewCell 将要被用于展示
 -(void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
+    LCNMessageLayout *layout = [self.chatMessagesManager messageLayoutAtIndexPath:indexPath];
     
     //表情气泡即将展示时，开启动画
     if (layout.model.mediaType == LCNMediaType_Emoji) {
@@ -150,7 +149,7 @@ UICollectionViewDataSourcePrefetching
 -(void)collectionView:(UICollectionView *)collectionView didEndDisplayingCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
     
     //表情气泡离开展示区时，关闭动画
-    LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
+    LCNMessageLayout *layout = [self.chatMessagesManager messageLayoutAtIndexPath:indexPath];
     if (layout.model.mediaType == LCNMediaType_Emoji) {
         LCNEmojiMedaiBubble *emojiBubble = (LCNEmojiMedaiBubble*)layout.model.mediaBubble;
         [emojiBubble.imageView stopAnimating];
@@ -211,7 +210,7 @@ UICollectionViewDataSourcePrefetching
 //CollectionViewCell高度设置
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     
-    LCNMessageLayout *layout = [_dataSource objectAtIndex:indexPath.row];
+    LCNMessageLayout *layout = [self.chatMessagesManager messageLayoutAtIndexPath:indexPath];;
     CGFloat cellHeight = layout.cellHeight;
     
     return CGSizeMake(kScreenWidth, cellHeight);
@@ -225,7 +224,7 @@ UICollectionViewDataSourcePrefetching
     if (!_isLoading &&!_isPulling
         && (scrollView.isDragging || scrollView.isDecelerating)
         && scrollView.contentOffset.y <= 20 - scrollView.contentInset.top
-        && self.dataSource.count > 0) {
+        && [self.chatMessagesManager messagesCount] > 0) {
         _isPulling = YES;
     }
 }
@@ -369,7 +368,7 @@ UICollectionViewDataSourcePrefetching
         
         //插入数据源
         [_collectionView performBatchUpdates:^{
-            [_dataSource insertObjects:layouts atIndex:0];
+            [self.chatMessagesManager insertMessagesIntoDataSource:layouts atIndex:0];
             [_collectionView insertItemsAtIndexPaths:indexPaths];
         } completion:^(BOOL finished) {
             _isLoadMoreCompleted = YES;
@@ -385,12 +384,12 @@ UICollectionViewDataSourcePrefetching
 //图片浏览器
 - (void)showPhotoBrowserWithCell:(LCNCollectionViewCell *)cell{
     
-    //Todo: _dataSource巨大的话，会引起CPU峰值，限制图片浏览数量。
+    //Todo: 图片消息数量巨大的话，会引起CPU峰值，限制图片浏览数量。
     
     //组装图片浏览Items
     UIView *fromView = nil;
     NSMutableArray *itemArray = [NSMutableArray new];
-    for (LCNMessageLayout *layout in _dataSource) {
+    for (LCNMessageLayout *layout in [self.chatMessagesManager dataSource]) {
         if (layout.model.mediaType == LCNMediaType_Image) {
             
             LCNImageMediaBubble *imageBubble = (LCNImageMediaBubble *)layout.model.mediaBubble;
@@ -444,6 +443,16 @@ UICollectionViewDataSourcePrefetching
 
 
 #pragma mark - Setter & Getter
+
+//ChatMessagesManager
+-(LCNChatMessagesManager *)chatMessagesManager{
+    if (nil == _chatMessagesManager) {
+        _chatMessagesManager = [LCNChatMessagesManager new];
+    }
+    return _chatMessagesManager;
+}
+
+
 //CollectionView
 -(LCNCollectionView *)collectionView{
     if(!_collectionView){

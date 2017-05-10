@@ -1,14 +1,17 @@
 PODS:
+  - SVProgressHUD (2.1.2)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - SVProgressHUD
   - YYKit
 
 SPEC CHECKSUMS:
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c4d73e27eca3c4210f2e05f172d646e02a2af3dd
+PODFILE CHECKSUM: 2cb569284ceba53183d09a145f062d6e81cc6b6d
 
 COCOAPODS: 1.1.1

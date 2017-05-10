@@ -14,7 +14,6 @@
 		6E06DD3B1EB0982D001EF166 /* LCNUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DD321EB0982D001EF166 /* LCNUtils.m */; };
 		6E06DD3C1EB0982D001EF166 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E06DD331EB0982D001EF166 /* libopencore-amrnb.a */; };
 		6E06DD3D1EB0982D001EF166 /* libopencore-amrwb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E06DD341EB0982D001EF166 /* libopencore-amrwb.a */; };
-		6E06DD3E1EB0982D001EF166 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DD361EB0982D001EF166 /* UIView+Toast.m */; };
 		6E06DD3F1EB0982D001EF166 /* wav.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6E06DD381EB0982D001EF166 /* wav.mm */; };
 		6E0EB9B31DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0EB9B21DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m */; };
 		6E19C2431DB611F800021B1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C2421DB611F800021B1B /* main.m */; };
@@ -45,6 +44,7 @@
 		6E19C3171DBA01C700021B1B /* LCNTextMediaBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E19C3161DBA01C700021B1B /* LCNTextMediaBubble.m */; };
 		6E23EE351DD9985600F42336 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E23EE341DD9985600F42336 /* TestViewController.m */; };
 		6E35CAB61DD30538008393CE /* LCNInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E35CAB51DD30538008393CE /* LCNInputBar.m */; };
+		6E5C531C1EC2F0C100D9E03C /* LCNChatMessagesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E5C531B1EC2F0C100D9E03C /* LCNChatMessagesManager.m */; };
 		6E60D72F1DC09ED9004DCFF2 /* LCNMsgContentHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */; };
 		6E89EA921DC9B492005EFAFD /* niconiconi@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */; };
 		6EAE637E1E1205890041EBF4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAE637D1E1205890041EBF4 /* QuartzCore.framework */; };
@@ -55,6 +55,7 @@
 		6EC0C6801E4B6AD6002B7A4E /* LCNAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EC0C67F1E4B6AD6002B7A4E /* LCNAudioManager.m */; };
 		6EDCF0151DCA2C3A0021FC5C /* dots22.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EDCF0141DCA2C3A0021FC5C /* dots22.gif */; };
 		6EDCF0271DCB75E80021FC5C /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDCF0261DCB75E80021FC5C /* DemoViewController.m */; };
+		6EE0D8581EBB0F6300A5B651 /* HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0D8571EBB0F6300A5B651 /* HUD.m */; };
 		6EE1DC1D1DC9E94A00480A18 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6EE1DC1C1DC9E94A00480A18 /* giphy.gif */; };
 		6EFDF3FB1E4863CE0063BA8C /* LCNRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFDF3FA1E4863CE0063BA8C /* LCNRefreshView.m */; };
 		BC68B187316B7B7D60F8B32B /* libPods-LCNChatKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D92FEE436CC2D0F01296A9 /* libPods-LCNChatKit.a */; };
@@ -93,8 +94,6 @@
 		6E06DD321EB0982D001EF166 /* LCNUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNUtils.m; sourceTree = "<group>"; };
 		6E06DD331EB0982D001EF166 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
 		6E06DD341EB0982D001EF166 /* libopencore-amrwb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrwb.a"; sourceTree = "<group>"; };
-		6E06DD351EB0982D001EF166 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
-		6E06DD361EB0982D001EF166 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		6E06DD371EB0982D001EF166 /* wav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = wav.h; sourceTree = "<group>"; };
 		6E06DD381EB0982D001EF166 /* wav.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = wav.mm; sourceTree = "<group>"; };
 		6E06DD431EB09877001EF166 /* interf_dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = interf_dec.h; sourceTree = "<group>"; };
@@ -166,6 +165,8 @@
 		6E23EE341DD9985600F42336 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		6E35CAB41DD30538008393CE /* LCNInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNInputBar.h; sourceTree = "<group>"; };
 		6E35CAB51DD30538008393CE /* LCNInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNInputBar.m; sourceTree = "<group>"; };
+		6E5C531A1EC2F0C100D9E03C /* LCNChatMessagesManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNChatMessagesManager.h; sourceTree = "<group>"; };
+		6E5C531B1EC2F0C100D9E03C /* LCNChatMessagesManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNChatMessagesManager.m; sourceTree = "<group>"; };
 		6E60D72D1DC09ED9004DCFF2 /* LCNMsgContentHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNMsgContentHelper.h; sourceTree = "<group>"; };
 		6E60D72E1DC09ED9004DCFF2 /* LCNMsgContentHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNMsgContentHelper.m; sourceTree = "<group>"; };
 		6E89EA911DC9B492005EFAFD /* niconiconi@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "niconiconi@2x.gif"; sourceTree = "<group>"; };
@@ -184,6 +185,8 @@
 		6EDCF0141DCA2C3A0021FC5C /* dots22.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dots22.gif; sourceTree = "<group>"; };
 		6EDCF0251DCB75E80021FC5C /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
 		6EDCF0261DCB75E80021FC5C /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
+		6EE0D8561EBB0F6300A5B651 /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		6EE0D8571EBB0F6300A5B651 /* HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUD.m; sourceTree = "<group>"; };
 		6EE1DC1C1DC9E94A00480A18 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 		6EFDF3F91E4863CE0063BA8C /* LCNRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCNRefreshView.h; sourceTree = "<group>"; };
 		6EFDF3FA1E4863CE0063BA8C /* LCNRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCNRefreshView.m; sourceTree = "<group>"; };
@@ -222,7 +225,7 @@
 		6E06DD2C1EB09808001EF166 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				6E06DD481EB098F4001EF166 /* Toast */,
+				6EE0D8551EBB0EB800A5B651 /* HUD */,
 				6E06DD401EB09840001EF166 /* VoiceConvert */,
 				6E06DD311EB0982D001EF166 /* LCNUtils.h */,
 				6E06DD321EB0982D001EF166 /* LCNUtils.m */,
@@ -271,15 +274,6 @@
 				6E06DD341EB0982D001EF166 /* libopencore-amrwb.a */,
 			);
 			name = "opencore-amrwb";
-			sourceTree = "<group>";
-		};
-		6E06DD481EB098F4001EF166 /* Toast */ = {
-			isa = PBXGroup;
-			children = (
-				6E06DD351EB0982D001EF166 /* UIView+Toast.h */,
-				6E06DD361EB0982D001EF166 /* UIView+Toast.m */,
-			);
-			name = Toast;
 			sourceTree = "<group>";
 		};
 		6E0EB9B01DBF54870050DF58 /* Helper */ = {
@@ -528,6 +522,8 @@
 				6EC0C67F1E4B6AD6002B7A4E /* LCNAudioManager.m */,
 				6E06DCDA1EAEED89001EF166 /* LCNDeviceManager.h */,
 				6E06DCDB1EAEED89001EF166 /* LCNDeviceManager.m */,
+				6E5C531A1EC2F0C100D9E03C /* LCNChatMessagesManager.h */,
+				6E5C531B1EC2F0C100D9E03C /* LCNChatMessagesManager.m */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -539,6 +535,15 @@
 				6EC0C8E01E4C97F9002B7A4E /* LCNAudioPlayDelegate.h */,
 			);
 			name = AudioProtocol;
+			sourceTree = "<group>";
+		};
+		6EE0D8551EBB0EB800A5B651 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				6EE0D8561EBB0F6300A5B651 /* HUD.h */,
+				6EE0D8571EBB0F6300A5B651 /* HUD.m */,
+			);
+			name = HUD;
 			sourceTree = "<group>";
 		};
 		971F30DC6FE07632822F213F /* Pods */ = {
@@ -751,7 +756,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EAE63891E12495B0041EBF4 /* LCNInputBarMoreView.m in Sources */,
-				6E06DD3E1EB0982D001EF166 /* UIView+Toast.m in Sources */,
 				6E0EB9B31DBF54A80050DF58 /* LCNMsgBubbleMaskMaker.m in Sources */,
 				6EFDF3FB1E4863CE0063BA8C /* LCNRefreshView.m in Sources */,
 				6E19C28B1DB6122600021B1B /* LCNCollectionViewFlowLayout.m in Sources */,
@@ -762,6 +766,7 @@
 				6E19C28A1DB6122600021B1B /* LCNCollectionViewCell.m in Sources */,
 				6EC0C6801E4B6AD6002B7A4E /* LCNAudioManager.m in Sources */,
 				6E19C28C1DB6122600021B1B /* LCNCollectionViewIncomingCell.m in Sources */,
+				6EE0D8581EBB0F6300A5B651 /* HUD.m in Sources */,
 				6E19C2461DB611F800021B1B /* AppDelegate.m in Sources */,
 				6E35CAB61DD30538008393CE /* LCNInputBar.m in Sources */,
 				6E19C2B61DB7B95800021B1B /* LCNShareMediaBubble.m in Sources */,
@@ -784,6 +789,7 @@
 				6E19C28F1DB6122600021B1B /* LCNMediaBubble.m in Sources */,
 				6E19C2A11DB7603800021B1B /* YYFPSLabel.m in Sources */,
 				6E19C28E1DB6122600021B1B /* LCNCollectionViewOutgoingCell.m in Sources */,
+				6E5C531C1EC2F0C100D9E03C /* LCNChatMessagesManager.m in Sources */,
 				6E19C28D1DB6122600021B1B /* LCNCollectionViewLayoutAttributes.m in Sources */,
 				6EBA554E1DC18F2D00588039 /* LCNMsgHelper.m in Sources */,
 				6E19C2911DB6122600021B1B /* LCNMessageModel.m in Sources */,

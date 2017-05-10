@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SVProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YYKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C87036259F4A8CC37C4D72B3FA3B22D7</key>
+		<key>161D1DB380840E2D5E826B6DCE791055</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F861ABE699C8D3E71C4391AC01493B33</key>
+		<key>3D10E5755EDCD0BD2A9024FC207927A2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78C04A837CE2ABBB92910C2DD498931B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

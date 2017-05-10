@@ -148,7 +148,9 @@
                 _block = dispatch_block_create(0, ^{
                     [delegate audioRecordDidStartRecordingWithError:nil];
                 });
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((MIN_RECORD_TIME_REQUIRED + 0.25) * NSEC_PER_SEC)), dispatch_get_main_queue(), _block);            }
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((MIN_RECORD_TIME_REQUIRED + 0.25) * NSEC_PER_SEC)), dispatch_get_main_queue(), _block);
+            }
             
             
             
@@ -163,17 +165,17 @@
                     break;
                 }
                 case kLCNErrorRecordTypeInitFailed: {
-                    [[UIApplication sharedApplication].keyWindow makeToast:@"无法正常访问您的麦克风"];
+                    [HUD showInfoWithStatus:@"无法正常访问您的麦克风" delay:1];
                     break;
                 }
                 case kLCNErrorRecordTypeMultiRequest:
-                    [[UIApplication sharedApplication].keyWindow makeToast:@"无法正常访问您的麦克风"];
+                    [HUD showInfoWithStatus:@"无法正常访问您的麦克风" delay:1];
                     break;
                 case kLCNErrorRecordTypeCreateAudioFileFailed:
-                    [[UIApplication sharedApplication].keyWindow makeToast:@"创建录音文件出错"];
+                    [HUD showInfoWithStatus:@"创建录音文件出错" delay:1];
                     break;
                 case kLCNErrorRecordTypeRecordError:
-                    [[UIApplication sharedApplication].keyWindow makeToast:@"无法正常访问您的麦克风"];
+                    [HUD showInfoWithStatus:@"无法正常访问您的麦克风" delay:1];
                     break;
                 default:
                     break;
@@ -290,7 +292,7 @@
 
 //弹出提示
 - (void)promptRecordPermissionDeniedAlert {
-    [[UIApplication sharedApplication].keyWindow makeToast:RECORD_AUTHORIZATION_DENIED_TEXT];
+    [HUD showInfoWithStatus:RECORD_AUTHORIZATION_DENIED_TEXT delay:1];
 }
 
 /**
@@ -513,7 +515,8 @@
 // 播放音频，播放音频不需要特殊权限
 - (void)startPlayingWithPath:(NSString *)aFilePath
                     delegate:(id<LCNAudioPlayDelegate>)delegate
-                    userInfo:(id)userInfo continuePlaying:(BOOL)continuePlaying {
+                    userInfo:(id)userInfo
+             continuePlaying:(BOOL)continuePlaying{
     
     [self checkAvailabilityWithFile:aFilePath callback:^(NSError *error) {
         if (!error) {
@@ -538,7 +541,7 @@
                 case kLCNErrorPlayTypeFileNotExist:
                 case kLCNErrorPlayTypePlayError:
                 {
-                    [[UIApplication sharedApplication].keyWindow makeToast:@"遇到问题，暂时无法播放"];
+                    [HUD showInfoWithStatus:@"遇到问题，暂时无法播放" delay:1];
                     break;
                 }
                 default:

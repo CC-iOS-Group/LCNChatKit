@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.dataSource = [self makeFakeDataWithCount:10];
+    [self.chatMessagesManager insertMessagesIntoDataSource: [self makeFakeDataWithCount:10] atIndex:0];
     [self.collectionView reloadData];
     
 }
@@ -75,7 +75,7 @@
 - (NSMutableArray *)makeFakeDataWithCount:(NSInteger)count{
     NSMutableArray *array = [NSMutableArray array];
     
-    LCNMessageLayout *preLayout = [self.dataSource lastObject];
+    LCNMessageLayout *preLayout = [self.chatMessagesManager lastestMessageLayout];
     NSDate *preDate = preLayout ? preLayout.model.date:[NSDate date];
     
     //测试数据制作

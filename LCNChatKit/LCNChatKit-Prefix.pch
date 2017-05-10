@@ -16,7 +16,7 @@
 
 
 #import "YYKit.h"
-#import "UIView+Toast.h"
+#import "HUD.h"
 
 
 #endif /* LCNChatKit_Prefix_pch */

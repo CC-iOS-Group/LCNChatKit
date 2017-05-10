@@ -46,7 +46,7 @@ typedef NS_ENUM(NSInteger, LCNErrorPlayType) {
 //播放
 - (void)startPlayingWithPath:(NSString *)aFilePath
                     delegate:(id<LCNAudioPlayDelegate>)delegate
-                    userinfo:(id)userinfo
+                    userInfo:(id)userinfo
              continuePlaying:(BOOL)continuePlaying;
 
 //关闭整个播放Session

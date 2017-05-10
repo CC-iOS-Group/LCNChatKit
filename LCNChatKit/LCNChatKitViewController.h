@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LCNChatKit.h"
+#import "LCNChatMessagesManager.h"
 
 @interface LCNChatKitViewController : UIViewController
 <LCNCollectionViewDataSource,
@@ -19,8 +20,8 @@ LCNInputBarDelegate>
 //CollectionView
 @property (nonatomic, strong) LCNCollectionView *collectionView;
 
-//数据源
-@property (nonatomic, strong) NSMutableArray<LCNMessageLayout *> *dataSource;
+//数据源管理类
+ @property (nonatomic, strong) LCNChatMessagesManager *chatMessagesManager;
 
 @end
 
