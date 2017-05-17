@@ -19,7 +19,7 @@
 
 - (void)insertMessagesIntoDataSource:(NSArray<LCNMessageLayout *> *)messageArray atIndex:(NSInteger)index;
 
-- (void)deleteMessageFromDataSourceWithMessageModel:(LCNMessageLayout *)messageModel;
+- (void)deleteMessageFromDataSourceWithMessageLayout:(LCNMessageLayout *)messageLayout;
 
 - (void)deleteMessageFromDataSourceWithIndexPath:(NSIndexPath *) indexPath;
 

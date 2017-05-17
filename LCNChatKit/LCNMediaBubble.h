@@ -17,7 +17,8 @@ typedef NS_ENUM(NSUInteger, LCNMediaType) {
     LCNMediaType_Video,
     LCNMediaType_Contact,
     LCNMediaType_Location,
-    LCNMediaType_Share
+    LCNMediaType_Share,
+    LCNMediaType_Recording,
 };
 
 @interface LCNMediaBubble : NSObject <LCNMediaBubbleDelegate>

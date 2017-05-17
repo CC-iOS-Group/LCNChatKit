@@ -20,4 +20,6 @@
 
 #define RECORD_AUTHORIZATION_DENIED_TEXT @"请在iPhone的“设置-隐私-麦克风”选项中，允许访问你的手机麦克风。"
 
+#define RECORD_TIME_TOOSHORT @"说话时间太短"
+
 #endif /* LCNConfig_h */

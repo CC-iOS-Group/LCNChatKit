@@ -94,6 +94,12 @@
 //            imageView;
 //        });
         
+        _indicatorView =({
+            UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [indicatorView startAnimating];
+            indicatorView;
+        });
+        
         //add subviews
         [self.contentView addSubview:self.timeLabel];
         [self.contentView addSubview:self.nameLabel];
@@ -101,6 +107,7 @@
         [self.contentView addSubview:self.mediaContainerrView];
         [self.contentView addSubview:self.statusLabel];
 //        [self.contentView addSubview:self.unreadRedPointView];
+        [self.contentView addSubview:self.indicatorView];
         
     }
     return self;

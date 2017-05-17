@@ -9,6 +9,7 @@
 #import "LCNInputBar.h"
 #import "LCNInputBarFaceView.h"
 #import "LCNInputBarMoreView.h"
+#import "LCNAudioManager.h"
 
 #define kLCNInputBarButtonWH 30
 
@@ -31,10 +32,16 @@ typedef NS_ENUM(NSUInteger, INPUTBARBUTTON_TAG) {
 @property (nonatomic, strong) LCNInputBarFaceView *inputBarFaceView;
 @property (nonatomic, strong) LCNInputBarMoreView *inputBarMoreView;
 
+@property (nonatomic, strong) UIEvent *recordEvent;
+@property (nonatomic, assign) BOOL recordPermissionGranted;//麦克风权限是否获取
+
 
 @end
 
-@implementation LCNInputBar
+@implementation LCNInputBar{
+    CFTimeInterval touchDownTime;
+    dispatch_block_t block;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -107,12 +114,22 @@ typedef NS_ENUM(NSUInteger, INPUTBARBUTTON_TAG) {
             [button setTitle:@"松开 结束" forState:UIControlStateHighlighted];
             [button setBackgroundColor:[UIColor colorWithHexString:@"edf1f6"]];
             [button setTitleColor:[UIColor colorWithHexString:@"7f8389"] forState:UIControlStateNormal];
-            button.frame = _textView.frame;
+            button.size = CGSizeMake(kScreenWidth - 40 - 3 *kLCNInputBarButtonWH, 50 - 16);
+            button.top = 8;
+            button.left = kLCNInputBarButtonWH + 15;
+//            button.frame = _textView.frame;
             button.layer.borderWidth = 0.5;
             button.layer.borderColor = [UIColor colorWithHexString:@"dddddd"].CGColor;
             button.clipsToBounds = YES;
             button.layer.cornerRadius = 5;
             button.hidden = YES;
+            [button addTarget:self action:@selector(recordButtonTouchDown:) forControlEvents:UIControlEventTouchDown];
+            [button addTarget:self action:@selector(recordButtonTouchUpInside:) forControlEvents:UIControlEventTouchUpInside];
+            [button addTarget:self action:@selector(recordButtonTouchUpOutside:) forControlEvents:UIControlEventTouchUpOutside];
+            [button addTarget:self action:@selector(recordButtonTouchCancel:) forControlEvents:UIControlEventTouchCancel];
+            [button addTarget:self action:@selector(recordButtonTouchDragEnter:) forControlEvents:UIControlEventTouchDragEnter];
+            [button addTarget:self action:@selector(recordButtonTouchDragExit:) forControlEvents:UIControlEventTouchDragExit];
+            
             button;
         });
         
@@ -207,6 +224,12 @@ typedef NS_ENUM(NSUInteger, INPUTBARBUTTON_TAG) {
             [self textViewTapped];
         }
     }
+    
+    UIView *view = [super hitTest:point withEvent:event];
+    if (view == self.recordButton) {
+        self.recordEvent = event;
+    }
+    
     return [super hitTest:point withEvent:event];
 }
 
@@ -216,6 +239,137 @@ typedef NS_ENUM(NSUInteger, INPUTBARBUTTON_TAG) {
     [self.textView reloadInputViews];
     [self resetAllButton];
     [self textViewShowCursorAndBecomeFirstResponser];
+}
+
+#pragma mark - RecordButton TouchAction
+
+- (BOOL)recordButtonTouchEventEnded {
+    UITouch *touch = [self.recordEvent.allTouches anyObject];
+    if (touch == nil || touch.phase == UITouchPhaseCancelled || touch.phase == UITouchPhaseEnded) {
+        return YES;
+    }
+    
+    return NO;
+}
+
+- (void)recordActionEnd {
+    self.recordEvent = nil;
+}
+
+- (void)recordButtonTouchDown:(UIButton *)sender{
+    NSLog(@"%s",__func__);
+    @weakify(self);
+
+    self.recordPermissionGranted = NO;
+    __block BOOL firstUseMicrophone = NO;
+    
+    [[LCNAudioManager sharedManager] requestRecordPermission:^(AVAudioSessionRecordPermission recordPermission) {
+        if (recordPermission == AVAudioSessionRecordPermissionUndetermined) {
+            firstUseMicrophone = YES;
+        }
+        else if (recordPermission == AVAudioSessionRecordPermissionGranted){
+            //第一次录音时，会请求麦克风权限。
+            //1、用户抬离手指后同意访问麦克风，这种情况不继续录音，因为用户已经离开录音按钮了
+            //2、用户保持手指按压录音按钮，用其他手指同意访问麦克风，则从获取授权的时间点开始录音
+            if (!firstUseMicrophone || ![weak_self recordButtonTouchEventEnded]) {
+                weak_self.recordPermissionGranted = YES;
+                @strongify(self);
+                
+                self->touchDownTime = CACurrentMediaTime();
+                if ([weak_self.delegate respondsToSelector:@selector(voiceRecordingShouldStart)]) {
+                    self->block = dispatch_block_create(0, ^{
+                        [weak_self.delegate voiceRecordingShouldStart];
+                    });
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), self->block);
+                }
+            }
+
+        }
+    }];
+    
+    
+}
+
+- (void)recordButtonTouchUpInside:(UIButton *)sender{
+    NSLog(@"%s",__func__);
+    if (!self.recordPermissionGranted)
+        return;
+    
+    CFTimeInterval currentTime = CACurrentMediaTime();
+    if (currentTime - touchDownTime < MIN_RECORD_TIME_REQUIRED + 0.25) {
+        self.recordButton.enabled = NO;
+        self.textView.userInteractionEnabled = NO;
+        if (!dispatch_block_testcancel(block))
+            dispatch_block_cancel(block);
+        block = nil;
+        
+        if ([self.delegate respondsToSelector:@selector(voiceRecordingTooShort)]) {
+            [self.delegate voiceRecordingTooShort];
+        }
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(MIN_RECORD_TIME_REQUIRED * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.recordButton.enabled = YES;
+            self.textView.userInteractionEnabled = YES;
+            [self recordActionEnd];
+        });
+        
+    }else {
+        [self recordActionEnd];
+        if ([self.delegate respondsToSelector:@selector(voicRecordingShouldFinish)]) {
+            [self.delegate voicRecordingShouldFinish];
+        }
+    }
+}
+
+- (void)recordButtonTouchUpOutside:(UIButton *)sender{
+    NSLog(@"%s",__func__);
+    if (!self.recordPermissionGranted)
+        return;
+    
+    [self recordActionEnd];
+    
+    if (!dispatch_block_testcancel(block))
+        dispatch_block_cancel(block);
+    block = nil;
+    
+    if ([self.delegate respondsToSelector:@selector(voiceRecordingShouldCancel)]) {
+        [self.delegate voiceRecordingShouldCancel];
+    }
+}
+
+- (void)recordButtonTouchCancel:(UIButton *)sender{
+    NSLog(@"%s",__func__);
+    if (!self.recordPermissionGranted)
+        return;
+    
+    [self recordButtonTouchUpInside:sender];
+}
+
+- (void)recordButtonTouchDragEnter:(UIButton *)sender{
+    NSLog(@"%s",__func__);
+    if (!self.recordPermissionGranted)
+        return;
+    
+    if ([self.delegate respondsToSelector:@selector(voiceRecordingDidDraginside)]) {
+        [self.delegate voiceRecordingDidDraginside];
+    }
+}
+
+- (void)recordButtonTouchDragExit:(UIButton *)sender{
+    NSLog(@"%s",__func__);
+    if (!self.recordPermissionGranted)
+        return;
+    
+    if ([self.delegate respondsToSelector:@selector(voiceRecordingDidDragoutside)]) {
+        [self.delegate voiceRecordingDidDragoutside];
+    }
+}
+
+- (void)cancelRecordButtonTouchEvent {
+    NSLog(@"%s",__func__);
+    [self.recordButton cancelTrackingWithEvent:nil];
+    [self recordActionEnd];
 }
 
 #pragma mark - Private Method

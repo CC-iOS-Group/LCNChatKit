@@ -36,4 +36,7 @@
 
 @property (nonatomic, assign) NSUInteger messageHash;
 
+
++ (LCNMessageModel *)getRecordingMessageModel;
+
 @end

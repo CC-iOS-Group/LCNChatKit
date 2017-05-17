@@ -32,7 +32,7 @@
 }
 
 - (LCNMessageLayout *)messageLayoutAtIndexPath:(NSIndexPath *)indexPath{
-    return [self.dataSource objectAtIndex:indexPath.row];
+    return [self.dataSource objectOrNilAtIndex:indexPath.row];
 }
 
 - (void)insertMessagesIntoDataSource:(NSArray<LCNMessageLayout *> *)messageArray
@@ -40,7 +40,7 @@
     [self.dataSource insertObjects:messageArray atIndex:index];
 }
 
-- (void)deleteMessageFromDataSourceWithMessageModel:(LCNMessageLayout *)messageLayout{
+- (void)deleteMessageFromDataSourceWithMessageLayout:(LCNMessageLayout *)messageLayout{
     [self.dataSource removeObject:messageLayout];
 }
 

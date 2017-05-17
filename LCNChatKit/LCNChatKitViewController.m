@@ -10,12 +10,18 @@
 #import "LCNMessageLayout.h"
 #import "LCNRefreshView.h"
 #import "YYPhotoGroupView.h"
+#import "LCNAudioRecordDelegate.h"
+#import "LCNAudioPlayDelegate.h"
+#import "AudioRecordIndicatorView.h"
+#import "LCNAudioManager.h"
 
 
 @interface LCNChatKitViewController ()
 <
 UICollectionViewDelegateFlowLayout,
-UICollectionViewDataSourcePrefetching
+UICollectionViewDataSourcePrefetching,
+LCNAudioRecordDelegate,
+LCNAudioPlayDelegate
 >
 
 //帧率显示器
@@ -24,7 +30,9 @@ UICollectionViewDataSourcePrefetching
 //输入框
 @property (nonatomic, strong) LCNInputBar *inputbar;
 
-
+//录音指示器
+@property (nonatomic, strong) AudioRecordIndicatorView *recordIndicatorView;
+@property (nonatomic, strong) LCNMessageLayout *currentAudioRecordingLayout;
 
 @end
 
@@ -150,7 +158,7 @@ UICollectionViewDataSourcePrefetching
     
     //表情气泡离开展示区时，关闭动画
     LCNMessageLayout *layout = [self.chatMessagesManager messageLayoutAtIndexPath:indexPath];
-    if (layout.model.mediaType == LCNMediaType_Emoji) {
+    if (layout.model.mediaType == LCNMediaType_Emoji && layout) {
         LCNEmojiMedaiBubble *emojiBubble = (LCNEmojiMedaiBubble*)layout.model.mediaBubble;
         [emojiBubble.imageView stopAnimating];
     }
@@ -277,6 +285,147 @@ UICollectionViewDataSourcePrefetching
     CGRect keyboardFrame = [YYTextKeyboardManager defaultManager].keyboardFrame;
     _collectionView.height = kScreenHeight - keyboardFrame.size.height - currentTextviewHeight;
     _inputbar.top = keyboardFrame.origin.y - currentTextviewHeight;
+    
+}
+
+#pragma mark - 语音输入相关回调
+- (void)voiceRecordingShouldStart{
+    //显示录音指示试图
+    [self.recordIndicatorView setCurrentRecordIndicatorStatus:AudioRecordIndicatorStatus_Recording];
+    [self.recordIndicatorView show];
+    
+    [[LCNAudioManager sharedManager] stopPlaying];
+    
+    if (![[LCNAudioManager sharedManager] isRecording]) {
+        [[LCNAudioManager sharedManager] startRecordingWithDelegate:self];
+    }
+}
+
+- (void)voiceRecordingShouldCancel{
+    [self.recordIndicatorView hide];
+    
+    [[LCNAudioManager sharedManager] cancelRecording];
+}
+
+- (void)voicRecordingShouldFinish{
+    [self.recordIndicatorView hide];
+    
+    [[LCNAudioManager sharedManager] stopRecording];
+}
+
+- (void)voiceRecordingDidDraginside{
+    [self.recordIndicatorView setCurrentRecordIndicatorStatus:AudioRecordIndicatorStatus_Recording];
+
+}
+
+- (void)voiceRecordingDidDragoutside{
+    [self.recordIndicatorView setCurrentRecordIndicatorStatus:AudioRecordIndicatorStatus_Canel];
+    
+}
+
+- (void)voiceRecordingTooShort{
+    [self.recordIndicatorView hide];
+    
+    [HUD showInfoWithStatus:RECORD_TIME_TOOSHORT delay:1];
+    
+    [[LCNAudioManager sharedManager] cancelRecording];
+    
+}
+
+#pragma mark - LCNAudioRecordDelegate
+//检查录音权限成功
+- (void)audioRecordAuthorizationDidGranted{
+
+}
+
+//录音成功开始
+- (void)audioRecordDidStartRecordingWithError:(NSError *)error{
+    if (error) {
+        [self.recordIndicatorView hide];
+        return;
+    }
+    
+    //制作录音气泡
+    LCNMessageModel *recordingMsgModel = [LCNMessageModel getRecordingMessageModel];
+    _currentAudioRecordingLayout = [[LCNMessageLayout alloc] initWithLCNMessageModel:recordingMsgModel
+                                                                             preMessageModel:[self.chatMessagesManager lastestMessageLayout].model];
+    [self.chatMessagesManager insertMessagesIntoDataSource:@[_currentAudioRecordingLayout] atIndex:[self.chatMessagesManager messagesCount]];
+    [self.collectionView reloadData];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.collectionView scrollToBottomAnimated:YES];
+    });
+}
+
+//录音音量发生变化
+- (void)audioRecordDidUpdateVoiceMeter:(double)averagePower{
+    [self.recordIndicatorView setCurrentVoiceVolume:averagePower];
+}
+
+//录音时长发生变化，以秒为单位
+- (void)audioRecordDurationDidChanged:(NSTimeInterval)duration{
+    
+}
+
+//录音最长时间
+- (NSTimeInterval)audioRecordMaxRecordTime{
+    return 0;
+}
+
+//录音成功，返回音频文件路径及时长
+- (void)audioRecordDidFinishSuccessed:(NSString *)voiceFilePath duration:(CFTimeInterval)duration{
+    
+    if (_currentAudioRecordingLayout != nil) {
+        [self.chatMessagesManager deleteMessageFromDataSourceWithMessageLayout:_currentAudioRecordingLayout];
+        [self.collectionView reloadData];
+        _currentAudioRecordingLayout = nil;
+    }
+    
+}
+
+- (void)audioRecordDidFailed{
+    
+}
+
+- (void)audioRecordDidCancelled{
+    
+    if (_currentAudioRecordingLayout != nil) {
+        [self.chatMessagesManager deleteMessageFromDataSourceWithMessageLayout:_currentAudioRecordingLayout];
+        [self.collectionView reloadData];
+        _currentAudioRecordingLayout = nil;
+    }
+    
+}
+
+//- (void)audioRecordDurationTooShort{
+//    
+//}
+
+- (void)audioRecordDurationTooLong{
+    
+}
+
+#pragma mark - LCNAudioPlayDelegate
+- (void)audioPlayDidStarted:(id)userinfo{
+    
+}
+
+//播放录音时，系统声音太小
+- (void)audioPlayVolumeTooLow{
+    
+}
+
+//发生播放错误时，播放Session同时结束
+- (void)audioPlayDidFailed:(id)userinfo{
+    
+}
+
+//播放结束时考虑到连续播放的需求，仅仅停止了当前播放，没有停止播放session
+- (void)audioPlayDidStopped:(id)userinfo{
+    
+}
+
+//播放结束，停止播放session
+- (void)audioPlayDidFinished:(id)userinfo{
     
 }
 
@@ -498,17 +647,14 @@ UICollectionViewDataSourcePrefetching
     return _inputbar;
 }
 
+//录音指示器
+-(AudioRecordIndicatorView *)recordIndicatorView{
+    if (nil == _recordIndicatorView) {
+        _recordIndicatorView = [[AudioRecordIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 160, 160)];
+        _recordIndicatorView.center = _collectionView.center;
+        [self.view addSubview:_recordIndicatorView];
+    }
+    return _recordIndicatorView;
+}
+
 @end
-
-
-
-
-
-
-
-
-
-
-
-
-

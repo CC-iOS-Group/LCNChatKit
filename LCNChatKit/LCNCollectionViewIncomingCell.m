@@ -68,6 +68,10 @@
     else{
         self.statusLabel.hidden = YES;
     }
+    
+    self.indicatorView.size = CGSizeMake(25, 25);
+    self.indicatorView.center = self.mediaContainerrView.center;
+    self.indicatorView.left += (self.mediaContainerrView.width+self.indicatorView.width)/2 + kCellMiddleGap;
 }
 
 @end

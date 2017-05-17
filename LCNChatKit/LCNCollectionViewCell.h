@@ -29,6 +29,7 @@
 @property (nonatomic, strong) YYLabel *statusLabel;
 
 @property (nonatomic, strong) UIImageView *unreadRedPointView;
+@property (nonatomic, strong) UIActivityIndicatorView *indicatorView;//发送中指示器
 
 //数据源
 @property (nonatomic, strong) LCNMessageLayout *layout;
